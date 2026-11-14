@@ -1,6 +1,6 @@
 # FORK — rehearse a decision before its consequences become real
 
-**Submission draft, not a submission receipt.** The original logistics source is public at [ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai). The Scenario Studio enhancement is locally implemented and must complete its current review before publication. Competition submission, final entry media and track selection are not claimed completed.
+**Submission draft, not a submission receipt.** The reviewed logistics, Scenario Studio and conversational source, documentation and demo recordings are public at [ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai). Competition submission and final track selection are not claimed completed. The current silent recording is verified presentation media; the live spoken pitch remains separate.
 
 ## Inspiration
 

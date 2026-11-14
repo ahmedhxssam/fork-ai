@@ -93,10 +93,10 @@ The logistics lab has synthetic roads, orders, priorities, volunteer identities,
 
 Public source: **[github.com/ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai)**. The repository was created November 13, 2026 at 11:13 PM Eastern, and anonymous source access was verified. The app runs locally; no hosted deployment or completed competition entry is claimed. [DEVPOST.md](DEVPOST.md) is the submission draft, ready for the owner's final entry review.
 
-That public snapshot is the original logistics release. The reviewed Scenario Studio enhancement and its new media are prepared locally; this update does not claim a public upload.
+The public repository includes the reviewed Scenario Studio and conversational flow, updated documentation, screenshots and demo recordings. Publication was verified against the exact source commit and demo-video Git blob; see [publication evidence](docs/PUBLICATION.md).
 
 ## Credits and AI assistance
 
 Built with Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScript, Vite, pytest, HTTPX and Playwright. Exact installed dependencies are recorded in `requirements.lock` and `frontend/package-lock.json`.
 
-OpenAI Codex provided substantial assistance with architecture, implementation, test authoring, debugging, review and documentation. This development assistance is distinct from runtime capability: the submitted application currently makes no LLM calls. No percentage of human-authored code or organizer eligibility determination is asserted. No sponsor integration or award outcome is claimed.
+OpenAI Codex provided substantial assistance with architecture, implementation, test authoring, debugging, review and documentation. This development assistance is distinct from runtime capability: the application currently makes no LLM calls. No percentage of human-authored code or organizer eligibility determination is asserted. No sponsor integration or award outcome is claimed.

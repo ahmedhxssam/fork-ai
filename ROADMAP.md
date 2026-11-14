@@ -6,7 +6,7 @@ The current delivery is a deterministic decision laboratory with a generic workf
 
 1. Finish real-browser and disconnected-localhost verification; record actual screenshots and a genuine two-minute demo.
 2. Reproduce setup from a clean environment, verify exports and preserve dependency locks.
-3. Preserve reviewed public GitHub publication and verify each newly published revision. The original logistics source was publicly published with explicit user authorization; studio enhancements require their own completed review before upload.
+3. Preserve reviewed public GitHub publication and verify each newly published revision. The reviewed logistics, Studio and conversational releases are now public with explicit user authorization. Future enhancements still require review and verification before upload.
 4. Finalize the submission's real links, team credits, AI disclosure and chosen track. Check actual sponsor briefs before making eligibility claims. No award outcome is predictable or guaranteed.
 
 ## Model quality
