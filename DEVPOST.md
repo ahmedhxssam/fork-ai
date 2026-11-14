@@ -36,10 +36,10 @@ A useful decision tool should make its assumptions and losses easy to inspect. I
 
 ## What's next
 
-Publish the reviewed source and reproducible artifacts after publication approval. Then validate the workflow with a food-bank coordinator, evaluate broader declared scenarios against conventional methods, and extend only the constraints that actual operations require. Live AI strategists and sponsor integrations remain conditional future work.
+Validate the workflow with a food-bank coordinator, evaluate broader declared scenarios against conventional methods, and extend only the constraints that actual operations require. Live AI strategists and sponsor integrations remain conditional future work.
 
 ## Credits and submission notes
 
 Built with Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScript, Vite, pytest, HTTPX and Playwright. Dependency locks record the versions. OpenAI Codex provided substantial AI-assisted development; no human-authorship percentage or organizer eligibility ruling is asserted.
 
-Choose a main track only after reading its current definition. Check each sponsor's actual brief and implemented requirements before selecting a sponsor category; there is no current live-model/deepagents/sponsor API claim and no guaranteed winning claim. Add only a verified public repository URL, actual screenshots and an actual ≤2-minute video. Public GitHub creation was blocked by automatic approval review, so the project is currently local and unpublished. Do not substitute an invented URL.
+Public repository: **https://github.com/ahmedhxssam/fork-ai** (created November 13, 2026 at 11:13 PM Eastern; public access verified). Actual screenshots and a genuine 37-second silent walkthrough are included in the repository. The live narrated pitch is separate. Check each sponsor's actual brief before selecting categories; there is no current live-model/deepagents/sponsor API claim or guaranteed award outcome. This file is a submission draft; the competition entry has not been submitted.

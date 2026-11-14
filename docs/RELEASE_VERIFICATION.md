@@ -72,5 +72,7 @@ healthy vehicle. That extra opportunity can produce more meals than the unshocke
 reference; the breakdown itself is not claimed to be beneficial. No roadside rescue,
 live LLM integration, real dispatch, global optimum, or field-validation claim.
 
-The public repository and competition entry remain unpublished until their actual
-external actions are authorized and verified. This report records local delivery.
+Public source is published at [ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai).
+Creation was verified as November 13, 2026 at 11:13 PM Eastern, with anonymous
+source access confirmed. The competition entry has not been submitted and no
+hosted deployment is claimed; the verified primary application runs locally.

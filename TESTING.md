@@ -41,7 +41,8 @@ npm --prefix frontend run test:e2e
 | Frontend typecheck / build | Passed | Checked with the final source and documented Make target |
 | Browser acceptance | 14 passed | Real API, all vehicles, artifacts, preference faults/order, resume, stale approval and layout |
 | External network blocked | Passed | Fresh experiment and shock against localhost, then refresh/resume; initial install remains online |
-| Publication / submission | Not completed | No public GitHub URL, hosted release or submission receipt claimed |
+| Public source | Published and anonymous access verified | [ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai), created November 13 at 11:13 PM Eastern |
+| Competition entry / hosting | Not submitted / not hosted | Local application and submission draft are delivered; no submission receipt claimed |
 
 Detailed source evidence: [engine report](docs/ENGINE_REPORT.md), [referee report](docs/VERIFIER_REPORT.md), [frontend handoff](frontend/IMPLEMENTATION_REPORT.md). Counts describe those reports' snapshot, not a promise that unexecuted checks passed.
 

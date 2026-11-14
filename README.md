@@ -74,7 +74,7 @@ All roads, orders, priorities, volunteer identities, costs and emissions are syn
 - [Roadmap](ROADMAP.md)
 - [Engine evidence](docs/ENGINE_REPORT.md) · [Independent referee evidence](docs/VERIFIER_REPORT.md)
 
-The local source tree is the primary runnable deliverable. Public GitHub publication is currently **not completed**; no public repository or deployment URL is claimed here. Submission and sponsor-category eligibility must be checked against the actual event briefs before publication.
+Public source: **[github.com/ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai)**. The repository was created November 13, 2026 at 11:13 PM Eastern, and anonymous source access was verified. The app runs locally; no hosted deployment or completed competition entry is claimed. [DEVPOST.md](DEVPOST.md) is the submission draft, ready for the owner's final entry review.
 
 ## Credits and AI assistance
 
