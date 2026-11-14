@@ -8,7 +8,7 @@ A plan can look convincing while hiding assumptions about capacity, deadlines, s
 
 ## What it does
 
-Scenario Studio starts with an editable brief. A deterministic bounded compiler turns supported statements into a typed resource-and-task model, with source facts, explicit defaults and blocking questions/errors. Community repair, event production and IT response use one scheduling engine with different input data.
+Scenario Studio starts with an ordinary problem description, including incomplete or conflicting details. A bounded deterministic interview asks one focused question at a time, quotes contradictions, and preserves source-backed answers. Users review the resulting plan and agreed assumptions in plain language; structured data remains an optional inspector. Different operations use the same resource/task scheduling engine.
 
 FORK computes three scheduling choices from the same model. Users add resource outages, compare actual processing timelines and inspect the same shocked schedule with and without adaptation. Zero gains, losses and ties remain visible. A separate referee recomputes capacity, work, materials, dependencies, cost and completion metrics before a human can approve current evidence for export. Nothing is dispatched.
 
@@ -44,4 +44,4 @@ Connect a bounded OpenAI authoring adapter after explicit API setup, preserving 
 
 ## Submission notes
 
-Intended main-track fit: **Best Business and Enterprise**. Final category selection remains an entry action. Do not claim a live-model/deepagents/sponsor integration or guaranteed award outcome. The genuine [46.520-second silent Studio walkthrough](artifacts/FORK-studio-demo-silent.webm) is recorded and verified; the older clip documents logistics. Use [the two-minute pitch](docs/PITCH.md) for live narration.
+Intended main-track fit: **Best Business and Enterprise**. Final category selection remains an entry action. Do not claim a live-model/deepagents/sponsor integration or guaranteed award outcome. The genuine [58.360-second conversational walkthrough](artifacts/FORK-conversation-demo-silent.webm) is recorded and verified; older clips document earlier interfaces. Use [the two-minute pitch](docs/PITCH.md) for live narration.

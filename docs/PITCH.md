@@ -1,39 +1,39 @@
-# FORK: two-minute studio pitch
+# FORK: two-minute conversational pitch
 
-Rehearse with the actual interface and measured results. The default scenario studio is deterministic; the retained food-bank demo is available through Logistics lab. Stop at two minutes. Do not preselect a winning policy or imply a runtime AI connection.
+Use the real interface and actual outcomes. Runtime is a bounded deterministic interview and simulator, not a connected language model. Do not preselect a winning strategy. The older clips document earlier interfaces; the conversational clip is the current walkthrough.
 
-**0:00–0:15 — Show the editable brief.**
+**0:00–0:15 — Show the ordinary incomplete description.**
 
-“Before a team commits to a plan, what if it could rehearse the consequences? FORK turns a scenario into an inspectable model, then lets you explore different futures.”
+“People describe problems, not simulation schemas. FORK starts with an issue like this: we have volunteers and bikes waiting, but we do not know how much we can finish.”
 
-**0:15–0:35 — Compile and show a resource, dependency and assumption.**
+**0:15–0:40 — Understand scenario; answer quantity, time per job and time available.**
 
-“This repair clinic has shared benches, limited parts and urgent jobs. The deterministic compiler shows exactly which facts became rules. It also exposes defaults. Unsupported requests block the run; nothing quietly becomes a made-up assumption.”
+“It asks only for the missing facts, one at a time. I can answer in a short phrase. These answers become actual capacity and processing constraints, with source evidence I can inspect.”
 
-**0:35–0:55 — Run three futures; show the work traces.**
+**0:40–1:00 — Review assumptions and run.**
 
-“These scheduling choices share the same inputs. The bars are actual computed processing, constrained by capacity, prerequisites, materials and budget. They may tie. Their names describe preferences, not guaranteed winners.”
+“Here is the plain-language model. This version assumes checkpointable work and explicitly excludes costs, materials and travel. With two volunteers, six 45-minute jobs and two hours, four repairs complete. The timelines are computed; the numbers are not generated narration.”
 
-**0:55–1:20 — Add a judge-selected outage and apply it.**
+**1:00–1:25 — Show conflicting-details example and resolve both conflicts.**
 
-“Choose which resource goes offline and for how long. Every future gets the same disruption. Checkpointed work stays done. Here is the same shocked plan with its original assignments locked, compared with a schedule allowed to adapt. The difference can be zero or negative.”
+“What if the description contradicts itself? It quotes two versus three technicians and one hour versus 90 minutes. It asks which facts to use instead of quietly choosing the last number. Three technicians with 90 minutes complete all six jobs in this model.”
 
-**1:20–1:40 — Switch to IT response or event production; compile and run.**
+**1:25–1:45 — Point to shared worlds, optional outage controls and independent receipt.**
 
-“Now the problem changes completely: different skills, work and dependencies. We changed the model data, not the scheduling engine. The shared abstraction is resource-constrained work; we do not claim to model every kind of problem.”
+“The same workflow engine handles the changed problem. We can apply one common outage to every scheduling choice and compare adaptation with a locked-plan control. A separate referee reconstructs every worked minute and recomputes the results.”
 
-**1:40–2:00 — Open independent receipt; approve and export.**
+**1:45–2:00 — Approve current evidence and export.**
 
-“A separate referee reconstructs the processing and recomputes the results. A human approves the current model and evidence. A future OpenAI adapter can propose this same typed model from freer language; it cannot fabricate outcomes or bypass the referee. No model calls run in this version.”
+“A person reviews and approves the current evidence. A future OpenAI adapter can interpret freer language through the same model and clarification contract; it cannot invent outcomes or bypass verification. This version runs locally without a key or model calls.”
 
 ## Judge questions
 
-**What is new?** The contribution is the integrated workflow: traceable model authoring, shared starting conditions, common disruptions, paired fixed-plan controls, independent evidence and revision-bound human choice. Simulation, scheduling and scenario comparison themselves already exist.
+**What is new?** The integrated experience: natural issue clarification, visible conflict resolution, traceable model inputs, shared starting conditions, common disruptions, paired controls, independent evidence and revision-bound human choice. Scheduling and simulation themselves already exist.
 
-**Is this AI?** Codex substantially assisted development. Runtime is deliberately deterministic until API-key setup is enabled later. The authoring boundary is an exposed typed JSON schema; no LLM/deepagents/sponsor integration is claimed today.
+**How general is it?** The engine handles bounded resource/task workflows. The current conversational interview deliberately offers a simpler scope and asks when facts are missing or ambiguous. It cannot infer arbitrary domain physics, travel, clinical judgment or the truth of user claims.
 
-**How general is it?** One engine handles bounded resource/task workflows across domains. A domain needing travel, stochastic behavior, noncheckpointable processes or other physics needs a validated model extension. A persuasive description alone cannot establish that a model fits reality.
+**What is AI today?** Codex substantially assisted development. Runtime remains deterministic because the user deferred API-key setup. The authoring/clarification schema is ready for a bounded provider adapter; no LLM/deepagents/sponsor integration is claimed.
 
-**Which track?** Business and Enterprise is the intended main-track fit: operational planning and analytics. Creativity is demonstrated by traceable authoring and counterfactual evidence; utility by measurable tradeoffs; charity by explicit human priorities; avidity by a working, inspected implementation. Track selection and competition submission remain the owner's final entry action.
+**Which track?** Intended main-track fit is Business and Enterprise: operational planning and analytics. Final category selection and entry submission remain owner actions. No award outcome is promised.
 
-**What does verification prove?** Consistency inside a declared synthetic minute/capacity model. Tests and independent replay do not establish global optimality, field performance, faithful domain assumptions or safety.
+**What do checks prove?** Consistency inside a declared model and the tested UI/recovery behavior. They do not establish optimality, operational safety, real-world model fidelity or unrestricted language understanding.

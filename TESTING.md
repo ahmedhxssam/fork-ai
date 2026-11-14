@@ -29,7 +29,17 @@ npm --prefix frontend run build
 npm --prefix frontend run test:e2e
 ```
 
-## Current Studio release
+## Current conversational release
+
+Fresh integration on November 14, 2026: `make test` passed **252 Python tests**, **4 frontend model tests**, TypeScript and Vite build. The final real-browser suite passed **36/36** in 46.8 seconds, including 14 retained logistics cases and 22 Studio/conversation cases. The final scope-revision UI adjustment also passed a fresh production build and independent focused Chrome review.
+
+Conversational coverage adds 49 intake cases, 14 independent acceptance cases and 7 provenance/API cases. Tests include incomplete facts, actual conflicts, ordinary paraphrases, uncertain/unavailable staffing, alternative or compound times, subject-bound deadlines, incompatible units, unknown leading/trailing conditions, invalid-answer rollback, old question IDs, edits, unfinished and legacy draft restore, delayed responses, pending answer locks, model-fingerprint drift and source-replayed launch/approval/export. Actual two-versus-three-worker and 15-versus-45-minute answers change independently verified simulation outcomes.
+
+The initial full browser run found three assertions tied to the old phrase “job take” after the clearer wording changed to “one bike repair take”; assertions were aligned with the actual duration question. A separate test exposed the scope-change choice staying in an error state; it failed before direct, focused return to the original editor was implemented. The full final suite then passed. Four existing third-party Python deprecation warnings remain.
+
+See [conversational release verification](docs/CONVERSATION_RELEASE_VERIFICATION.md), [independent review](docs/CONVERSATION_FINAL_REVIEW.md), [acceptance checks](docs/CONVERSATION_ACCEPTANCE.md), and [recording evidence](docs/CONVERSATION_RECORDING_REPORT.md). Current checks do not establish arbitrary prose understanding or real-world validity.
+
+## Earlier Studio release
 
 Fresh combined checks on November 14, 2026: `make test` passed **182 Python tests**, **4 frontend model tests**, TypeScript and production Vite build. After a small skip-link clipping fix for full-page captures, the build passed again and the complete real-browser suite passed **26/26** in 22.8 seconds: 14 retained logistics cases and 12 Studio cases. Four existing Python dependency deprecation warnings remain.
 

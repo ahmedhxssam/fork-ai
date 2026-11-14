@@ -1,0 +1,4330 @@
+{
+  "id": "wf-724eb6321f264ce6",
+  "kind": "workflow",
+  "revision": 2,
+  "mode": "deterministic",
+  "brief": "Our help desk has three technicians. Eight laptop setups take fifteen minutes each. Four account checks take ten minutes each. Account checks start after laptop setups finish. Account checks are due within 100 minutes. We have two hours to finish.",
+  "model": {
+    "schema_version": "fork-workflow/1",
+    "title": "Laptop setups and account checks",
+    "horizon": 120,
+    "resources": [
+      {
+        "id": "r1",
+        "label": "technicians",
+        "capacity": 3,
+        "skills": [
+          "g1",
+          "g2"
+        ],
+        "cost_per_minute": 0
+      }
+    ],
+    "tasks": [
+      {
+        "id": "g1_1",
+        "label": "laptop setups 1",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_2",
+        "label": "laptop setups 2",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_3",
+        "label": "laptop setups 3",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_4",
+        "label": "laptop setups 4",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_5",
+        "label": "laptop setups 5",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_6",
+        "label": "laptop setups 6",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_7",
+        "label": "laptop setups 7",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g1_8",
+        "label": "laptop setups 8",
+        "duration": 15,
+        "skill": "g1",
+        "units": 1,
+        "release": 0,
+        "due": 120,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "g2_1",
+        "label": "account checks 1",
+        "duration": 10,
+        "skill": "g2",
+        "units": 1,
+        "release": 0,
+        "due": 100,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [
+          "g1_1",
+          "g1_2",
+          "g1_3",
+          "g1_4",
+          "g1_5",
+          "g1_6",
+          "g1_7",
+          "g1_8"
+        ],
+        "materials": {}
+      },
+      {
+        "id": "g2_2",
+        "label": "account checks 2",
+        "duration": 10,
+        "skill": "g2",
+        "units": 1,
+        "release": 0,
+        "due": 100,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [
+          "g1_1",
+          "g1_2",
+          "g1_3",
+          "g1_4",
+          "g1_5",
+          "g1_6",
+          "g1_7",
+          "g1_8"
+        ],
+        "materials": {}
+      },
+      {
+        "id": "g2_3",
+        "label": "account checks 3",
+        "duration": 10,
+        "skill": "g2",
+        "units": 1,
+        "release": 0,
+        "due": 100,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [
+          "g1_1",
+          "g1_2",
+          "g1_3",
+          "g1_4",
+          "g1_5",
+          "g1_6",
+          "g1_7",
+          "g1_8"
+        ],
+        "materials": {}
+      },
+      {
+        "id": "g2_4",
+        "label": "account checks 4",
+        "duration": 10,
+        "skill": "g2",
+        "units": 1,
+        "release": 0,
+        "due": 100,
+        "priority": 1,
+        "value": 1,
+        "depends_on": [
+          "g1_1",
+          "g1_2",
+          "g1_3",
+          "g1_4",
+          "g1_5",
+          "g1_6",
+          "g1_7",
+          "g1_8"
+        ],
+        "materials": {}
+      }
+    ],
+    "stock": {},
+    "budget_cents": null,
+    "events": [
+      {
+        "id": "outage-mwg0fgct-0",
+        "kind": "resource_outage",
+        "resource_id": "r1",
+        "at": 5,
+        "duration": 10,
+        "capacity_lost": 1,
+        "label": "Outage 1"
+      },
+      {
+        "id": "outage-mwg0fgdq-1",
+        "kind": "resource_outage",
+        "resource_id": "r1",
+        "at": 25,
+        "duration": 8,
+        "capacity_lost": 1,
+        "label": "Outage 2"
+      }
+    ]
+  },
+  "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+  "worlds": [
+    {
+      "id": "throughput",
+      "name": "Throughput",
+      "policy": "throughput",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 5,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 25,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 33,
+          "end": 48,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 58,
+          "end": 68,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 25
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 45
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 48
+        },
+        {
+          "task_id": "g2_1",
+          "time": 58
+        },
+        {
+          "task_id": "g2_2",
+          "time": 58
+        },
+        {
+          "task_id": "g2_3",
+          "time": 58
+        },
+        {
+          "task_id": "g2_4",
+          "time": 68
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "task_paused",
+          "summary": "Paused laptop setups 3: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for laptop setups 3 on its original pool.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 68,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 68
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 68
+        },
+        "evidence_hash": "52424897edc860430da032ce8ce366c4217d25f5c056e36095046e4b772b7f82"
+      },
+      "compute_seconds": 0.00097
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "policy": "resilience",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 5,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 25,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 33,
+          "end": 48,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 58,
+          "end": 68,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 25
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 45
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 48
+        },
+        {
+          "task_id": "g2_1",
+          "time": 58
+        },
+        {
+          "task_id": "g2_2",
+          "time": 58
+        },
+        {
+          "task_id": "g2_3",
+          "time": 58
+        },
+        {
+          "task_id": "g2_4",
+          "time": 68
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "task_paused",
+          "summary": "Paused laptop setups 3: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for laptop setups 3 on its original pool.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 68,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 68
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 68
+        },
+        "evidence_hash": "beda256eaf3d6d25d7c9e5722f76ba5ac6dce2079c90a8e7fd6d2f4270334858"
+      },
+      "compute_seconds": 0.00119
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "policy": "priority",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 5,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 25,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 33,
+          "end": 48,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 58,
+          "end": 68,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 25
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 45
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 48
+        },
+        {
+          "task_id": "g2_1",
+          "time": 58
+        },
+        {
+          "task_id": "g2_2",
+          "time": 58
+        },
+        {
+          "task_id": "g2_3",
+          "time": 58
+        },
+        {
+          "task_id": "g2_4",
+          "time": 68
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "task_paused",
+          "summary": "Paused laptop setups 3: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for laptop setups 3 on its original pool.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 68,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 68
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 68
+        },
+        "evidence_hash": "15687617efebc439b55bedda739f66c4561f2a0b635c121c4ea88b98cec96d8f"
+      },
+      "compute_seconds": 0.00098
+    }
+  ],
+  "baseline_worlds": [
+    {
+      "id": "throughput",
+      "name": "Throughput",
+      "policy": "throughput",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 55,
+          "end": 65,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 15
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 30
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 45
+        },
+        {
+          "task_id": "g2_1",
+          "time": 55
+        },
+        {
+          "task_id": "g2_2",
+          "time": 55
+        },
+        {
+          "task_id": "g2_3",
+          "time": 55
+        },
+        {
+          "task_id": "g2_4",
+          "time": 65
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 65,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 65
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 65
+        },
+        "evidence_hash": "834ffa43e53e645c209ae7a568dfaabdf7fdaedd9eb52486f47396e074ca5cd8"
+      },
+      "compute_seconds": 0.00105
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "policy": "resilience",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 55,
+          "end": 65,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 15
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 30
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 45
+        },
+        {
+          "task_id": "g2_1",
+          "time": 55
+        },
+        {
+          "task_id": "g2_2",
+          "time": 55
+        },
+        {
+          "task_id": "g2_3",
+          "time": 55
+        },
+        {
+          "task_id": "g2_4",
+          "time": 65
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 65,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 65
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 65
+        },
+        "evidence_hash": "e248406d30a6e6560e5cfe67838bfca6c82758135cadea4516f9baac9e7d24ee"
+      },
+      "compute_seconds": 0.00096
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "policy": "priority",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 55,
+          "end": 65,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 15
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 30
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 45
+        },
+        {
+          "task_id": "g2_1",
+          "time": 55
+        },
+        {
+          "task_id": "g2_2",
+          "time": 55
+        },
+        {
+          "task_id": "g2_3",
+          "time": 55
+        },
+        {
+          "task_id": "g2_4",
+          "time": 65
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 55,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 65,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 65
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 65
+        },
+        "evidence_hash": "b11a0a98494afd1bf2829b68005ab8205979c66a7d09bf4d80d152fb116578d7"
+      },
+      "compute_seconds": 0.00096
+    }
+  ],
+  "controls": [
+    {
+      "id": "throughput",
+      "name": "Throughput",
+      "policy": "throughput",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": false,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 5,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 25,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 33,
+          "end": 48,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 58,
+          "end": 68,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 25
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 45
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 48
+        },
+        {
+          "task_id": "g2_1",
+          "time": 58
+        },
+        {
+          "task_id": "g2_2",
+          "time": 58
+        },
+        {
+          "task_id": "g2_3",
+          "time": 58
+        },
+        {
+          "task_id": "g2_4",
+          "time": 68
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "task_paused",
+          "summary": "Paused laptop setups 3: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for laptop setups 3 on its original pool.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 68,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 68
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 68
+        },
+        "evidence_hash": "225ef3b8e00728e129ef5a4848aeed1a1a06c71ac0be0e6af516c859a4f58967"
+      },
+      "compute_seconds": 0.00133
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "policy": "resilience",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": false,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 5,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 25,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 33,
+          "end": 48,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 58,
+          "end": 68,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 25
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 45
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 48
+        },
+        {
+          "task_id": "g2_1",
+          "time": 58
+        },
+        {
+          "task_id": "g2_2",
+          "time": 58
+        },
+        {
+          "task_id": "g2_3",
+          "time": 58
+        },
+        {
+          "task_id": "g2_4",
+          "time": 68
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "task_paused",
+          "summary": "Paused laptop setups 3: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for laptop setups 3 on its original pool.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 68,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 68
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 68
+        },
+        "evidence_hash": "a94a3a3d57b1b89511743e5b847f511f5851ac422b6a2f095c064c11b1c056a4"
+      },
+      "compute_seconds": 0.00133
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "policy": "priority",
+      "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+      "adapt": false,
+      "segments": [
+        {
+          "task_id": "g1_1",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_2",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 15,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 0,
+          "end": 5,
+          "units": 1
+        },
+        {
+          "task_id": "g1_3",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 25,
+          "units": 1
+        },
+        {
+          "task_id": "g1_4",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_5",
+          "resource_id": "r1",
+          "start": 15,
+          "end": 30,
+          "units": 1
+        },
+        {
+          "task_id": "g1_6",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_7",
+          "resource_id": "r1",
+          "start": 30,
+          "end": 45,
+          "units": 1
+        },
+        {
+          "task_id": "g1_8",
+          "resource_id": "r1",
+          "start": 33,
+          "end": 48,
+          "units": 1
+        },
+        {
+          "task_id": "g2_1",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_2",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_3",
+          "resource_id": "r1",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        },
+        {
+          "task_id": "g2_4",
+          "resource_id": "r1",
+          "start": 58,
+          "end": 68,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "g1_1",
+          "time": 15
+        },
+        {
+          "task_id": "g1_2",
+          "time": 15
+        },
+        {
+          "task_id": "g1_3",
+          "time": 25
+        },
+        {
+          "task_id": "g1_4",
+          "time": 30
+        },
+        {
+          "task_id": "g1_5",
+          "time": 30
+        },
+        {
+          "task_id": "g1_6",
+          "time": 45
+        },
+        {
+          "task_id": "g1_7",
+          "time": 45
+        },
+        {
+          "task_id": "g1_8",
+          "time": 48
+        },
+        {
+          "task_id": "g2_1",
+          "time": 58
+        },
+        {
+          "task_id": "g2_2",
+          "time": 58
+        },
+        {
+          "task_id": "g2_3",
+          "time": 58
+        },
+        {
+          "task_id": "g2_4",
+          "time": 68
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 1 on technicians; materials consumed once.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 2 on technicians; materials consumed once.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started laptop setups 3 on technicians; materials consumed once.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 5,
+          "kind": "task_paused",
+          "summary": "Paused laptop setups 3: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 1.",
+          "task_id": "g1_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 2.",
+          "task_id": "g1_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for laptop setups 3 on its original pool.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 4 on technicians; materials consumed once.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started laptop setups 5 on technicians; materials consumed once.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 3.",
+          "task_id": "g1_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 4.",
+          "task_id": "g1_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 5.",
+          "task_id": "g1_5",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 6 on technicians; materials consumed once.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started laptop setups 7 on technicians; materials consumed once.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "r1"
+        },
+        {
+          "time": 33,
+          "kind": "task_started",
+          "summary": "Started laptop setups 8 on technicians; materials consumed once.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 6.",
+          "task_id": "g1_6",
+          "resource_id": "r1"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 7.",
+          "task_id": "g1_7",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed laptop setups 8.",
+          "task_id": "g1_8",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 1 on technicians; materials consumed once.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 2 on technicians; materials consumed once.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started account checks 3 on technicians; materials consumed once.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 1.",
+          "task_id": "g2_1",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 2.",
+          "task_id": "g2_2",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed account checks 3.",
+          "task_id": "g2_3",
+          "resource_id": "r1"
+        },
+        {
+          "time": 58,
+          "kind": "task_started",
+          "summary": "Started account checks 4 on technicians; materials consumed once.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 68,
+          "kind": "task_completed",
+          "summary": "Completed account checks 4.",
+          "task_id": "g2_4",
+          "resource_id": "r1"
+        },
+        {
+          "time": 120,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 12,
+        "total": 12,
+        "on_time": 12,
+        "priority_on_time": 0,
+        "priority_total": 0,
+        "value_completed": 12,
+        "value_total": 12,
+        "cost_cents": 0,
+        "work_minutes": 160,
+        "unserved": 0,
+        "makespan": 68
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 12,
+          "total": 12,
+          "on_time": 12,
+          "priority_on_time": 0,
+          "priority_total": 0,
+          "value_completed": 12,
+          "value_total": 12,
+          "cost_cents": 0,
+          "work_minutes": 160,
+          "unserved": 0,
+          "makespan": 68
+        },
+        "evidence_hash": "16ab77eb2c248b7b62bc6b846addf0038b84110ea2432ab9f4f7d32205c33724"
+      },
+      "compute_seconds": 0.00133
+    }
+  ],
+  "comparison": {
+    "recommended_id": null,
+    "tied_ids": [
+      "throughput",
+      "resilience",
+      "priority"
+    ],
+    "ranking": [
+      {
+        "world_id": "throughput",
+        "score": 0.5,
+        "eligible": true
+      },
+      {
+        "world_id": "resilience",
+        "score": 0.5,
+        "eligible": true
+      },
+      {
+        "world_id": "priority",
+        "score": 0.5,
+        "eligible": true
+      }
+    ],
+    "weights": {
+      "completion": 0.5,
+      "priority": 0.35,
+      "cost": 0.15
+    }
+  },
+  "approved": {
+    "world_id": "throughput",
+    "revision": 2,
+    "evidence_hash": "52424897edc860430da032ce8ce366c4217d25f5c056e36095046e4b772b7f82",
+    "model_hash": "a26bc290d83b06fcfaf49698e8c1d1f3e649d37fcefddaed2c68b1cd9ae4f7f8",
+    "weights_hash": "bf9c5ef4ff2c562aa03bbf9be5da26b2b5749bc9f6b7e3e2af7fcd52ad96eedb",
+    "approved_at": "2026-11-14T06:13:44.955352+00:00"
+  },
+  "created_at": "2026-11-14T06:13:44.667546+00:00",
+  "authoring": {
+    "method": "conversation",
+    "answers": [
+      {
+        "question_id": "308c5559bf841dbd:4f53cda18c2b:scope",
+        "answer": "accept"
+      }
+    ],
+    "brief_hash": "308c5559bf841dbd0b53a3fc66aacee8a096c23ff4a69b6a29c01d27cd970078",
+    "model_hash": "d359ace80bd495995cb78fdb2624a46edfd042d3814929e0268ab7fc87c761d5"
+  },
+  "display_brief": "Our help desk has three technicians. Eight laptop setups take fifteen minutes each. Four account checks take ten minutes each. Account checks start after laptop setups finish. Account checks are due within 100 minutes. We have two hours to finish."
+}

@@ -1,6 +1,8 @@
 # Demo and recording
 
-The default demo is **Scenario Studio**: editable brief → reviewable model → three computed futures → common outages → independent evidence → human approval. Use the updated [two-minute studio pitch](docs/PITCH.md) and [studio model guide](docs/SCENARIO_STUDIO.md). Runtime remains deterministic and credential-free. Demonstrate two genuinely different templates using the same engine; explain that arbitrary prose and new physics remain unsupported.
+The default demo is **Scenario Studio**: natural issue description → missing/conflicting-detail questions → plain model review → three computed futures → common outages → independent evidence → human approval. Use [the conversational guide](docs/CONVERSATIONAL_INTAKE.md) and [two-minute pitch](docs/PITCH.md). Runtime remains deterministic and credential-free; the interview has bounded language/model support.
+
+For the incomplete repair example, answer “Six bikes”, “About 45 minutes each”, and “We have two hours”. Review its simplified scope and run: two volunteers complete four of six modeled repairs. Then show the conflicting-details example and explicitly resolve available staff and the room window. Choose three technicians and 90 minutes: all six 45-minute jobs finish in that model. Read actual results; do not promise different policies or a preferred strategy must win. The demonstration is that clarified facts change executable inputs and consequences.
 
 The retained logistics walkthrough below runs at `http://127.0.0.1:8000/?view=logistics`. Its measured recovery story has no predetermined winning policy. The earlier silent video documents that logistics version.
 

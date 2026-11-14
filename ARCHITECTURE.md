@@ -4,7 +4,9 @@ FORK is a local Python service and React single-page application with two model 
 
 ## Scenario Studio
 
-`frontend/src/studio/` provides editable briefs, model review and workflow timelines. `backend/studio/compiler.py` emits only validated data defined in `schema.py`. `engine.py` schedules checkpointable work in integer minutes. `referee.py` independently reconstructs physical feasibility and metrics using the standard library. `api.py` coordinates three policies, an unshocked baseline, paired fixed-plan controls, comparison, versioned mutations and evidence-checked exports.
+`frontend/src/studio/` provides a natural-prose conversation, plain model review and workflow timelines. `backend/studio/intake.py` extracts bounded explicit facts, asks one clarification at a time, preserves conflicts and replays accepted answers into validated data defined in `schema.py`. The retained `compiler.py` serves the earlier advanced line grammar. `engine.py` schedules checkpointable work in integer minutes. `referee.py` independently reconstructs physical feasibility and metrics using the standard library. `api.py` coordinates three policies, controls, comparison, versioned mutations and evidence-checked exports.
+
+`GET /api/studio/prompts` returns natural examples; `POST /api/studio/intake` returns the next question or a reviewable model. Conversational launch replays answers and requires exact source/model hashes. Stored authoring remains bound to the original model when later outage schedules change; approval/export rechecks both provenance and physical evidence. Earlier source is preserved with a readable legacy summary. See [conversational intake](docs/CONVERSATIONAL_INTAKE.md).
 
 The studio routes are `/api/studio/templates`, `/compile`, `/schema`, `/experiments`, and `/experiments/{id}` with `/events`, `/preferences`, `/approve` and `/export`. Mutations require the current revision; launch takes the reviewed model and its canonical hash. Generic experiment IDs are isolated from logistics routes. The model JSON schema is an AI adapter boundary, not a current provider integration. See [the full studio contract and limits](docs/SCENARIO_STUDIO.md).
 

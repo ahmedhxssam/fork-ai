@@ -1,3 +1,4 @@
+// Historical pre-conversation recorder; use record-conversation.mjs for the current interface.
 // Records the real localhost Scenario Studio UI. No fixtures, overlays or API writes.
 // Run from the repository root: node frontend/scripts/record-studio.mjs
 import { mkdtemp, mkdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';

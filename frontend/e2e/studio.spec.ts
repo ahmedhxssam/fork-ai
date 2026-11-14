@@ -1,9 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-async function compile(page:Page){
-  await page.getByRole('button',{name:'Compile brief',exact:true}).click();
-  await expect(page.getByText('Ready for review',{exact:true})).toBeVisible();
-}
+import {understand as compile} from './studio-helpers';
 async function launch(page:Page){
   await page.goto('/'); await compile(page);
   await page.getByRole('button',{name:'Run three futures',exact:true}).click();
@@ -14,17 +11,18 @@ async function launch(page:Page){
 test('prefilled editable brief, cross-domain model review and unsupported requests block',async({page})=>{
   await page.goto('/');
   await expect(page.getByRole('heading',{name:'Every plan has a fork.',exact:true})).toBeVisible();
-  await expect(page.getByRole('textbox',{name:'Scenario brief'})).not.toHaveValue('');
+  await expect(page.getByRole('textbox',{name:'Describe what is happening'})).not.toHaveValue('');
+  const first=await page.getByRole('textbox',{name:'Describe what is happening'}).inputValue();
   await compile(page);
   await expect(page.getByRole('button',{name:'Run three futures',exact:true})).toBeEnabled();
-  const first=await page.getByRole('textbox',{name:'Scenario brief'}).inputValue();
-  await page.getByRole('button',{name:/IT.*response/i}).click();
-  await expect(page.getByRole('textbox',{name:'Scenario brief'})).not.toHaveValue(first);
+  await page.getByRole('button',{name:'Another operation',exact:true}).click();
+  await expect(page.getByRole('textbox',{name:'Describe what is happening'})).not.toHaveValue(first);
   await compile(page);
-  await page.getByRole('textbox',{name:'Scenario brief'}).fill('Teleport every task to Mars.');
+  await page.getByRole('button',{name:'Edit original issue',exact:true}).click();
+  await page.getByRole('textbox',{name:'Describe what is happening'}).fill('Teleport every task to Mars.');
   await expect(page.getByRole('button',{name:'Run three futures',exact:true})).toBeDisabled();
-  await page.getByRole('button',{name:'Compile brief',exact:true}).click();
-  await expect(page.getByText('Needs revision',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Understand scenario',exact:true}).click();
+  await expect(page.getByTestId('intake-question')).toBeVisible();
   await expect(page.getByRole('button',{name:'Run three futures',exact:true})).toBeDisabled();
 });
 
@@ -46,7 +44,8 @@ test('computed futures, outage rerun, stale gates, current approval and download
   await expect(page.getByRole('link',{name:'Export JSON',exact:true})).toBeVisible();
   const href=await page.getByRole('link',{name:'Export JSON',exact:true}).getAttribute('href');
   expect((await page.request.get(href!)).ok()).toBeTruthy();
-  await page.getByRole('textbox',{name:'Scenario brief'}).fill('An edited brief');
+  await page.getByRole('button',{name:'Edit original issue',exact:true}).click();
+  await page.getByRole('textbox',{name:'Describe what is happening'}).fill('An edited brief');
   await expect(page.getByRole('link',{name:'Export JSON',exact:true})).toHaveCount(0);
   await expect(page.getByRole('button',{name:'Approve selected future',exact:true})).toBeDisabled();
 });
@@ -63,7 +62,7 @@ test('resume survives a transient error and start over creates an empty draft',a
   await page.getByRole('button',{name:'Resume saved experiment',exact:true}).click();
   await expect(page.getByRole('heading',{name:'Three possible futures',exact:true})).toBeVisible();
   await page.getByRole('button',{name:'New scenario',exact:true}).click();
-  await expect(page.getByRole('textbox',{name:'Scenario brief'})).toHaveValue('');
+  await expect(page.getByRole('textbox',{name:'Describe what is happening'})).toHaveValue('');
   await expect(page.getByTestId('world-card')).toHaveCount(0);
   expect(await page.evaluate(()=>localStorage.getItem('fork-studio-experiment'))).toBe(id);
 });
@@ -73,6 +72,7 @@ test('mobile keyboard, real playback and bounded document width',async({page})=>
   await launch(page);
   await page.getByRole('slider',{name:'Playback minute'}).press('End');
   await expect(page.getByTestId('playback-time')).not.toHaveText('0m');
+  await page.getByText('Advanced model and source trace',{exact:true}).click();
   await page.getByRole('button',{name:'Inspect typed model',exact:true}).click();
   await expect(page.getByText('fork-workflow/1',{exact:false}).first()).toBeVisible();
   const widths=await page.evaluate(()=>({document:document.documentElement.scrollWidth,viewport:innerWidth}));
@@ -137,12 +137,12 @@ test('multiple event drafts survive a reload and preference writes cannot discar
 
 test('a late template response cannot replace a brief typed while examples load',async({page})=>{
   let release!:()=>void;const gate=new Promise<void>(resolve=>{release=resolve});
-  await page.route('**/api/studio/templates',async route=>{await gate;await route.continue()});
+  await page.route('**/api/studio/prompts',async route=>{await gate;await route.continue()});
   await page.goto('/');
-  await page.getByRole('textbox',{name:'Scenario brief'}).fill('Title: My custom draft');
+  await page.getByRole('textbox',{name:'Describe what is happening'}).fill('We have a custom operation to plan.');
   release();
-  await expect(page.getByRole('button',{name:/Community repair clinic/i})).toBeVisible();
-  await expect(page.getByRole('textbox',{name:'Scenario brief'})).toHaveValue('Title: My custom draft');
+  await expect(page.getByRole('button',{name:'Incomplete details',exact:true})).toBeVisible();
+  await expect(page.getByRole('textbox',{name:'Describe what is happening'})).toHaveValue('We have a custom operation to plan.');
 });
 
 test('approval exports refer to the selected future and a different future can be approved',async({page})=>{

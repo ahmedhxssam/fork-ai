@@ -2,9 +2,9 @@
 
 **Rehearse a decision before its consequences become real.**
 
-FORK is a local decision laboratory. Its Scenario Studio compiles an editable brief into a typed resource-and-task model, runs three scheduling choices, and compares their response to the same disruptions. Repair clinics, event production and IT response use the same engine. An independent referee reconstructs the evidence before an outcome can be approved.
+FORK is a local decision laboratory. Describe an operational issue in ordinary words; Scenario Studio asks for missing details, helps resolve conflicting claims, and turns the reviewed answers into an executable resource-and-task model. Three scheduling choices face the same disruptions. An independent referee reconstructs the evidence before an outcome can be approved.
 
-The current release runs entirely in **deterministic mode**. The bounded brief compiler and workflow scheduler run locally. The retained food-bank logistics lab uses OR-Tools and NetworkX. No language model, deepagents or API key is used. The typed model schema is ready for a later AI authoring adapter; AI-generated simulation models are not claimed today.
+The current release runs entirely in **deterministic mode**. Bounded phrase recognition and a guided interview run locally with the workflow scheduler. The retained food-bank logistics lab uses OR-Tools and NetworkX. No language model, deepagents or API key is used. The typed model and clarification contract are ready for a later AI authoring adapter; unrestricted language understanding is not claimed today.
 
 ## Run locally
 
@@ -17,7 +17,7 @@ make demo
 
 Open **http://127.0.0.1:8000**. `make demo` builds the frontend and serves it through FastAPI on one origin. Keep that terminal running. No hosted service is required. Run one backend worker; the local command serializer does not support multiple Uvicorn workers.
 
-![Editable scenario brief and its compiled executable model](docs/assets/studio-02-model.png)
+![Natural issue description with an explicit staffing-conflict question](docs/assets/conversation-02-conflict.png)
 
 ```sh
 make dev           # API on :8000 and Vite on :5173
@@ -32,13 +32,13 @@ Experiments persist in `data/fork.sqlite`; set `FORK_DB_PATH` before starting th
 
 ## Start with Scenario Studio
 
-1. Edit the prefilled brief, or choose repair clinic, event production or IT response.
-2. Compile and review the extracted resources, jobs, dependencies, source facts and explicit assumptions. Unsupported requests remain visible and block the run.
-3. Run three genuinely computed futures and inspect their processing timelines and independent checks.
+1. Describe an issue in your own words, or try incomplete details, conflicting details or another operation.
+2. Choose **Understand scenario**. Answer one question at a time; conflicting claims are quoted instead of silently resolved.
+3. Review the plain-language plan and its agreed assumptions, then run three genuinely computed futures and inspect their timelines and independent checks.
 4. Add resource outages and rerun the same counterfactual for every policy. Compare adaptive execution with a fixed-plan control under the same outages.
 5. Adjust preferences, review the current evidence, approve a future and export JSON or worked-segment CSV.
 
-Changing the brief makes old results stale. New scenario starts an empty draft and preserves history. The compiler accepts documented patterns, not arbitrary domain physics. See [Scenario Studio's model, grammar and AI boundary](docs/SCENARIO_STUDIO.md).
+Changing the issue or an earlier answer makes old results stale. New scenario starts an empty draft and preserves saved experiments. Advanced JSON remains optional. The deterministic interview handles a bounded workflow abstraction and explicitly asks about missing, ambiguous or unsupported details. See [conversational intake](docs/CONVERSATIONAL_INTAKE.md) and [the underlying model](docs/SCENARIO_STUDIO.md).
 
 ## Retained logistics lab
 
@@ -61,15 +61,15 @@ The distinctive demonstration is the paired recovery comparison: hold the scenar
 
 ## Implementation and evidence
 
-- Editable scenario workbench, typed data-only compiler, one generic workflow scheduler and an independent workflow referee.
+- Natural-prose conversation, missing-fact questions, explicit conflict resolution, typed data-only model boundary, one generic workflow scheduler and an independent workflow referee.
 - React/TypeScript/Vite workspace with workflow processing timelines and a retained SVG logistics lab, playback, preference comparison and evidence inspection.
 - FastAPI coordinator, transactional SQLite snapshots, idempotent launch/shock/approval commands and revision-bound exports.
 - Directed-road routing, explicit timed loads/services, stranded cargo and bounded recovery reloads.
 - Independent standard-library referee that reconstructs custody, movement, timing and metrics without importing planner/simulator validation helpers.
 
-The current combined release passes **182 Python tests**, **4 frontend model tests** and **26 real-browser checks**, including both Studio and the retained logistics lab. A separate fresh 1,000-model workflow audit checked **6,000 adaptive/control simulations**, plus nominal/control parity, no future-outage peek and outage-order invariance. See [Studio release verification](docs/STUDIO_RELEASE_VERIFICATION.md) and [TESTING.md](TESTING.md). A finite synthetic sweep is not a proof of optimality or operational safety.
+The current combined release passes **252 Python tests**, **4 frontend model tests** and **36 real-browser checks**, including conversational authoring and the retained workflows. Independent acceptance checks show that clarified staffing and durations change real model outputs. See [conversational release verification](docs/CONVERSATION_RELEASE_VERIFICATION.md) and [TESTING.md](TESTING.md). The earlier 1,000-model workflow audit checked 6,000 physical results; these finite checks do not prove optimality, real-world model fidelity or unrestricted language understanding.
 
-The [47-second Studio walkthrough](artifacts/FORK-studio-demo-silent.webm) records genuine cross-domain compilation, an outage rerun, independent checks, approval and a verified download. It is silent; use the [two-minute spoken pitch](docs/PITCH.md) for narration. [Studio recording provenance](docs/STUDIO_RECORDING_REPORT.md), [approved workflow evidence](artifacts/studio-approved.json), and the original [logistics clip](artifacts/FORK-demo-silent.webm) are included.
+The current [58-second conversational walkthrough](artifacts/FORK-conversation-demo-silent.webm) records an incomplete issue, plain-language answers, quoted conflicts, model review, real changed outcomes, independent checks and an approved download. It is silent; use the [two-minute spoken pitch](docs/PITCH.md) for narration. See [recording provenance](docs/CONVERSATION_RECORDING_REPORT.md). Earlier Studio and logistics clips remain as historical artifacts of those versions.
 
 ## Deliberate limits
 
@@ -80,6 +80,7 @@ The logistics lab has synthetic roads, orders, priorities, volunteer identities,
 ## Documentation
 
 - [Architecture and API](ARCHITECTURE.md)
+- [Conversational authoring and clarification](docs/CONVERSATIONAL_INTAKE.md)
 - [Scenario Studio and AI authoring boundary](docs/SCENARIO_STUDIO.md)
 - [Simulation, policies and metric definitions](SIMULATION.md)
 - [Deterministic roles and AI disclosure](AGENTS.md)

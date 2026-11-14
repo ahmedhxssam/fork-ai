@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+import {understand} from './studio-helpers';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 
@@ -14,14 +15,14 @@ test('three distinct workflow domains, shared engine, multiple real outages and 
   });
   await mkdir(assets,{recursive:true});await mkdir(artifacts,{recursive:true});
   await page.goto('/');
-  await expect(page.getByRole('textbox',{name:'Scenario brief'})).not.toHaveValue('');
+  await expect(page.getByRole('textbox',{name:'Describe what is happening'})).not.toHaveValue('');
   await page.screenshot({path:resolve(assets,'studio-01-workbench.png')});
   const domains=[];
-  for(const title of ['Community repair clinic','Community event production','IT service response']){
+  for(const title of ['Incomplete details','Conflicting details','Another operation']){
     await page.getByRole('button',{name:title,exact:true}).click();
-    await page.getByRole('button',{name:'Compile brief',exact:true}).click();
+    await understand(page);
     await expect(page.getByText('Ready for review',{exact:true})).toBeVisible();
-    if(title==='Community repair clinic')await page.locator('.st-workbench').screenshot({path:resolve(assets,'studio-02-model.png')});
+    if(title==='Incomplete details')await page.locator('.st-workbench').screenshot({path:resolve(assets,'studio-02-model.png')});
     const response=page.waitForResponse(r=>r.url().endsWith('/api/studio/experiments')&&r.request().method()==='POST');
     await page.getByRole('button',{name:'Run three futures',exact:true}).click();
     const exp=await(await response).json();
@@ -30,11 +31,11 @@ test('three distinct workflow domains, shared engine, multiple real outages and 
     expect(exp.worlds.every((world:any)=>world.verification.valid)).toBe(true);
     expect(exp.worlds.every((world:any)=>world.segments.length>0)).toBe(true);
     domains.push({id:exp.id,title:exp.model.title,hash:exp.model_hash,
-      skills:exp.model.resources.flatMap((r:any)=>r.skills),tasks:exp.model.tasks.map((t:any)=>t.id),
+      skills:exp.model.resources.flatMap((r:any)=>r.skills),work_labels:exp.model.tasks.map((t:any)=>t.label),tasks:exp.model.tasks.map((t:any)=>t.id),
       metrics:exp.worlds.map((w:any)=>({policy:w.policy,metrics:w.verification.metrics}))});
   }
   expect(new Set(domains.map(domain=>domain.hash)).size).toBe(3);
-  expect(new Set(domains.map(domain=>domain.skills.join(','))).size).toBe(3);
+  expect(new Set(domains.map(domain=>domain.work_labels.join(','))).size).toBe(3);
   await page.getByRole('button',{name:'Add outage',exact:true}).click();
   await page.getByLabel('Outage 1 start').fill('5');
   await page.getByLabel('Outage 1 duration').fill('10');
@@ -76,12 +77,12 @@ test('three distinct workflow domains, shared engine, multiple real outages and 
 test('mobile scenario authoring and model review retain readable controls',async({page})=>{
   await mkdir(assets,{recursive:true});
   await page.setViewportSize({width:390,height:844});await page.goto('/');
-  await page.getByRole('button',{name:'Compile brief',exact:true}).click();
+  const editorSize=await page.getByRole('textbox',{name:'Describe what is happening'}).evaluate(element=>parseFloat(getComputedStyle(element).fontSize));
+  await understand(page);
   await expect(page.getByText('Ready for review',{exact:true})).toBeVisible();
-  const dimensions=await page.evaluate(()=>({width:innerWidth,document:document.documentElement.scrollWidth,
-    editorSize:parseFloat(getComputedStyle(document.querySelector('textarea')!).fontSize)}));
+  const dimensions=await page.evaluate(()=>({width:innerWidth,document:document.documentElement.scrollWidth}));
   expect(dimensions.document).toBeLessThanOrEqual(dimensions.width+1);
-  expect(dimensions.editorSize).toBeGreaterThanOrEqual(16);
+  expect(editorSize).toBeGreaterThanOrEqual(16);
   await page.evaluate(()=>window.scrollTo(0,0));
   await page.screenshot({path:resolve(assets,'studio-05-mobile.png'),fullPage:true});
 });

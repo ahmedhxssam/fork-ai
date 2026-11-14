@@ -1,0 +1,243 @@
+{
+  "mode": "deterministic",
+  "synthetic": true,
+  "external_requests": [],
+  "domains": [
+    {
+      "id": "wf-f3c6a061307a45a5",
+      "title": "Bike repairs",
+      "hash": "77d6fe02453ecdd35e841b69487dc6212e302c97f9e93dde550ab873b6f1cb94",
+      "skills": [
+        "g1"
+      ],
+      "work_labels": [
+        "bike repairs 1",
+        "bike repairs 2",
+        "bike repairs 3",
+        "bike repairs 4",
+        "bike repairs 5",
+        "bike repairs 6"
+      ],
+      "tasks": [
+        "g1_1",
+        "g1_2",
+        "g1_3",
+        "g1_4",
+        "g1_5",
+        "g1_6"
+      ],
+      "metrics": [
+        {
+          "policy": "throughput",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 6,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 6,
+            "value_total": 6,
+            "cost_cents": 0,
+            "work_minutes": 120,
+            "unserved": 0,
+            "makespan": 60
+          }
+        },
+        {
+          "policy": "resilience",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 6,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 6,
+            "value_total": 6,
+            "cost_cents": 0,
+            "work_minutes": 120,
+            "unserved": 0,
+            "makespan": 60
+          }
+        },
+        {
+          "policy": "priority",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 6,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 6,
+            "value_total": 6,
+            "cost_cents": 0,
+            "work_minutes": 120,
+            "unserved": 0,
+            "makespan": 60
+          }
+        }
+      ]
+    },
+    {
+      "id": "wf-ea5ccc653b7b46ee",
+      "title": "Laptop repairs",
+      "hash": "28ef06776a23ad9db04b2c7f4b77d1fe673742765ba67a31e10d91045c65c858",
+      "skills": [
+        "g1"
+      ],
+      "work_labels": [
+        "laptop repairs 1",
+        "laptop repairs 2",
+        "laptop repairs 3",
+        "laptop repairs 4",
+        "laptop repairs 5",
+        "laptop repairs 6"
+      ],
+      "tasks": [
+        "g1_1",
+        "g1_2",
+        "g1_3",
+        "g1_4",
+        "g1_5",
+        "g1_6"
+      ],
+      "metrics": [
+        {
+          "policy": "throughput",
+          "metrics": {
+            "completed": 2,
+            "total": 6,
+            "on_time": 2,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 2,
+            "value_total": 6,
+            "cost_cents": 0,
+            "work_minutes": 120,
+            "unserved": 4,
+            "makespan": 60
+          }
+        },
+        {
+          "policy": "resilience",
+          "metrics": {
+            "completed": 2,
+            "total": 6,
+            "on_time": 2,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 2,
+            "value_total": 6,
+            "cost_cents": 0,
+            "work_minutes": 120,
+            "unserved": 4,
+            "makespan": 60
+          }
+        },
+        {
+          "policy": "priority",
+          "metrics": {
+            "completed": 2,
+            "total": 6,
+            "on_time": 2,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 2,
+            "value_total": 6,
+            "cost_cents": 0,
+            "work_minutes": 120,
+            "unserved": 4,
+            "makespan": 60
+          }
+        }
+      ]
+    },
+    {
+      "id": "wf-724eb6321f264ce6",
+      "title": "Laptop setups and account checks",
+      "hash": "d359ace80bd495995cb78fdb2624a46edfd042d3814929e0268ab7fc87c761d5",
+      "skills": [
+        "g1",
+        "g2"
+      ],
+      "work_labels": [
+        "laptop setups 1",
+        "laptop setups 2",
+        "laptop setups 3",
+        "laptop setups 4",
+        "laptop setups 5",
+        "laptop setups 6",
+        "laptop setups 7",
+        "laptop setups 8",
+        "account checks 1",
+        "account checks 2",
+        "account checks 3",
+        "account checks 4"
+      ],
+      "tasks": [
+        "g1_1",
+        "g1_2",
+        "g1_3",
+        "g1_4",
+        "g1_5",
+        "g1_6",
+        "g1_7",
+        "g1_8",
+        "g2_1",
+        "g2_2",
+        "g2_3",
+        "g2_4"
+      ],
+      "metrics": [
+        {
+          "policy": "throughput",
+          "metrics": {
+            "completed": 12,
+            "total": 12,
+            "on_time": 12,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 12,
+            "value_total": 12,
+            "cost_cents": 0,
+            "work_minutes": 160,
+            "unserved": 0,
+            "makespan": 65
+          }
+        },
+        {
+          "policy": "resilience",
+          "metrics": {
+            "completed": 12,
+            "total": 12,
+            "on_time": 12,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 12,
+            "value_total": 12,
+            "cost_cents": 0,
+            "work_minutes": 160,
+            "unserved": 0,
+            "makespan": 65
+          }
+        },
+        {
+          "policy": "priority",
+          "metrics": {
+            "completed": 12,
+            "total": 12,
+            "on_time": 12,
+            "priority_on_time": 0,
+            "priority_total": 0,
+            "value_completed": 12,
+            "value_total": 12,
+            "cost_cents": 0,
+            "work_minutes": 160,
+            "unserved": 0,
+            "makespan": 65
+          }
+        }
+      ]
+    }
+  ],
+  "shocked_experiment_id": "wf-724eb6321f264ce6"
+}

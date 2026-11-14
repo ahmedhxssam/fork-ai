@@ -81,3 +81,7 @@ Before enabling that adapter, add explicit provider/budget configuration, bounde
 5. Approve the current evidence and download JSON. Say plainly that future AI can author this typed model, while evidence remains independently computed.
 
 This demonstrates creativity through inspectable model authoring, utility through resource tradeoffs, charity through transparent priorities and constraints, and technical execution through real counterfactuals and independent checks. No award outcome is promised.
+
+## Current default: conversational authoring
+
+The original bounded line-grammar authoring described above is retained as an advanced API. The default UI now accepts ordinary prose, asks targeted follow-ups for missing or conflicting facts, and reviews a simplified model in plain language. Structured JSON stays optional. See [conversational intake](CONVERSATIONAL_INTAKE.md) for current user behavior, simplified-scope limits, replay-bound launch and saved-source handling. The original model/engine/referee semantics in this document still apply; natural-language support does not imply that every richer model field can be inferred automatically.

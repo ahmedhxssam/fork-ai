@@ -4,7 +4,7 @@ FORK currently runs only in **Deterministic Planner Mode**. Strategy names and a
 
 ## Runtime roles
 
-Scenario Studio additionally uses a deterministic bounded brief compiler, a shared resource/task scheduling engine, and a separate standard-library workflow referee. It accepts typed model inputs; it never executes generated code. Source facts, defaults and unsupported statements remain inspectable. Its schema is a future AI authoring boundary; no model provider is currently connected. See [Scenario Studio](docs/SCENARIO_STUDIO.md). The roles below describe the retained logistics lab.
+Scenario Studio additionally uses a bounded natural-prose interview, a retained advanced brief compiler, a shared resource/task scheduling engine, and a separate standard-library workflow referee. Missing or conflicting facts require clarification; accepted answers replay into a typed model. Unsupported details require explicit scope review. It never executes generated code. Its clarification/model schema is a future AI authoring boundary; no model provider is currently connected. See [conversational intake](docs/CONVERSATIONAL_INTAKE.md) and [Scenario Studio](docs/SCENARIO_STUDIO.md). The roles below describe the retained logistics lab.
 
 | Role | Implemented mechanism | Authority |
 | --- | --- | --- |

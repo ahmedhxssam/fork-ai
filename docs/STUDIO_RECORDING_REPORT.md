@@ -53,7 +53,7 @@ Outage applied to the repair clinic's first resource pool: start 5m, duration 25
 
 ## Reproduce
 
-Serve the current frontend and API on `http://127.0.0.1:8000`, then run `node frontend/scripts/record-studio.mjs` from the repository root. The script uses existing local dependencies and browser binaries, finalizes video only after its assertions and complete decode succeed, closes the browser in `finally`, and removes temporary recording/download files. It creates new stored experiments through normal UI actions and does not erase existing experiments.
+This historical recording uses the pre-conversation interface at source commit `94f1824`. Serve that version on `http://127.0.0.1:8000`, then run `node frontend/scripts/record-studio.mjs` from the repository root. For the current conversational interface use `record-conversation.mjs` and `CONVERSATION_RECORDING_REPORT.md`. The recorder finalizes video only after its assertions and complete decode succeed, closes the browser in `finally`, and removes temporary recording/download files. It creates new stored experiments through normal UI actions and does not erase existing experiments.
 
 ## Recorder execution notes
 

@@ -41,9 +41,29 @@ class CompileRequest(Body):
         return value
 
 
+class DialogueAnswer(Body):
+    question_id: str = Field(min_length=1, max_length=512)
+    answer: str = Field(min_length=1, max_length=2000)
+
+
+class IntakeRequest(CompileRequest):
+    answers: list[DialogueAnswer] = Field(default_factory=list, max_length=100)
+
+
+class Authoring(Body):
+    method: Literal['conversation']
+    answers: list[DialogueAnswer] = Field(default_factory=list, max_length=100)
+    brief_hash: str = Field(pattern=r'^[0-9a-f]{64}$')
+
+
+class SavedAuthoring(Authoring):
+    model_hash: str = Field(pattern=r'^[0-9a-f]{64}$')
+
+
 class LaunchRequest(CompileRequest):
     model: dict
     model_hash: str = Field(pattern=r'^[0-9a-f]{64}$')
+    authoring: Authoring | None = None
 
 
 class RevisionRequest(Body):
@@ -123,6 +143,15 @@ def compute_experiment(model):
 
 
 def install_studio_routes(application, store, mutation_lock):
+    def present(exp):
+        if 'display_brief' not in exp:
+            if exp.get('authoring'):
+                exp['display_brief'] = exp['brief']
+            else:
+                from backend.studio.intake import describe_model
+                exp['display_brief'] = describe_model(exp['model'])
+        return exp
+
     def validate(raw):
         from backend.studio.schema import validate_model
         try:
@@ -134,7 +163,7 @@ def install_studio_routes(application, store, mutation_lock):
         exp = store.get(experiment_id)
         if exp is None or exp.get('kind') != 'workflow':
             raise HTTPException(404, 'Workflow experiment not found. Your draft can still be compiled again.')
-        return exp
+        return present(exp)
 
     def cached(scope, key, payload):
         if not key:
@@ -147,6 +176,7 @@ def install_studio_routes(application, store, mutation_lock):
             raise HTTPException(409, str(exc)) from exc
 
     def persist(exp, scope, key, payload):
+        present(exp)
         command = ('studio:'+scope, key, digest(payload), exp) if key else None
         store.save(exp, command=command)
         return exp
@@ -157,6 +187,17 @@ def install_studio_routes(application, store, mutation_lock):
 
     def fresh_evidence(exp, world_id):
         from backend.studio.referee import verify
+        if exp.get('authoring'):
+            from backend.studio.intake import intake
+            try:
+                source = SavedAuthoring.model_validate(exp['authoring']).model_dump()
+                parsed = intake(exp['brief'], source['answers'])
+            except (ValueError, KeyError, TypeError) as exc:
+                raise HTTPException(409, 'The saved conversation needs review before approval or export.') from exc
+            if (not parsed['ready'] or parsed['brief_hash'] != source['brief_hash']
+                    or parsed['model_hash'] != source['model_hash']
+                    or digest(dict(parsed['model'], events=exp['model']['events'])) != exp['model_hash']):
+                raise HTTPException(409, 'The conversation no longer matches this model. Review the scenario again.')
         selected = next((w for w in exp['worlds'] if w['id'] == world_id), None)
         if selected is None:
             raise HTTPException(409, 'This future is not part of the current experiment.')
@@ -185,6 +226,16 @@ def install_studio_routes(application, store, mutation_lock):
         from backend.studio.schema import model_schema
         return {'schema':model_schema(), 'mode':'deterministic', 'provider_enabled':False}
 
+    @application.get('/api/studio/prompts')
+    def prompts():
+        from backend.studio.intake import PROMPTS
+        return {'prompts':copy.deepcopy(PROMPTS), 'mode':'deterministic', 'provider_enabled':False}
+
+    @application.post('/api/studio/intake')
+    def understand(body: IntakeRequest):
+        from backend.studio.intake import intake
+        return intake(body.brief, [answer.model_dump() for answer in body.answers])
+
     @application.post('/api/studio/compile')
     def compile_scenario(body: CompileRequest):
         from backend.studio.compiler import compile_brief
@@ -193,6 +244,8 @@ def install_studio_routes(application, store, mutation_lock):
     @application.post('/api/studio/experiments')
     def launch(body: LaunchRequest, idempotency_key: str | None = Header(None)):
         payload = body.model_dump()
+        if body.authoring is None:
+            payload.pop('authoring')
         with mutation_lock:
             previous = cached('launch', idempotency_key, payload)
             if previous:
@@ -200,11 +253,22 @@ def install_studio_routes(application, store, mutation_lock):
             model = validate(body.model)
             if digest(model) != body.model_hash:
                 raise HTTPException(409, 'The reviewed model does not match its fingerprint. Compile and review it again.')
+            authoring = None
+            if body.authoring is not None:
+                from backend.studio.intake import intake
+                authoring = body.authoring.model_dump()
+                parsed = intake(body.brief, authoring['answers'])
+                if (not parsed['ready'] or parsed['brief_hash'] != authoring['brief_hash']
+                        or parsed['model_hash'] != body.model_hash or digest(parsed['model']) != digest(model)):
+                    raise HTTPException(409, 'Answer the current follow-up questions and review the resulting model before running.')
+                authoring['model_hash'] = parsed['model_hash']
             worlds, baseline, controls = compute_experiment(model)
             exp = {'id':'wf-'+uuid.uuid4().hex[:16], 'kind':'workflow', 'revision':1,
                    'mode':'deterministic', 'brief':body.brief, 'model':model, 'model_hash':digest(model),
                    'worlds':worlds, 'baseline_worlds':baseline, 'controls':controls,
                    'comparison':comparison(worlds, model), 'approved':None, 'created_at':now()}
+            if authoring is not None:
+                exp['authoring'] = authoring
             return persist(exp, 'launch', idempotency_key, payload)
 
     @application.get('/api/studio/experiments/{experiment_id}')
