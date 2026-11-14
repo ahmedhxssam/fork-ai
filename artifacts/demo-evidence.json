@@ -1,0 +1,2450 @@
+{
+  "scenario_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+  "seed": 26,
+  "mode": "deterministic",
+  "baseline": [
+    {
+      "id": "velocity",
+      "metrics": {
+        "meals_delivered": 216,
+        "demand": 264,
+        "coverage": 0.8181818181818182,
+        "on_time_meals": 192,
+        "on_time_coverage": 0.7272727272727273,
+        "priority_coverage": 0.5384615384615384,
+        "priority_weighted_coverage": 0.7,
+        "destinations_served": 10,
+        "late_deliveries": 1,
+        "unserved_meals": 48,
+        "distance_m": 51281.0,
+        "cost_cents": 4361,
+        "emissions_g": 11058,
+        "violations": 0
+      },
+      "receipt": {
+        "valid": true,
+        "violations": [],
+        "metrics": {
+          "meals_delivered": 216,
+          "demand": 264,
+          "coverage": 0.8181818181818182,
+          "on_time_meals": 192,
+          "on_time_coverage": 0.7272727272727273,
+          "priority_coverage": 0.5384615384615384,
+          "priority_weighted_coverage": 0.7,
+          "destinations_served": 10,
+          "late_deliveries": 1,
+          "unserved_meals": 48,
+          "distance_m": 51281.0,
+          "cost_cents": 4361,
+          "emissions_g": 11058,
+          "violations": 0
+        },
+        "checks": [
+          {
+            "id": "provenance",
+            "label": "Common initial scenario and evidence",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "custody",
+            "label": "Stock and cargo custody",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "capacity",
+            "label": "Vehicle capacity and cold compatibility",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "delivery",
+            "label": "Unique completed delivery ledger",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "movement",
+            "label": "Road travel and continuous locations",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "timing",
+            "label": "Service windows, duration and shifts",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "availability",
+            "label": "Failed vehicles do no further work",
+            "passed": true,
+            "detail": "Independent replay passed"
+          }
+        ],
+        "scenario_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+        "event_hash": "bcedb9fc76373cc214e5d461a74d3f17f3270df82cca950cb7e32bf24c05cad5",
+        "version": "fork-referee-1.0"
+      }
+    },
+    {
+      "id": "resilience",
+      "metrics": {
+        "meals_delivered": 192,
+        "demand": 264,
+        "coverage": 0.7272727272727273,
+        "on_time_meals": 168,
+        "on_time_coverage": 0.6363636363636364,
+        "priority_coverage": 1.0,
+        "priority_weighted_coverage": 0.7857142857142857,
+        "destinations_served": 9,
+        "late_deliveries": 1,
+        "unserved_meals": 72,
+        "distance_m": 48152.0,
+        "cost_cents": 4248,
+        "emissions_g": 10879,
+        "violations": 0
+      },
+      "receipt": {
+        "valid": true,
+        "violations": [],
+        "metrics": {
+          "meals_delivered": 192,
+          "demand": 264,
+          "coverage": 0.7272727272727273,
+          "on_time_meals": 168,
+          "on_time_coverage": 0.6363636363636364,
+          "priority_coverage": 1.0,
+          "priority_weighted_coverage": 0.7857142857142857,
+          "destinations_served": 9,
+          "late_deliveries": 1,
+          "unserved_meals": 72,
+          "distance_m": 48152.0,
+          "cost_cents": 4248,
+          "emissions_g": 10879,
+          "violations": 0
+        },
+        "checks": [
+          {
+            "id": "provenance",
+            "label": "Common initial scenario and evidence",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "custody",
+            "label": "Stock and cargo custody",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "capacity",
+            "label": "Vehicle capacity and cold compatibility",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "delivery",
+            "label": "Unique completed delivery ledger",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "movement",
+            "label": "Road travel and continuous locations",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "timing",
+            "label": "Service windows, duration and shifts",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "availability",
+            "label": "Failed vehicles do no further work",
+            "passed": true,
+            "detail": "Independent replay passed"
+          }
+        ],
+        "scenario_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+        "event_hash": "1d48b84db93335c82be34c6ecda6629dbfa644b96c05508946e11cda7c28d2da",
+        "version": "fork-referee-1.0"
+      }
+    },
+    {
+      "id": "equity",
+      "metrics": {
+        "meals_delivered": 216,
+        "demand": 264,
+        "coverage": 0.8181818181818182,
+        "on_time_meals": 192,
+        "on_time_coverage": 0.7272727272727273,
+        "priority_coverage": 1.0,
+        "priority_weighted_coverage": 0.8285714285714286,
+        "destinations_served": 10,
+        "late_deliveries": 1,
+        "unserved_meals": 48,
+        "distance_m": 52016.0,
+        "cost_cents": 4433,
+        "emissions_g": 11246,
+        "violations": 0
+      },
+      "receipt": {
+        "valid": true,
+        "violations": [],
+        "metrics": {
+          "meals_delivered": 216,
+          "demand": 264,
+          "coverage": 0.8181818181818182,
+          "on_time_meals": 192,
+          "on_time_coverage": 0.7272727272727273,
+          "priority_coverage": 1.0,
+          "priority_weighted_coverage": 0.8285714285714286,
+          "destinations_served": 10,
+          "late_deliveries": 1,
+          "unserved_meals": 48,
+          "distance_m": 52016.0,
+          "cost_cents": 4433,
+          "emissions_g": 11246,
+          "violations": 0
+        },
+        "checks": [
+          {
+            "id": "provenance",
+            "label": "Common initial scenario and evidence",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "custody",
+            "label": "Stock and cargo custody",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "capacity",
+            "label": "Vehicle capacity and cold compatibility",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "delivery",
+            "label": "Unique completed delivery ledger",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "movement",
+            "label": "Road travel and continuous locations",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "timing",
+            "label": "Service windows, duration and shifts",
+            "passed": true,
+            "detail": "Independent replay passed"
+          },
+          {
+            "id": "availability",
+            "label": "Failed vehicles do no further work",
+            "passed": true,
+            "detail": "Independent replay passed"
+          }
+        ],
+        "scenario_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+        "event_hash": "d6e0e244e608d59c1cc7bd172666e0f7c234b5a39d4eab0dde018379b710160b",
+        "version": "fork-referee-1.0"
+      }
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "greedy",
+      "metrics": {
+        "meals_delivered": 224,
+        "demand": 264,
+        "coverage": 0.8484848484848485,
+        "on_time_meals": 200,
+        "on_time_coverage": 0.7575757575757576,
+        "priority_coverage": 0.6153846153846154,
+        "priority_weighted_coverage": 0.7428571428571429,
+        "destinations_served": 10,
+        "late_deliveries": 1,
+        "unserved_meals": 40,
+        "distance_m": 48047.0,
+        "cost_cents": 4146,
+        "emissions_g": 10503,
+        "violations": 0
+      }
+    },
+    {
+      "id": "solver_only",
+      "metrics": {
+        "meals_delivered": 216,
+        "demand": 264,
+        "coverage": 0.8181818181818182,
+        "on_time_meals": 192,
+        "on_time_coverage": 0.7272727272727273,
+        "priority_coverage": 0.5384615384615384,
+        "priority_weighted_coverage": 0.7,
+        "destinations_served": 10,
+        "late_deliveries": 1,
+        "unserved_meals": 48,
+        "distance_m": 51281.0,
+        "cost_cents": 4361,
+        "emissions_g": 11058,
+        "violations": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "shock": {
+        "vehicle_id": "A",
+        "time": 0
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.4857142857142857,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 29945.0,
+            "cost_cents": 2558,
+            "emissions_g": 6188,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.3076923076923077,
+            "priority_weighted_coverage": 0.4,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 30222.0,
+            "cost_cents": 2571,
+            "emissions_g": 6214,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "ff494b7125c13d600b09d39304e6527f5c506177c907822226c109378a384da8"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 31604.0,
+            "cost_cents": 2662,
+            "emissions_g": 6420,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 96,
+            "demand": 264,
+            "coverage": 0.36363636363636365,
+            "on_time_meals": 96,
+            "on_time_coverage": 0.36363636363636365,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.44285714285714284,
+            "destinations_served": 5,
+            "late_deliveries": 0,
+            "unserved_meals": 168,
+            "distance_m": 26760.0,
+            "cost_cents": 2430,
+            "emissions_g": 5959,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "f2bb6bf14baf5081dbf253766f82306bccd69a7078ca247a05a3cdfde2ac106f"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 31604.0,
+            "cost_cents": 2662,
+            "emissions_g": 6420,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.4857142857142857,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 30624.0,
+            "cost_cents": 2615,
+            "emissions_g": 6326,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "f2bb6bf14baf5081dbf253766f82306bccd69a7078ca247a05a3cdfde2ac106f"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "A",
+        "time": 1500
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.6571428571428571,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 48231.0,
+            "cost_cents": 3695,
+            "emissions_g": 8872,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.5285714285714286,
+            "destinations_served": 7,
+            "late_deliveries": 0,
+            "unserved_meals": 120,
+            "distance_m": 37229.0,
+            "cost_cents": 3167,
+            "emissions_g": 7826,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "99e5f60d491be42edc9ce28d06b465545be664364f3ffc5d52103b7ba35b6fd6"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 44867.0,
+            "cost_cents": 3549,
+            "emissions_g": 8591,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.5714285714285714,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 33513.0,
+            "cost_cents": 3004,
+            "emissions_g": 7512,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "644db7661d819c2893c0e06d55068d0c49a475f7a09f8b673f9c3e16cbe063ed"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 48731.0,
+            "cost_cents": 3734,
+            "emissions_g": 8958,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 7,
+            "late_deliveries": 0,
+            "unserved_meals": 120,
+            "distance_m": 37377.0,
+            "cost_cents": 3189,
+            "emissions_g": 7879,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "d3f311987ca157c45eeeb86de1c0b6c16fd7370a6bfb2fc1b4537bbc573d3fb2"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "A",
+        "time": 1800
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 45258.0,
+            "cost_cents": 3612,
+            "emissions_g": 8808,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.5285714285714286,
+            "destinations_served": 7,
+            "late_deliveries": 0,
+            "unserved_meals": 120,
+            "distance_m": 38846.0,
+            "cost_cents": 3304,
+            "emissions_g": 8198,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "9c3cceafaa68c5eed2135aabad6469ff62d5baa58b82cc189a1d41b27597ae59"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 45910.0,
+            "cost_cents": 3638,
+            "emissions_g": 8831,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.5714285714285714,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 144,
+            "distance_m": 34556.0,
+            "cost_cents": 3093,
+            "emissions_g": 7752,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "d392b1c04aa7c37f1689e00202d65c39b9527a67f302739a91a4118868b75520"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7428571428571429,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 46962.0,
+            "cost_cents": 3688,
+            "emissions_g": 8931,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 7,
+            "late_deliveries": 0,
+            "unserved_meals": 120,
+            "distance_m": 38420.0,
+            "cost_cents": 3278,
+            "emissions_g": 8119,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "bda5c22f99673bfa14bfc81cad71e38a594b91725a57ffd192c52b9a49dc241e"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "A",
+        "time": 2700
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 9,
+            "late_deliveries": 0,
+            "unserved_meals": 72,
+            "distance_m": 48622.0,
+            "cost_cents": 3898,
+            "emissions_g": 9581,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 42210.0,
+            "cost_cents": 3590,
+            "emissions_g": 8971,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "7fcef119b1199914f92b01700fe63f1aa378c6fe635fd84be19b35e45502f1f7"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 10,
+            "late_deliveries": 2,
+            "unserved_meals": 48,
+            "distance_m": 49022.0,
+            "cost_cents": 3940,
+            "emissions_g": 9686,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 8,
+            "late_deliveries": 0,
+            "unserved_meals": 96,
+            "distance_m": 38694.0,
+            "cost_cents": 3444,
+            "emissions_g": 8704,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "c52b11a0d3dc2bb0934854993326e915104fff5bb4e574cff5e72ab7710e0643"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 49060.0,
+            "cost_cents": 3941,
+            "emissions_g": 9689,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 9,
+            "late_deliveries": 0,
+            "unserved_meals": 72,
+            "distance_m": 42558.0,
+            "cost_cents": 3629,
+            "emissions_g": 9071,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "c01b9fa94ffa50b90745c5cff90a5437fc6585d698ddf7309c2dc512b57265bd"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "A",
+        "time": 5400
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 11,
+            "late_deliveries": 2,
+            "unserved_meals": 24,
+            "distance_m": 59471.0,
+            "cost_cents": 4754,
+            "emissions_g": 11836,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "9f09c42a57412eede1174b7ff61e61181b8c478a31cf4729094e3c10f478505d"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 10,
+            "late_deliveries": 2,
+            "unserved_meals": 48,
+            "distance_m": 55976.0,
+            "cost_cents": 4623,
+            "emissions_g": 11623,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "fafc32a9b10e0d9ad47258c9a4e6aa08e71e3cc13e4817785f3f1095ff1753c2"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "1dc9d8bbab382f83e7f3d5ba0de2bc9e5b957a21b6220535184bc101593a19b8"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "A",
+        "time": 14400
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "d3a13bba1d6f5c4acbdc8ee0d07be05017f8fca601d39e66752849ea32a45d6b"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "66f5bb55a5f44372c84491375b62340c60d9f30e87f8d30a6fc96bd538879f81"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "f23ef83f35c8048bb14150df1df314b994f0045eb95fdfe87065a1fad9fb482a"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "B",
+        "time": 0
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.5714285714285714,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 96,
+            "distance_m": 39129.0,
+            "cost_cents": 3778,
+            "emissions_g": 9904,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.5714285714285714,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 96,
+            "distance_m": 39129.0,
+            "cost_cents": 3778,
+            "emissions_g": 9904,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "b45825175ae78987ea0637c4fc6c03e67476568c944421e5809bf92ff2b5b2f2"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 96,
+            "distance_m": 39864.0,
+            "cost_cents": 3850,
+            "emissions_g": 10092,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 96,
+            "distance_m": 39864.0,
+            "cost_cents": 3850,
+            "emissions_g": 10092,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "3ee909589a1f79042f53caa17b168de93433de9f4e2dceb324202b53ae2fcfc3"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 96,
+            "distance_m": 39864.0,
+            "cost_cents": 3850,
+            "emissions_g": 10092,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 168,
+            "demand": 264,
+            "coverage": 0.6363636363636364,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 96,
+            "distance_m": 39864.0,
+            "cost_cents": 3850,
+            "emissions_g": 10092,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "3ee909589a1f79042f53caa17b168de93433de9f4e2dceb324202b53ae2fcfc3"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "B",
+        "time": 1500
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 176,
+            "on_time_coverage": 0.6666666666666666,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.6857142857142857,
+            "destinations_served": 10,
+            "late_deliveries": 2,
+            "unserved_meals": 48,
+            "distance_m": 51515.0,
+            "cost_cents": 4679,
+            "emissions_g": 12040,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 45851.0,
+            "cost_cents": 4101,
+            "emissions_g": 10543,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "b6a81bef13043a9a677a41706331cc6b0c85176d4297ea114fdd15047be8c0af"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 176,
+            "on_time_coverage": 0.6666666666666666,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8142857142857143,
+            "destinations_served": 11,
+            "late_deliveries": 3,
+            "unserved_meals": 24,
+            "distance_m": 59303.0,
+            "cost_cents": 5473,
+            "emissions_g": 14093,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 46620.0,
+            "cost_cents": 4174,
+            "emissions_g": 10734,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "2396a15813a9167a59213c0039135414e955b23b6fe628d809c436be380ea2b1"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 46619.0,
+            "cost_cents": 4174,
+            "emissions_g": 10734,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 46619.0,
+            "cost_cents": 4174,
+            "emissions_g": 10734,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "5ed768de64c442b646e28bdf051d1abaf384323f333402226fab3479a443db9d"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "B",
+        "time": 1800
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.7428571428571429,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 53897.0,
+            "cost_cents": 4737,
+            "emissions_g": 12219,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 47137.0,
+            "cost_cents": 4162,
+            "emissions_g": 10665,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "1f18cb9fb353d64a0afbf78734ca2ce0d881935b15ad09a68fd3409307c2eeae"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 176,
+            "on_time_coverage": 0.6666666666666666,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8142857142857143,
+            "destinations_served": 11,
+            "late_deliveries": 3,
+            "unserved_meals": 24,
+            "distance_m": 59802.0,
+            "cost_cents": 5557,
+            "emissions_g": 14197,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "744e82a715a1371610256091aa273adb1d6bcb6f4c4c33865fbeb707be1cde0d"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48104.0,
+            "cost_cents": 4246,
+            "emissions_g": 10875,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48104.0,
+            "cost_cents": 4246,
+            "emissions_g": 10875,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "1bfa50158fb71d34c543310cd67add14ec7f2582d5e53a4bfe9b422eadd63182"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "B",
+        "time": 2700
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 216,
+            "on_time_coverage": 0.8181818181818182,
+            "priority_coverage": 0.7692307692307693,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 11,
+            "late_deliveries": 1,
+            "unserved_meals": 24,
+            "distance_m": 59471.0,
+            "cost_cents": 5217,
+            "emissions_g": 13262,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "96bc97cc9da39720ec73827b9236036a31d71f40f243cb18677e51d9204aa138"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 11,
+            "late_deliveries": 3,
+            "unserved_meals": 24,
+            "distance_m": 60856.0,
+            "cost_cents": 5328,
+            "emissions_g": 13801,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "572f4fdfea376e0b03c75dd6d782d87788f9cf131ceb5cf1c96ab18b3ca87dd7"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "17017be855559bb3e66612421844528a0e52f8057abc908b5a6a989a633abab4"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "B",
+        "time": 5400
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 11,
+            "late_deliveries": 2,
+            "unserved_meals": 24,
+            "distance_m": 59471.0,
+            "cost_cents": 5057,
+            "emissions_g": 12941,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "0dfef5603544cd396d9055083178af127e8333f71e78cb365e47a9c94c01140a"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 10,
+            "late_deliveries": 2,
+            "unserved_meals": 48,
+            "distance_m": 55976.0,
+            "cost_cents": 4913,
+            "emissions_g": 12679,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "cc3863bac4b809a783048f29df1d885de144dac3401c62ea8a5807739cf8b366"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "90f9e9de109ad7718a84c17a7482be5c476c84079695835cb52f546b99e37800"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "B",
+        "time": 14400
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "a704ea133667d2dac56b0bbcf6ed7f12d3df5e86a87a072e2b3e442bcef96912"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "99f319346f1a1b2627e972765c64e84f4c5105f5fc2ffee097b8e7c807d405f6"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "282c5ffbf7f80fa8533a23cd3debba37913abde1cc6042e58eccfd392a4a3246"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "C",
+        "time": 0
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.46153846153846156,
+            "priority_weighted_coverage": 0.4714285714285714,
+            "destinations_served": 6,
+            "late_deliveries": 1,
+            "unserved_meals": 120,
+            "distance_m": 29281.0,
+            "cost_cents": 2082,
+            "emissions_g": 5249,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.23076923076923078,
+            "priority_weighted_coverage": 0.42857142857142855,
+            "destinations_served": 6,
+            "late_deliveries": 1,
+            "unserved_meals": 120,
+            "distance_m": 33211.0,
+            "cost_cents": 2373,
+            "emissions_g": 5998,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "7404d20e95b30ca783929f3fd4623c679dbc0cd0c8d1d05253865d0e7fc8dd6a"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.6923076923076923,
+            "priority_weighted_coverage": 0.6428571428571429,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 120,
+            "distance_m": 37134.0,
+            "cost_cents": 2609,
+            "emissions_g": 6544,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 120,
+            "demand": 264,
+            "coverage": 0.45454545454545453,
+            "on_time_meals": 96,
+            "on_time_coverage": 0.36363636363636365,
+            "priority_coverage": 0.46153846153846156,
+            "priority_weighted_coverage": 0.42857142857142855,
+            "destinations_served": 5,
+            "late_deliveries": 1,
+            "unserved_meals": 144,
+            "distance_m": 29680.0,
+            "cost_cents": 2216,
+            "emissions_g": 5707,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "eca1c4b22da65f6ac0815cf981b5762cddbd031403d552e3ce94a6ecd8676359"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 144,
+            "on_time_coverage": 0.5454545454545454,
+            "priority_coverage": 0.6923076923076923,
+            "priority_weighted_coverage": 0.6428571428571429,
+            "destinations_served": 6,
+            "late_deliveries": 0,
+            "unserved_meals": 120,
+            "distance_m": 37134.0,
+            "cost_cents": 2609,
+            "emissions_g": 6544,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 144,
+            "demand": 264,
+            "coverage": 0.5454545454545454,
+            "on_time_meals": 120,
+            "on_time_coverage": 0.45454545454545453,
+            "priority_coverage": 0.46153846153846156,
+            "priority_weighted_coverage": 0.4714285714285714,
+            "destinations_served": 6,
+            "late_deliveries": 1,
+            "unserved_meals": 120,
+            "distance_m": 33544.0,
+            "cost_cents": 2401,
+            "emissions_g": 6074,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "eca1c4b22da65f6ac0815cf981b5762cddbd031403d552e3ce94a6ecd8676359"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "C",
+        "time": 1500
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 208,
+            "demand": 264,
+            "coverage": 0.7878787878787878,
+            "on_time_meals": 184,
+            "on_time_coverage": 0.696969696969697,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.7285714285714285,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 56,
+            "distance_m": 51978.0,
+            "cost_cents": 3624,
+            "emissions_g": 8824,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 184,
+            "demand": 264,
+            "coverage": 0.696969696969697,
+            "on_time_meals": 160,
+            "on_time_coverage": 0.6060606060606061,
+            "priority_coverage": 0.38461538461538464,
+            "priority_weighted_coverage": 0.5571428571428572,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 80,
+            "distance_m": 38846.0,
+            "cost_cents": 2993,
+            "emissions_g": 7576,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "dce6673edd8ff9294ff654f0a59303538c97f389710484878c3fb7bf179e0928"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 184,
+            "demand": 264,
+            "coverage": 0.696969696969697,
+            "on_time_meals": 136,
+            "on_time_coverage": 0.5151515151515151,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.6428571428571429,
+            "destinations_served": 8,
+            "late_deliveries": 2,
+            "unserved_meals": 80,
+            "distance_m": 44026.0,
+            "cost_cents": 3237,
+            "emissions_g": 8063,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 136,
+            "demand": 264,
+            "coverage": 0.5151515151515151,
+            "on_time_meals": 112,
+            "on_time_coverage": 0.42424242424242425,
+            "priority_coverage": 0.6153846153846154,
+            "priority_weighted_coverage": 0.5142857142857142,
+            "destinations_served": 6,
+            "late_deliveries": 1,
+            "unserved_meals": 128,
+            "distance_m": 35048.0,
+            "cost_cents": 2806,
+            "emissions_g": 7210,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "b27eca19f2a01b945a316e5f3929c59b9648d4588d808fac9abf428cdf937a37"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 184,
+            "demand": 264,
+            "coverage": 0.696969696969697,
+            "on_time_meals": 112,
+            "on_time_coverage": 0.42424242424242425,
+            "priority_coverage": 0.6153846153846154,
+            "priority_weighted_coverage": 0.5142857142857142,
+            "destinations_served": 8,
+            "late_deliveries": 3,
+            "unserved_meals": 80,
+            "distance_m": 47890.0,
+            "cost_cents": 3422,
+            "emissions_g": 8430,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 160,
+            "demand": 264,
+            "coverage": 0.6060606060606061,
+            "on_time_meals": 136,
+            "on_time_coverage": 0.5151515151515151,
+            "priority_coverage": 0.6153846153846154,
+            "priority_weighted_coverage": 0.5571428571428572,
+            "destinations_served": 7,
+            "late_deliveries": 1,
+            "unserved_meals": 104,
+            "distance_m": 38912.0,
+            "cost_cents": 2991,
+            "emissions_g": 7577,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "ea8f7633c7978d05ad0313432e651f15eaf70c7a09b8fc0d097fe8f94cf95174"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "C",
+        "time": 1800
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 208,
+            "demand": 264,
+            "coverage": 0.7878787878787878,
+            "on_time_meals": 184,
+            "on_time_coverage": 0.696969696969697,
+            "priority_coverage": 0.6153846153846154,
+            "priority_weighted_coverage": 0.6857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 56,
+            "distance_m": 47450.0,
+            "cost_cents": 3771,
+            "emissions_g": 9646,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 184,
+            "demand": 264,
+            "coverage": 0.696969696969697,
+            "on_time_meals": 160,
+            "on_time_coverage": 0.6060606060606061,
+            "priority_coverage": 0.38461538461538464,
+            "priority_weighted_coverage": 0.5571428571428572,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 80,
+            "distance_m": 40690.0,
+            "cost_cents": 3196,
+            "emissions_g": 8092,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "1b557f33cbe4527f38e34178544f17d900697864b18b6e811a038e3b341a499f"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 208,
+            "demand": 264,
+            "coverage": 0.7878787878787878,
+            "on_time_meals": 160,
+            "on_time_coverage": 0.6060606060606061,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.6857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 2,
+            "unserved_meals": 56,
+            "distance_m": 49216.0,
+            "cost_cents": 3596,
+            "emissions_g": 8884,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 160,
+            "demand": 264,
+            "coverage": 0.6060606060606061,
+            "on_time_meals": 136,
+            "on_time_coverage": 0.5151515151515151,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.6428571428571429,
+            "destinations_served": 7,
+            "late_deliveries": 1,
+            "unserved_meals": 104,
+            "distance_m": 36819.0,
+            "cost_cents": 3001,
+            "emissions_g": 7706,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "050bf400f8d3fea355d8bbc0728191c817c9a131b7e9192e992c0423ee80049e"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 208,
+            "demand": 264,
+            "coverage": 0.7878787878787878,
+            "on_time_meals": 160,
+            "on_time_coverage": 0.6060606060606061,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.6857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 2,
+            "unserved_meals": 56,
+            "distance_m": 46681.0,
+            "cost_cents": 3474,
+            "emissions_g": 8643,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 184,
+            "demand": 264,
+            "coverage": 0.696969696969697,
+            "on_time_meals": 160,
+            "on_time_coverage": 0.6060606060606061,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.6857142857142857,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 80,
+            "distance_m": 40683.0,
+            "cost_cents": 3186,
+            "emissions_g": 8073,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "e911a8a105047f7dfc60c88b97999b7e19156ad63b19ccc3ae1e28a4479410d0"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "C",
+        "time": 2700
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 224,
+            "demand": 264,
+            "coverage": 0.8484848484848485,
+            "on_time_meals": 200,
+            "on_time_coverage": 0.7575757575757576,
+            "priority_coverage": 0.6153846153846154,
+            "priority_weighted_coverage": 0.7428571428571429,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 40,
+            "distance_m": 53219.0,
+            "cost_cents": 4132,
+            "emissions_g": 10326,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 200,
+            "demand": 264,
+            "coverage": 0.7575757575757576,
+            "on_time_meals": 176,
+            "on_time_coverage": 0.6666666666666666,
+            "priority_coverage": 0.38461538461538464,
+            "priority_weighted_coverage": 0.6142857142857143,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 64,
+            "distance_m": 45029.0,
+            "cost_cents": 3673,
+            "emissions_g": 9307,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "44606db2189ee9fd2eda6e89805d42ba2497a1a15eb694e7f5e79da5eddaef53"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 224,
+            "demand": 264,
+            "coverage": 0.8484848484848485,
+            "on_time_meals": 152,
+            "on_time_coverage": 0.5757575757575758,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 3,
+            "unserved_meals": 40,
+            "distance_m": 52046.0,
+            "cost_cents": 4023,
+            "emissions_g": 10033,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 176,
+            "demand": 264,
+            "coverage": 0.6666666666666666,
+            "on_time_meals": 152,
+            "on_time_coverage": 0.5757575757575758,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 8,
+            "late_deliveries": 1,
+            "unserved_meals": 88,
+            "distance_m": 41168.0,
+            "cost_cents": 3480,
+            "emissions_g": 8924,
+            "violations": 0
+          },
+          "recovered_meals": 48,
+          "event_hash": "800e219a65d80e33ec22b312c6233710e8b202231169a670a91f47b57b3ef162"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 224,
+            "demand": 264,
+            "coverage": 0.8484848484848485,
+            "on_time_meals": 176,
+            "on_time_coverage": 0.6666666666666666,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.7428571428571429,
+            "destinations_served": 10,
+            "late_deliveries": 2,
+            "unserved_meals": 40,
+            "distance_m": 52084.0,
+            "cost_cents": 4024,
+            "emissions_g": 10036,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 200,
+            "demand": 264,
+            "coverage": 0.7575757575757576,
+            "on_time_meals": 176,
+            "on_time_coverage": 0.6666666666666666,
+            "priority_coverage": 0.8461538461538461,
+            "priority_weighted_coverage": 0.7428571428571429,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 64,
+            "distance_m": 45032.0,
+            "cost_cents": 3665,
+            "emissions_g": 9291,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "67b8d9155b69b96d1a17faea5908a8d9e013315160300ea5c0ee5ad025860455"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "C",
+        "time": 5400
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 240,
+            "demand": 264,
+            "coverage": 0.9090909090909091,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 11,
+            "late_deliveries": 2,
+            "unserved_meals": 24,
+            "distance_m": 59471.0,
+            "cost_cents": 5057,
+            "emissions_g": 12941,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "f01c8ec6c5599c3d1cd904cff4a1f65a20abf342c0f70fd6cc259b865b50dd16"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 10,
+            "late_deliveries": 2,
+            "unserved_meals": 48,
+            "distance_m": 55976.0,
+            "cost_cents": 4913,
+            "emissions_g": 12679,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 24,
+          "event_hash": "10cc2d52a9a8f897971e6ee50fdaea65c89158fc44728814c0c327477a679169"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "8d41e7098ac7de2ac182805b00e87838192afa0bb5838324b11923364a245457"
+        }
+      ]
+    },
+    {
+      "shock": {
+        "vehicle_id": "C",
+        "time": 14400
+      },
+      "worlds": [
+        {
+          "id": "velocity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 0.5384615384615384,
+            "priority_weighted_coverage": 0.7,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 51281.0,
+            "cost_cents": 4361,
+            "emissions_g": 11058,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "97d6366ea817e94d28e5ec3ed73d40d948c0a46f83d82a58065dfbbcf7730d7f"
+        },
+        {
+          "id": "resilience",
+          "adaptive": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 192,
+            "demand": 264,
+            "coverage": 0.7272727272727273,
+            "on_time_meals": 168,
+            "on_time_coverage": 0.6363636363636364,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.7857142857142857,
+            "destinations_served": 9,
+            "late_deliveries": 1,
+            "unserved_meals": 72,
+            "distance_m": 48152.0,
+            "cost_cents": 4248,
+            "emissions_g": 10879,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "3403bdb8ad82546d95bfc50e77b1f8b027600cb4a7d3d982e650cff280921838"
+        },
+        {
+          "id": "equity",
+          "adaptive": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "fixed": {
+            "meals_delivered": 216,
+            "demand": 264,
+            "coverage": 0.8181818181818182,
+            "on_time_meals": 192,
+            "on_time_coverage": 0.7272727272727273,
+            "priority_coverage": 1.0,
+            "priority_weighted_coverage": 0.8285714285714286,
+            "destinations_served": 10,
+            "late_deliveries": 1,
+            "unserved_meals": 48,
+            "distance_m": 52016.0,
+            "cost_cents": 4433,
+            "emissions_g": 11246,
+            "violations": 0
+          },
+          "recovered_meals": 0,
+          "event_hash": "e7bff07e13991a0d8780137a0969d76c624faad7a58fbcc24e928089b20be259"
+        }
+      ]
+    }
+  ],
+  "execution_seconds": 1.2359
+}

@@ -1,0 +1,3612 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "external_dispatch": false,
+  "decision": {
+    "id": "3d9c91bb8cb0",
+    "world_id": "resilience",
+    "experiment_id": "ddf63f2fdc574f69",
+    "revision": 2,
+    "approved_at": "2026-11-14T04:09:28.505677+00:00",
+    "label": "Human-approved simulated plan",
+    "evidence_hash": "06433cc3a2c65d69df316d111c463bfccb49abc9e5983aac007829d5f150ac71",
+    "preferences_hash": "7c4699a78cd2f8f833f1d204ecb41e16089859b5d1898f90bbb421c8d25c91fb"
+  },
+  "scenario": {
+    "id": "riverton-26",
+    "name": "Riverton Meal Mission",
+    "seed": 26,
+    "start_time": "09:00",
+    "horizon": 14400,
+    "inventory": {
+      "ambient": 192,
+      "chilled": 48
+    },
+    "nodes": [
+      {
+        "id": "depot",
+        "name": "Riverton Food Hub",
+        "x": 480,
+        "y": 340,
+        "kind": "depot",
+        "demand": 0,
+        "commodity": "ambient",
+        "priority": 0,
+        "window_start": 0,
+        "window_end": 14400,
+        "due": 14400,
+        "service_seconds": 0
+      },
+      {
+        "id": "west",
+        "name": "West Junction",
+        "x": 280,
+        "y": 340,
+        "kind": "junction",
+        "demand": 0,
+        "commodity": "ambient",
+        "priority": 0,
+        "window_start": 0,
+        "window_end": 14400,
+        "due": 14400,
+        "service_seconds": 0
+      },
+      {
+        "id": "east",
+        "name": "East Junction",
+        "x": 700,
+        "y": 340,
+        "kind": "junction",
+        "demand": 0,
+        "commodity": "ambient",
+        "priority": 0,
+        "window_start": 0,
+        "window_end": 14400,
+        "due": 14400,
+        "service_seconds": 0
+      },
+      {
+        "id": "north",
+        "name": "North Junction",
+        "x": 480,
+        "y": 150,
+        "kind": "junction",
+        "demand": 0,
+        "commodity": "ambient",
+        "priority": 0,
+        "window_start": 0,
+        "window_end": 14400,
+        "due": 14400,
+        "service_seconds": 0
+      },
+      {
+        "id": "south",
+        "name": "South Junction",
+        "x": 480,
+        "y": 540,
+        "kind": "junction",
+        "demand": 0,
+        "commodity": "ambient",
+        "priority": 0,
+        "window_start": 0,
+        "window_end": 14400,
+        "due": 14400,
+        "service_seconds": 0
+      },
+      {
+        "id": "maple",
+        "name": "Maple Centre",
+        "x": 140,
+        "y": 180,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 1,
+        "window_start": 0,
+        "window_end": 5600,
+        "due": 2600,
+        "service_seconds": 300
+      },
+      {
+        "id": "river",
+        "name": "River House",
+        "x": 140,
+        "y": 420,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 2,
+        "window_start": 0,
+        "window_end": 6300,
+        "due": 3300,
+        "service_seconds": 180
+      },
+      {
+        "id": "cedar",
+        "name": "Cedar Hall",
+        "x": 230,
+        "y": 590,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 3,
+        "window_start": 0,
+        "window_end": 7800,
+        "due": 4800,
+        "service_seconds": 300
+      },
+      {
+        "id": "oak",
+        "name": "Oak Pantry",
+        "x": 350,
+        "y": 90,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 1,
+        "window_start": 0,
+        "window_end": 5700,
+        "due": 2700,
+        "service_seconds": 180
+      },
+      {
+        "id": "hill",
+        "name": "Hill Community",
+        "x": 630,
+        "y": 80,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 3,
+        "window_start": 0,
+        "window_end": 6000,
+        "due": 3000,
+        "service_seconds": 240
+      },
+      {
+        "id": "harbor",
+        "name": "Harbor Centre",
+        "x": 870,
+        "y": 170,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 2,
+        "window_start": 0,
+        "window_end": 6600,
+        "due": 3600,
+        "service_seconds": 300
+      },
+      {
+        "id": "garden",
+        "name": "Garden Kitchen",
+        "x": 890,
+        "y": 440,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 1,
+        "window_start": 0,
+        "window_end": 7200,
+        "due": 4200,
+        "service_seconds": 300
+      },
+      {
+        "id": "park",
+        "name": "Park Shelter",
+        "x": 750,
+        "y": 590,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 3,
+        "window_start": 0,
+        "window_end": 7600,
+        "due": 4600,
+        "service_seconds": 180
+      },
+      {
+        "id": "station",
+        "name": "Station Pantry",
+        "x": 380,
+        "y": 660,
+        "kind": "destination",
+        "demand": 24,
+        "commodity": "ambient",
+        "priority": 2,
+        "window_start": 0,
+        "window_end": 8300,
+        "due": 5300,
+        "service_seconds": 180
+      },
+      {
+        "id": "clinic",
+        "name": "Clinic Meal Hub",
+        "x": 570,
+        "y": 230,
+        "kind": "destination",
+        "demand": 16,
+        "commodity": "chilled",
+        "priority": 3,
+        "window_start": 0,
+        "window_end": 5000,
+        "due": 2000,
+        "service_seconds": 240
+      },
+      {
+        "id": "spruce",
+        "name": "Spruce Centre",
+        "x": 800,
+        "y": 280,
+        "kind": "destination",
+        "demand": 16,
+        "commodity": "chilled",
+        "priority": 2,
+        "window_start": 0,
+        "window_end": 6300,
+        "due": 3300,
+        "service_seconds": 180
+      },
+      {
+        "id": "linden",
+        "name": "Linden House",
+        "x": 580,
+        "y": 630,
+        "kind": "destination",
+        "demand": 16,
+        "commodity": "chilled",
+        "priority": 3,
+        "window_start": 0,
+        "window_end": 7800,
+        "due": 4800,
+        "service_seconds": 300
+      }
+    ],
+    "edges": [
+      {
+        "id": "depot>west",
+        "source": "depot",
+        "target": "west",
+        "distance_m": 1800,
+        "seconds": 293
+      },
+      {
+        "id": "west>depot",
+        "source": "west",
+        "target": "depot",
+        "distance_m": 1800,
+        "seconds": 293
+      },
+      {
+        "id": "depot>east",
+        "source": "depot",
+        "target": "east",
+        "distance_m": 1980,
+        "seconds": 318
+      },
+      {
+        "id": "east>depot",
+        "source": "east",
+        "target": "depot",
+        "distance_m": 1980,
+        "seconds": 318
+      },
+      {
+        "id": "depot>north",
+        "source": "depot",
+        "target": "north",
+        "distance_m": 1710,
+        "seconds": 280
+      },
+      {
+        "id": "north>depot",
+        "source": "north",
+        "target": "depot",
+        "distance_m": 1710,
+        "seconds": 280
+      },
+      {
+        "id": "depot>south",
+        "source": "depot",
+        "target": "south",
+        "distance_m": 1800,
+        "seconds": 293
+      },
+      {
+        "id": "south>depot",
+        "source": "south",
+        "target": "depot",
+        "distance_m": 1800,
+        "seconds": 293
+      },
+      {
+        "id": "west>north",
+        "source": "west",
+        "target": "north",
+        "distance_m": 2483,
+        "seconds": 390
+      },
+      {
+        "id": "north>west",
+        "source": "north",
+        "target": "west",
+        "distance_m": 2483,
+        "seconds": 390
+      },
+      {
+        "id": "north>east",
+        "source": "north",
+        "target": "east",
+        "distance_m": 2616,
+        "seconds": 409
+      },
+      {
+        "id": "east>north",
+        "source": "east",
+        "target": "north",
+        "distance_m": 2616,
+        "seconds": 409
+      },
+      {
+        "id": "east>south",
+        "source": "east",
+        "target": "south",
+        "distance_m": 2676,
+        "seconds": 418
+      },
+      {
+        "id": "south>east",
+        "source": "south",
+        "target": "east",
+        "distance_m": 2676,
+        "seconds": 418
+      },
+      {
+        "id": "south>west",
+        "source": "south",
+        "target": "west",
+        "distance_m": 2546,
+        "seconds": 399
+      },
+      {
+        "id": "west>south",
+        "source": "west",
+        "target": "south",
+        "distance_m": 2546,
+        "seconds": 399
+      },
+      {
+        "id": "west>maple",
+        "source": "west",
+        "target": "maple",
+        "distance_m": 1913,
+        "seconds": 309
+      },
+      {
+        "id": "maple>west",
+        "source": "maple",
+        "target": "west",
+        "distance_m": 1913,
+        "seconds": 309
+      },
+      {
+        "id": "west>river",
+        "source": "west",
+        "target": "river",
+        "distance_m": 1451,
+        "seconds": 243
+      },
+      {
+        "id": "river>west",
+        "source": "river",
+        "target": "west",
+        "distance_m": 1451,
+        "seconds": 243
+      },
+      {
+        "id": "south>cedar",
+        "source": "south",
+        "target": "cedar",
+        "distance_m": 2295,
+        "seconds": 363
+      },
+      {
+        "id": "cedar>south",
+        "source": "cedar",
+        "target": "south",
+        "distance_m": 2295,
+        "seconds": 363
+      },
+      {
+        "id": "north>oak",
+        "source": "north",
+        "target": "oak",
+        "distance_m": 1289,
+        "seconds": 220
+      },
+      {
+        "id": "oak>north",
+        "source": "oak",
+        "target": "north",
+        "distance_m": 1289,
+        "seconds": 220
+      },
+      {
+        "id": "north>hill",
+        "source": "north",
+        "target": "hill",
+        "distance_m": 1490,
+        "seconds": 248
+      },
+      {
+        "id": "hill>north",
+        "source": "hill",
+        "target": "north",
+        "distance_m": 1490,
+        "seconds": 248
+      },
+      {
+        "id": "east>harbor",
+        "source": "east",
+        "target": "harbor",
+        "distance_m": 2164,
+        "seconds": 345
+      },
+      {
+        "id": "harbor>east",
+        "source": "harbor",
+        "target": "east",
+        "distance_m": 2164,
+        "seconds": 345
+      },
+      {
+        "id": "east>garden",
+        "source": "east",
+        "target": "garden",
+        "distance_m": 1932,
+        "seconds": 311
+      },
+      {
+        "id": "garden>east",
+        "source": "garden",
+        "target": "east",
+        "distance_m": 1932,
+        "seconds": 311
+      },
+      {
+        "id": "south>park",
+        "source": "south",
+        "target": "park",
+        "distance_m": 2471,
+        "seconds": 388
+      },
+      {
+        "id": "park>south",
+        "source": "park",
+        "target": "south",
+        "distance_m": 2471,
+        "seconds": 388
+      },
+      {
+        "id": "south>station",
+        "source": "south",
+        "target": "station",
+        "distance_m": 1406,
+        "seconds": 236
+      },
+      {
+        "id": "station>south",
+        "source": "station",
+        "target": "south",
+        "distance_m": 1406,
+        "seconds": 236
+      },
+      {
+        "id": "north>clinic",
+        "source": "north",
+        "target": "clinic",
+        "distance_m": 1084,
+        "seconds": 190
+      },
+      {
+        "id": "clinic>north",
+        "source": "clinic",
+        "target": "north",
+        "distance_m": 1084,
+        "seconds": 190
+      },
+      {
+        "id": "east>spruce",
+        "source": "east",
+        "target": "spruce",
+        "distance_m": 1050,
+        "seconds": 185
+      },
+      {
+        "id": "spruce>east",
+        "source": "spruce",
+        "target": "east",
+        "distance_m": 1050,
+        "seconds": 185
+      },
+      {
+        "id": "south>linden",
+        "source": "south",
+        "target": "linden",
+        "distance_m": 1211,
+        "seconds": 208
+      },
+      {
+        "id": "linden>south",
+        "source": "linden",
+        "target": "south",
+        "distance_m": 1211,
+        "seconds": 208
+      }
+    ],
+    "depot_id": "depot",
+    "vehicles": [
+      {
+        "id": "A",
+        "name": "Atlas Van",
+        "capacity": 100,
+        "chilled": false,
+        "cost_per_km": 85,
+        "emissions_per_km": 230,
+        "driver_id": "v1",
+        "shift_start": 0,
+        "shift_end": 10800,
+        "color": "#74e5c0"
+      },
+      {
+        "id": "B",
+        "name": "Birch Cargo",
+        "capacity": 60,
+        "chilled": false,
+        "cost_per_km": 48,
+        "emissions_per_km": 95,
+        "driver_id": "v2",
+        "shift_start": 0,
+        "shift_end": 9000,
+        "color": "#ffc46b"
+      },
+      {
+        "id": "C",
+        "name": "Cobalt Cold Van",
+        "capacity": 80,
+        "chilled": true,
+        "cost_per_km": 110,
+        "emissions_per_km": 280,
+        "driver_id": "v3",
+        "shift_start": 0,
+        "shift_end": 12000,
+        "color": "#aab3ff"
+      }
+    ],
+    "volunteers": [
+      {
+        "id": "v1",
+        "name": "Volunteer 1",
+        "vehicle_id": "A",
+        "shift_start": 0,
+        "shift_end": 10800
+      },
+      {
+        "id": "v2",
+        "name": "Volunteer 2",
+        "vehicle_id": "B",
+        "shift_start": 0,
+        "shift_end": 9000
+      },
+      {
+        "id": "v3",
+        "name": "Volunteer 3",
+        "vehicle_id": "C",
+        "shift_start": 0,
+        "shift_end": 12000
+      }
+    ],
+    "assumptions": [
+      "Entire scenario, names, priorities and coefficients are synthetic.",
+      "Each order is indivisible; loading takes 120 seconds. Initial routes make one trip; recovery permits at most one depot reload per healthy vehicle.",
+      "Cold-chain is vehicle compatibility only; no food-safety certification claim.",
+      "Roads are directed; shortest travel-time paths are used. Vehicles must return before their original shifts end.",
+      "Cost is distance \u00d7 cents/km; emissions are distance \u00d7 grams CO2e/km, rounded per vehicle. No fixed or service costs are modeled.",
+      "Planning wall time does not advance scenario time. Failed cargo is stranded without rescue or transfer."
+    ],
+    "hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b"
+  },
+  "disruption": {
+    "vehicle_id": "B",
+    "time": 1800
+  },
+  "world": {
+    "id": "resilience",
+    "policy": "resilience",
+    "name": "Resilience",
+    "initial_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+    "plan": {
+      "routes": [
+        {
+          "vehicle_id": "A",
+          "stops": [
+            "cedar",
+            "station",
+            "park",
+            "river"
+          ],
+          "manifest": {
+            "ambient": 96,
+            "chilled": 0
+          },
+          "schedule": [
+            {
+              "node_id": "cedar",
+              "service_start": 776
+            },
+            {
+              "node_id": "station",
+              "service_start": 1675
+            },
+            {
+              "node_id": "park",
+              "service_start": 2479
+            },
+            {
+              "node_id": "river",
+              "service_start": 3689
+            }
+          ],
+          "start_node": "depot",
+          "ready_at": 120,
+          "return_at": 4405,
+          "reload": true,
+          "preload_node": "depot",
+          "preload_ready": 0,
+          "onboard": {
+            "ambient": 0,
+            "chilled": 0
+          }
+        },
+        {
+          "vehicle_id": "B",
+          "stops": [
+            "harbor"
+          ],
+          "manifest": {
+            "ambient": 24,
+            "chilled": 0
+          },
+          "schedule": [
+            {
+              "node_id": "harbor",
+              "service_start": 783
+            }
+          ],
+          "start_node": "depot",
+          "ready_at": 120,
+          "return_at": 1746,
+          "reload": true,
+          "preload_node": "depot",
+          "preload_ready": 0,
+          "onboard": {
+            "ambient": 0,
+            "chilled": 0
+          }
+        },
+        {
+          "vehicle_id": "C",
+          "stops": [
+            "clinic",
+            "hill",
+            "spruce",
+            "linden"
+          ],
+          "manifest": {
+            "ambient": 24,
+            "chilled": 48
+          },
+          "schedule": [
+            {
+              "node_id": "clinic",
+              "service_start": 590
+            },
+            {
+              "node_id": "hill",
+              "service_start": 1268
+            },
+            {
+              "node_id": "spruce",
+              "service_start": 2350
+            },
+            {
+              "node_id": "linden",
+              "service_start": 3341
+            }
+          ],
+          "start_node": "depot",
+          "ready_at": 120,
+          "return_at": 4142,
+          "reload": true,
+          "preload_node": "depot",
+          "preload_ready": 0,
+          "onboard": {
+            "ambient": 0,
+            "chilled": 0
+          }
+        }
+      ],
+      "manifests": {
+        "A": {
+          "ambient": 96,
+          "chilled": 0
+        },
+        "B": {
+          "ambient": 24,
+          "chilled": 0
+        },
+        "C": {
+          "ambient": 24,
+          "chilled": 48
+        }
+      },
+      "policy": "resilience",
+      "policy_config": {
+        "meal_penalty": 1800,
+        "priority_power": 1,
+        "lateness_per_second": 4,
+        "distance_weight": 1,
+        "reserve_ambient": 32,
+        "reserve_chilled": 0
+      },
+      "solver": {
+        "algorithm": "OR-Tools Routing / parallel cheapest insertion",
+        "status": "feasible_constructive_incumbent",
+        "budget": {
+          "solution_limit_per_candidate": 1,
+          "watchdog_seconds_per_candidate": 3,
+          "candidates": 1
+        },
+        "optimal": false,
+        "deterministic_work_limit": true,
+        "objective": "Integer distance metres + meal omission penalties + service-start tardiness seconds; proxy objective, not exact on-time coverage."
+      },
+      "initial_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+      "omitted": [
+        "maple",
+        "oak",
+        "garden"
+      ]
+    },
+    "trajectories": [
+      {
+        "vehicle_id": "A",
+        "from_id": "depot",
+        "to_id": "south",
+        "depart": 120,
+        "arrive": 413,
+        "path": [
+          [
+            480,
+            340
+          ],
+          [
+            480.0,
+            540.0
+          ]
+        ],
+        "distance_m": 1800,
+        "revision": 0,
+        "edge_id": "depot>south",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "B",
+        "from_id": "depot",
+        "to_id": "east",
+        "depart": 120,
+        "arrive": 438,
+        "path": [
+          [
+            480,
+            340
+          ],
+          [
+            700.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1980,
+        "revision": 0,
+        "edge_id": "depot>east",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "depot",
+        "to_id": "north",
+        "depart": 120,
+        "arrive": 400,
+        "path": [
+          [
+            480,
+            340
+          ],
+          [
+            480.0,
+            150.0
+          ]
+        ],
+        "distance_m": 1710,
+        "revision": 0,
+        "edge_id": "depot>north",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "north",
+        "to_id": "clinic",
+        "depart": 400,
+        "arrive": 590,
+        "path": [
+          [
+            480,
+            150
+          ],
+          [
+            570.0,
+            230.0
+          ]
+        ],
+        "distance_m": 1084,
+        "revision": 0,
+        "edge_id": "north>clinic",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "south",
+        "to_id": "cedar",
+        "depart": 413,
+        "arrive": 776,
+        "path": [
+          [
+            480,
+            540
+          ],
+          [
+            230.0,
+            590.0
+          ]
+        ],
+        "distance_m": 2295,
+        "revision": 0,
+        "edge_id": "south>cedar",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "B",
+        "from_id": "east",
+        "to_id": "harbor",
+        "depart": 438,
+        "arrive": 783,
+        "path": [
+          [
+            700,
+            340
+          ],
+          [
+            870.0,
+            170.0
+          ]
+        ],
+        "distance_m": 2164,
+        "revision": 0,
+        "edge_id": "east>harbor",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "clinic",
+        "to_id": "north",
+        "depart": 830,
+        "arrive": 1020,
+        "path": [
+          [
+            570,
+            230
+          ],
+          [
+            480.0,
+            150.0
+          ]
+        ],
+        "distance_m": 1084,
+        "revision": 0,
+        "edge_id": "clinic>north",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "north",
+        "to_id": "hill",
+        "depart": 1020,
+        "arrive": 1268,
+        "path": [
+          [
+            480,
+            150
+          ],
+          [
+            630.0,
+            80.0
+          ]
+        ],
+        "distance_m": 1490,
+        "revision": 0,
+        "edge_id": "north>hill",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "cedar",
+        "to_id": "south",
+        "depart": 1076,
+        "arrive": 1439,
+        "path": [
+          [
+            230,
+            590
+          ],
+          [
+            480.0,
+            540.0
+          ]
+        ],
+        "distance_m": 2295,
+        "revision": 0,
+        "edge_id": "cedar>south",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "B",
+        "from_id": "harbor",
+        "to_id": "east",
+        "depart": 1083,
+        "arrive": 1428,
+        "path": [
+          [
+            870,
+            170
+          ],
+          [
+            700.0,
+            340.0
+          ]
+        ],
+        "distance_m": 2164,
+        "revision": 0,
+        "edge_id": "harbor>east",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "B",
+        "from_id": "east",
+        "to_id": "depot",
+        "depart": 1428,
+        "arrive": 1746,
+        "path": [
+          [
+            700,
+            340
+          ],
+          [
+            480.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1980,
+        "revision": 0,
+        "edge_id": "east>depot",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "south",
+        "to_id": "station",
+        "depart": 1439,
+        "arrive": 1675,
+        "path": [
+          [
+            480,
+            540
+          ],
+          [
+            380.0,
+            660.0
+          ]
+        ],
+        "distance_m": 1406,
+        "revision": 0,
+        "edge_id": "south>station",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "hill",
+        "to_id": "north",
+        "depart": 1508,
+        "arrive": 1756,
+        "path": [
+          [
+            630,
+            80
+          ],
+          [
+            480.0,
+            150.0
+          ]
+        ],
+        "distance_m": 1490,
+        "revision": 0,
+        "edge_id": "hill>north",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "north",
+        "to_id": "east",
+        "depart": 1756,
+        "arrive": 2165,
+        "path": [
+          [
+            480,
+            150
+          ],
+          [
+            700.0,
+            340.0
+          ]
+        ],
+        "distance_m": 2616,
+        "revision": 0,
+        "edge_id": "north>east",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "station",
+        "to_id": "south",
+        "depart": 1855,
+        "arrive": 2091,
+        "path": [
+          [
+            380,
+            660
+          ],
+          [
+            480.0,
+            540.0
+          ]
+        ],
+        "distance_m": 1406,
+        "revision": 1,
+        "edge_id": "station>south",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "south",
+        "to_id": "west",
+        "depart": 2091,
+        "arrive": 2490,
+        "path": [
+          [
+            480,
+            540
+          ],
+          [
+            280.0,
+            340.0
+          ]
+        ],
+        "distance_m": 2546,
+        "revision": 1,
+        "edge_id": "south>west",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "east",
+        "to_id": "depot",
+        "depart": 2165,
+        "arrive": 2483,
+        "path": [
+          [
+            700,
+            340
+          ],
+          [
+            480.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1980,
+        "revision": 1,
+        "edge_id": "east>depot",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "west",
+        "to_id": "river",
+        "depart": 2490,
+        "arrive": 2733,
+        "path": [
+          [
+            280,
+            340
+          ],
+          [
+            140.0,
+            420.0
+          ]
+        ],
+        "distance_m": 1451,
+        "revision": 1,
+        "edge_id": "west>river",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "depot",
+        "to_id": "south",
+        "depart": 2603,
+        "arrive": 2896,
+        "path": [
+          [
+            480,
+            340
+          ],
+          [
+            480.0,
+            540.0
+          ]
+        ],
+        "distance_m": 1800,
+        "revision": 1,
+        "edge_id": "depot>south",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "south",
+        "to_id": "linden",
+        "depart": 2896,
+        "arrive": 3104,
+        "path": [
+          [
+            480,
+            540
+          ],
+          [
+            580.0,
+            630.0
+          ]
+        ],
+        "distance_m": 1211,
+        "revision": 1,
+        "edge_id": "south>linden",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "river",
+        "to_id": "west",
+        "depart": 2913,
+        "arrive": 3156,
+        "path": [
+          [
+            140,
+            420
+          ],
+          [
+            280.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1451,
+        "revision": 1,
+        "edge_id": "river>west",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "west",
+        "to_id": "maple",
+        "depart": 3156,
+        "arrive": 3465,
+        "path": [
+          [
+            280,
+            340
+          ],
+          [
+            140.0,
+            180.0
+          ]
+        ],
+        "distance_m": 1913,
+        "revision": 1,
+        "edge_id": "west>maple",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "linden",
+        "to_id": "south",
+        "depart": 3404,
+        "arrive": 3612,
+        "path": [
+          [
+            580,
+            630
+          ],
+          [
+            480.0,
+            540.0
+          ]
+        ],
+        "distance_m": 1211,
+        "revision": 1,
+        "edge_id": "linden>south",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "south",
+        "to_id": "park",
+        "depart": 3612,
+        "arrive": 4000,
+        "path": [
+          [
+            480,
+            540
+          ],
+          [
+            750.0,
+            590.0
+          ]
+        ],
+        "distance_m": 2471,
+        "revision": 1,
+        "edge_id": "south>park",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "maple",
+        "to_id": "west",
+        "depart": 3765,
+        "arrive": 4074,
+        "path": [
+          [
+            140,
+            180
+          ],
+          [
+            280.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1913,
+        "revision": 1,
+        "edge_id": "maple>west",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "A",
+        "from_id": "west",
+        "to_id": "depot",
+        "depart": 4074,
+        "arrive": 4367,
+        "path": [
+          [
+            280,
+            340
+          ],
+          [
+            480.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1800,
+        "revision": 1,
+        "edge_id": "west>depot",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "park",
+        "to_id": "south",
+        "depart": 4180,
+        "arrive": 4568,
+        "path": [
+          [
+            750,
+            590
+          ],
+          [
+            480.0,
+            540.0
+          ]
+        ],
+        "distance_m": 2471,
+        "revision": 1,
+        "edge_id": "park>south",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "south",
+        "to_id": "east",
+        "depart": 4568,
+        "arrive": 4986,
+        "path": [
+          [
+            480,
+            540
+          ],
+          [
+            700.0,
+            340.0
+          ]
+        ],
+        "distance_m": 2676,
+        "revision": 1,
+        "edge_id": "south>east",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "east",
+        "to_id": "garden",
+        "depart": 4986,
+        "arrive": 5297,
+        "path": [
+          [
+            700,
+            340
+          ],
+          [
+            890.0,
+            440.0
+          ]
+        ],
+        "distance_m": 1932,
+        "revision": 1,
+        "edge_id": "east>garden",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "garden",
+        "to_id": "east",
+        "depart": 5597,
+        "arrive": 5908,
+        "path": [
+          [
+            890,
+            440
+          ],
+          [
+            700.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1932,
+        "revision": 1,
+        "edge_id": "garden>east",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "east",
+        "to_id": "spruce",
+        "depart": 5908,
+        "arrive": 6093,
+        "path": [
+          [
+            700,
+            340
+          ],
+          [
+            800.0,
+            280.0
+          ]
+        ],
+        "distance_m": 1050,
+        "revision": 1,
+        "edge_id": "east>spruce",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "spruce",
+        "to_id": "east",
+        "depart": 6273,
+        "arrive": 6458,
+        "path": [
+          [
+            800,
+            280
+          ],
+          [
+            700.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1050,
+        "revision": 1,
+        "edge_id": "spruce>east",
+        "progress": 1.0
+      },
+      {
+        "vehicle_id": "C",
+        "from_id": "east",
+        "to_id": "depot",
+        "depart": 6458,
+        "arrive": 6776,
+        "path": [
+          [
+            700,
+            340
+          ],
+          [
+            480.0,
+            340.0
+          ]
+        ],
+        "distance_m": 1980,
+        "revision": 1,
+        "edge_id": "east>depot",
+        "progress": 1.0
+      }
+    ],
+    "deliveries": [
+      {
+        "id": "C-clinic",
+        "destination_id": "clinic",
+        "vehicle_id": "C",
+        "quantity": 16,
+        "commodity": "chilled",
+        "service_start": 590,
+        "completed_at": 830,
+        "priority": 3,
+        "on_time": true
+      },
+      {
+        "id": "A-cedar",
+        "destination_id": "cedar",
+        "vehicle_id": "A",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 776,
+        "completed_at": 1076,
+        "priority": 3,
+        "on_time": true
+      },
+      {
+        "id": "B-harbor",
+        "destination_id": "harbor",
+        "vehicle_id": "B",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 783,
+        "completed_at": 1083,
+        "priority": 2,
+        "on_time": true
+      },
+      {
+        "id": "C-hill",
+        "destination_id": "hill",
+        "vehicle_id": "C",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 1268,
+        "completed_at": 1508,
+        "priority": 3,
+        "on_time": true
+      },
+      {
+        "id": "A-station",
+        "destination_id": "station",
+        "vehicle_id": "A",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 1675,
+        "completed_at": 1855,
+        "priority": 2,
+        "on_time": true
+      },
+      {
+        "id": "A-river",
+        "destination_id": "river",
+        "vehicle_id": "A",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 2733,
+        "completed_at": 2913,
+        "priority": 2,
+        "on_time": true
+      },
+      {
+        "id": "C-linden",
+        "destination_id": "linden",
+        "vehicle_id": "C",
+        "quantity": 16,
+        "commodity": "chilled",
+        "service_start": 3104,
+        "completed_at": 3404,
+        "priority": 3,
+        "on_time": true
+      },
+      {
+        "id": "A-maple",
+        "destination_id": "maple",
+        "vehicle_id": "A",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 3465,
+        "completed_at": 3765,
+        "priority": 1,
+        "on_time": false
+      },
+      {
+        "id": "C-park",
+        "destination_id": "park",
+        "vehicle_id": "C",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 4000,
+        "completed_at": 4180,
+        "priority": 3,
+        "on_time": true
+      },
+      {
+        "id": "C-garden",
+        "destination_id": "garden",
+        "vehicle_id": "C",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 5297,
+        "completed_at": 5597,
+        "priority": 1,
+        "on_time": false
+      },
+      {
+        "id": "C-spruce",
+        "destination_id": "spruce",
+        "vehicle_id": "C",
+        "quantity": 16,
+        "commodity": "chilled",
+        "service_start": 6093,
+        "completed_at": 6273,
+        "priority": 2,
+        "on_time": false
+      }
+    ],
+    "events": [
+      {
+        "id": "event-0000",
+        "seq": 0,
+        "time": 0,
+        "kind": "plan_accepted",
+        "revision": 0,
+        "summary": "Initial routing plan accepted."
+      },
+      {
+        "id": "event-0001",
+        "seq": 1,
+        "time": 0,
+        "kind": "load_start",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 96,
+          "chilled": 0
+        },
+        "complete_at": 120,
+        "summary": "A loading at depot.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0002",
+        "seq": 2,
+        "time": 0,
+        "kind": "load_start",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 24,
+          "chilled": 0
+        },
+        "complete_at": 120,
+        "summary": "B loading at depot.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0003",
+        "seq": 3,
+        "time": 0,
+        "kind": "load_start",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 24,
+          "chilled": 48
+        },
+        "complete_at": 120,
+        "summary": "C loading at depot.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0004",
+        "seq": 4,
+        "time": 120,
+        "kind": "load",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 96,
+          "chilled": 0
+        },
+        "started_at": 0,
+        "summary": "A loaded 96 meals.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0005",
+        "seq": 5,
+        "time": 120,
+        "kind": "load",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 24,
+          "chilled": 0
+        },
+        "started_at": 0,
+        "summary": "B loaded 24 meals.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0006",
+        "seq": 6,
+        "time": 120,
+        "kind": "load",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 24,
+          "chilled": 48
+        },
+        "started_at": 0,
+        "summary": "C loaded 72 meals.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0007",
+        "seq": 7,
+        "time": 120,
+        "kind": "depart",
+        "from_id": "depot",
+        "to_id": "south",
+        "edge_id": "depot>south",
+        "arrive": 413,
+        "distance_m": 1800,
+        "summary": "A travelling to South Junction.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0008",
+        "seq": 8,
+        "time": 120,
+        "kind": "depart",
+        "from_id": "depot",
+        "to_id": "east",
+        "edge_id": "depot>east",
+        "arrive": 438,
+        "distance_m": 1980,
+        "summary": "B travelling to East Junction.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0009",
+        "seq": 9,
+        "time": 120,
+        "kind": "depart",
+        "from_id": "depot",
+        "to_id": "north",
+        "edge_id": "depot>north",
+        "arrive": 400,
+        "distance_m": 1710,
+        "summary": "C travelling to North Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0010",
+        "seq": 10,
+        "time": 400,
+        "kind": "arrive",
+        "from_id": "depot",
+        "node_id": "north",
+        "edge_id": "depot>north",
+        "distance_m": 1710,
+        "depart": 120,
+        "summary": "C arrived at North Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0011",
+        "seq": 11,
+        "time": 400,
+        "kind": "depart",
+        "from_id": "north",
+        "to_id": "clinic",
+        "edge_id": "north>clinic",
+        "arrive": 590,
+        "distance_m": 1084,
+        "summary": "C travelling to Clinic Meal Hub.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0012",
+        "seq": 12,
+        "time": 413,
+        "kind": "arrive",
+        "from_id": "depot",
+        "node_id": "south",
+        "edge_id": "depot>south",
+        "distance_m": 1800,
+        "depart": 120,
+        "summary": "A arrived at South Junction.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0013",
+        "seq": 13,
+        "time": 413,
+        "kind": "depart",
+        "from_id": "south",
+        "to_id": "cedar",
+        "edge_id": "south>cedar",
+        "arrive": 776,
+        "distance_m": 2295,
+        "summary": "A travelling to Cedar Hall.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0014",
+        "seq": 14,
+        "time": 438,
+        "kind": "arrive",
+        "from_id": "depot",
+        "node_id": "east",
+        "edge_id": "depot>east",
+        "distance_m": 1980,
+        "depart": 120,
+        "summary": "B arrived at East Junction.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0015",
+        "seq": 15,
+        "time": 438,
+        "kind": "depart",
+        "from_id": "east",
+        "to_id": "harbor",
+        "edge_id": "east>harbor",
+        "arrive": 783,
+        "distance_m": 2164,
+        "summary": "B travelling to Harbor Centre.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0016",
+        "seq": 16,
+        "time": 590,
+        "kind": "arrive",
+        "from_id": "north",
+        "node_id": "clinic",
+        "edge_id": "north>clinic",
+        "distance_m": 1084,
+        "depart": 400,
+        "summary": "C arrived at Clinic Meal Hub.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0017",
+        "seq": 17,
+        "time": 590,
+        "kind": "service_start",
+        "node_id": "clinic",
+        "quantity": 16,
+        "commodity": "chilled",
+        "complete_at": 830,
+        "summary": "C serving Clinic Meal Hub.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0018",
+        "seq": 18,
+        "time": 776,
+        "kind": "arrive",
+        "from_id": "south",
+        "node_id": "cedar",
+        "edge_id": "south>cedar",
+        "distance_m": 2295,
+        "depart": 413,
+        "summary": "A arrived at Cedar Hall.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0019",
+        "seq": 19,
+        "time": 776,
+        "kind": "service_start",
+        "node_id": "cedar",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 1076,
+        "summary": "A serving Cedar Hall.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0020",
+        "seq": 20,
+        "time": 783,
+        "kind": "arrive",
+        "from_id": "east",
+        "node_id": "harbor",
+        "edge_id": "east>harbor",
+        "distance_m": 2164,
+        "depart": 438,
+        "summary": "B arrived at Harbor Centre.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0021",
+        "seq": 21,
+        "time": 783,
+        "kind": "service_start",
+        "node_id": "harbor",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 1083,
+        "summary": "B serving Harbor Centre.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0022",
+        "seq": 22,
+        "time": 830,
+        "kind": "delivery",
+        "node_id": "clinic",
+        "quantity": 16,
+        "commodity": "chilled",
+        "service_start": 590,
+        "delivery_id": "C-clinic",
+        "summary": "16 meals delivered to Clinic Meal Hub.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0023",
+        "seq": 23,
+        "time": 830,
+        "kind": "depart",
+        "from_id": "clinic",
+        "to_id": "north",
+        "edge_id": "clinic>north",
+        "arrive": 1020,
+        "distance_m": 1084,
+        "summary": "C travelling to North Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0024",
+        "seq": 24,
+        "time": 1020,
+        "kind": "arrive",
+        "from_id": "clinic",
+        "node_id": "north",
+        "edge_id": "clinic>north",
+        "distance_m": 1084,
+        "depart": 830,
+        "summary": "C arrived at North Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0025",
+        "seq": 25,
+        "time": 1020,
+        "kind": "depart",
+        "from_id": "north",
+        "to_id": "hill",
+        "edge_id": "north>hill",
+        "arrive": 1268,
+        "distance_m": 1490,
+        "summary": "C travelling to Hill Community.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0026",
+        "seq": 26,
+        "time": 1076,
+        "kind": "delivery",
+        "node_id": "cedar",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 776,
+        "delivery_id": "A-cedar",
+        "summary": "24 meals delivered to Cedar Hall.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0027",
+        "seq": 27,
+        "time": 1076,
+        "kind": "depart",
+        "from_id": "cedar",
+        "to_id": "south",
+        "edge_id": "cedar>south",
+        "arrive": 1439,
+        "distance_m": 2295,
+        "summary": "A travelling to South Junction.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0028",
+        "seq": 28,
+        "time": 1083,
+        "kind": "delivery",
+        "node_id": "harbor",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 783,
+        "delivery_id": "B-harbor",
+        "summary": "24 meals delivered to Harbor Centre.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0029",
+        "seq": 29,
+        "time": 1083,
+        "kind": "depart",
+        "from_id": "harbor",
+        "to_id": "east",
+        "edge_id": "harbor>east",
+        "arrive": 1428,
+        "distance_m": 2164,
+        "summary": "B travelling to East Junction.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0030",
+        "seq": 30,
+        "time": 1268,
+        "kind": "arrive",
+        "from_id": "north",
+        "node_id": "hill",
+        "edge_id": "north>hill",
+        "distance_m": 1490,
+        "depart": 1020,
+        "summary": "C arrived at Hill Community.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0031",
+        "seq": 31,
+        "time": 1268,
+        "kind": "service_start",
+        "node_id": "hill",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 1508,
+        "summary": "C serving Hill Community.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0032",
+        "seq": 32,
+        "time": 1428,
+        "kind": "arrive",
+        "from_id": "harbor",
+        "node_id": "east",
+        "edge_id": "harbor>east",
+        "distance_m": 2164,
+        "depart": 1083,
+        "summary": "B arrived at East Junction.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0033",
+        "seq": 33,
+        "time": 1428,
+        "kind": "depart",
+        "from_id": "east",
+        "to_id": "depot",
+        "edge_id": "east>depot",
+        "arrive": 1746,
+        "distance_m": 1980,
+        "summary": "B travelling to Riverton Food Hub.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0034",
+        "seq": 34,
+        "time": 1439,
+        "kind": "arrive",
+        "from_id": "cedar",
+        "node_id": "south",
+        "edge_id": "cedar>south",
+        "distance_m": 2295,
+        "depart": 1076,
+        "summary": "A arrived at South Junction.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0035",
+        "seq": 35,
+        "time": 1439,
+        "kind": "depart",
+        "from_id": "south",
+        "to_id": "station",
+        "edge_id": "south>station",
+        "arrive": 1675,
+        "distance_m": 1406,
+        "summary": "A travelling to Station Pantry.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0036",
+        "seq": 36,
+        "time": 1508,
+        "kind": "delivery",
+        "node_id": "hill",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 1268,
+        "delivery_id": "C-hill",
+        "summary": "24 meals delivered to Hill Community.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0037",
+        "seq": 37,
+        "time": 1508,
+        "kind": "depart",
+        "from_id": "hill",
+        "to_id": "north",
+        "edge_id": "hill>north",
+        "arrive": 1756,
+        "distance_m": 1490,
+        "summary": "C travelling to North Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0038",
+        "seq": 38,
+        "time": 1675,
+        "kind": "arrive",
+        "from_id": "south",
+        "node_id": "station",
+        "edge_id": "south>station",
+        "distance_m": 1406,
+        "depart": 1439,
+        "summary": "A arrived at Station Pantry.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0039",
+        "seq": 39,
+        "time": 1675,
+        "kind": "service_start",
+        "node_id": "station",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 1855,
+        "summary": "A serving Station Pantry.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0040",
+        "seq": 40,
+        "time": 1746,
+        "kind": "arrive",
+        "from_id": "east",
+        "node_id": "depot",
+        "edge_id": "east>depot",
+        "distance_m": 1980,
+        "depart": 1428,
+        "summary": "B arrived at Riverton Food Hub.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0041",
+        "seq": 41,
+        "time": 1746,
+        "kind": "return",
+        "node_id": "depot",
+        "summary": "B returned to depot.",
+        "vehicle_id": "B",
+        "revision": 0
+      },
+      {
+        "id": "event-0042",
+        "seq": 42,
+        "time": 1756,
+        "kind": "arrive",
+        "from_id": "hill",
+        "node_id": "north",
+        "edge_id": "hill>north",
+        "distance_m": 1490,
+        "depart": 1508,
+        "summary": "C arrived at North Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0043",
+        "seq": 43,
+        "time": 1756,
+        "kind": "depart",
+        "from_id": "north",
+        "to_id": "east",
+        "edge_id": "north>east",
+        "arrive": 2165,
+        "distance_m": 2616,
+        "summary": "C travelling to East Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0044",
+        "seq": 44,
+        "time": 1800,
+        "kind": "breakdown",
+        "vehicle_id": "B",
+        "node_id": "depot",
+        "position": [
+          480,
+          340
+        ],
+        "stranded": {
+          "ambient": 0,
+          "chilled": 0
+        },
+        "distance_m": 0,
+        "summary": "Vehicle B unavailable; onboard cargo stranded."
+      },
+      {
+        "id": "event-0045",
+        "seq": 45,
+        "time": 1800,
+        "kind": "replan",
+        "summary": "Residual routes recomputed from physical readiness, locked commitments and shared depot stock.",
+        "excluded_orders": [
+          "cedar",
+          "clinic",
+          "harbor",
+          "hill",
+          "station"
+        ],
+        "projected_states": {
+          "A": {
+            "node_id": "station",
+            "ready": 1855,
+            "onboard": {
+              "ambient": 48,
+              "chilled": 0
+            }
+          },
+          "C": {
+            "node_id": "east",
+            "ready": 2165,
+            "onboard": {
+              "ambient": 0,
+              "chilled": 32
+            }
+          }
+        },
+        "free_depot_inventory": {
+          "ambient": 48,
+          "chilled": 0
+        }
+      },
+      {
+        "id": "event-0046",
+        "seq": 46,
+        "time": 1800,
+        "kind": "plan_accepted",
+        "revision": 1,
+        "summary": "Recovery plan accepted.",
+        "routes": [
+          {
+            "vehicle_id": "A",
+            "stops": [
+              "river",
+              "maple"
+            ],
+            "manifest": {
+              "ambient": 0,
+              "chilled": 0
+            },
+            "schedule": [
+              {
+                "node_id": "river",
+                "service_start": 2733
+              },
+              {
+                "node_id": "maple",
+                "service_start": 3465
+              }
+            ],
+            "start_node": "station",
+            "ready_at": 1855,
+            "return_at": 4367,
+            "reload": false,
+            "preload_node": "station",
+            "preload_ready": 1855,
+            "onboard": {
+              "ambient": 48,
+              "chilled": 0
+            }
+          },
+          {
+            "vehicle_id": "C",
+            "stops": [
+              "linden",
+              "park",
+              "garden",
+              "spruce"
+            ],
+            "manifest": {
+              "ambient": 48,
+              "chilled": 0
+            },
+            "schedule": [
+              {
+                "node_id": "linden",
+                "service_start": 3104
+              },
+              {
+                "node_id": "park",
+                "service_start": 4000
+              },
+              {
+                "node_id": "garden",
+                "service_start": 5297
+              },
+              {
+                "node_id": "spruce",
+                "service_start": 6093
+              }
+            ],
+            "start_node": "depot",
+            "ready_at": 2603,
+            "return_at": 6776,
+            "reload": true,
+            "preload_node": "east",
+            "preload_ready": 2165,
+            "onboard": {
+              "ambient": 0,
+              "chilled": 32
+            }
+          }
+        ],
+        "solver": {
+          "algorithm": "OR-Tools Routing / parallel cheapest insertion",
+          "status": "feasible_constructive_incumbent",
+          "budget": {
+            "solution_limit_per_candidate": 1,
+            "watchdog_seconds_per_candidate": 3,
+            "candidates": 4
+          },
+          "optimal": false,
+          "deterministic_work_limit": true,
+          "objective": "Integer distance metres + meal omission penalties + service-start tardiness seconds; proxy objective, not exact on-time coverage."
+        }
+      },
+      {
+        "id": "event-0047",
+        "seq": 47,
+        "time": 1855,
+        "kind": "delivery",
+        "node_id": "station",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 1675,
+        "delivery_id": "A-station",
+        "summary": "24 meals delivered to Station Pantry.",
+        "vehicle_id": "A",
+        "revision": 0
+      },
+      {
+        "id": "event-0048",
+        "seq": 48,
+        "time": 1855,
+        "kind": "depart",
+        "from_id": "station",
+        "to_id": "south",
+        "edge_id": "station>south",
+        "arrive": 2091,
+        "distance_m": 1406,
+        "summary": "A travelling to South Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0049",
+        "seq": 49,
+        "time": 2091,
+        "kind": "arrive",
+        "from_id": "station",
+        "node_id": "south",
+        "edge_id": "station>south",
+        "distance_m": 1406,
+        "depart": 1855,
+        "summary": "A arrived at South Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0050",
+        "seq": 50,
+        "time": 2091,
+        "kind": "depart",
+        "from_id": "south",
+        "to_id": "west",
+        "edge_id": "south>west",
+        "arrive": 2490,
+        "distance_m": 2546,
+        "summary": "A travelling to West Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0051",
+        "seq": 51,
+        "time": 2165,
+        "kind": "arrive",
+        "from_id": "north",
+        "node_id": "east",
+        "edge_id": "north>east",
+        "distance_m": 2616,
+        "depart": 1756,
+        "summary": "C arrived at East Junction.",
+        "vehicle_id": "C",
+        "revision": 0
+      },
+      {
+        "id": "event-0052",
+        "seq": 52,
+        "time": 2165,
+        "kind": "depart",
+        "from_id": "east",
+        "to_id": "depot",
+        "edge_id": "east>depot",
+        "arrive": 2483,
+        "distance_m": 1980,
+        "summary": "C travelling to Riverton Food Hub.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0053",
+        "seq": 53,
+        "time": 2483,
+        "kind": "arrive",
+        "from_id": "east",
+        "node_id": "depot",
+        "edge_id": "east>depot",
+        "distance_m": 1980,
+        "depart": 2165,
+        "summary": "C arrived at Riverton Food Hub.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0054",
+        "seq": 54,
+        "time": 2483,
+        "kind": "return",
+        "node_id": "depot",
+        "summary": "C returned to depot.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0055",
+        "seq": 55,
+        "time": 2483,
+        "kind": "load_start",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 48,
+          "chilled": 0
+        },
+        "complete_at": 2603,
+        "summary": "C loading at depot.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0056",
+        "seq": 56,
+        "time": 2490,
+        "kind": "arrive",
+        "from_id": "south",
+        "node_id": "west",
+        "edge_id": "south>west",
+        "distance_m": 2546,
+        "depart": 2091,
+        "summary": "A arrived at West Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0057",
+        "seq": 57,
+        "time": 2490,
+        "kind": "depart",
+        "from_id": "west",
+        "to_id": "river",
+        "edge_id": "west>river",
+        "arrive": 2733,
+        "distance_m": 1451,
+        "summary": "A travelling to River House.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0058",
+        "seq": 58,
+        "time": 2603,
+        "kind": "load",
+        "node_id": "depot",
+        "manifest": {
+          "ambient": 48,
+          "chilled": 0
+        },
+        "started_at": 2483,
+        "summary": "C loaded 48 meals.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0059",
+        "seq": 59,
+        "time": 2603,
+        "kind": "depart",
+        "from_id": "depot",
+        "to_id": "south",
+        "edge_id": "depot>south",
+        "arrive": 2896,
+        "distance_m": 1800,
+        "summary": "C travelling to South Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0060",
+        "seq": 60,
+        "time": 2733,
+        "kind": "arrive",
+        "from_id": "west",
+        "node_id": "river",
+        "edge_id": "west>river",
+        "distance_m": 1451,
+        "depart": 2490,
+        "summary": "A arrived at River House.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0061",
+        "seq": 61,
+        "time": 2733,
+        "kind": "service_start",
+        "node_id": "river",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 2913,
+        "summary": "A serving River House.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0062",
+        "seq": 62,
+        "time": 2896,
+        "kind": "arrive",
+        "from_id": "depot",
+        "node_id": "south",
+        "edge_id": "depot>south",
+        "distance_m": 1800,
+        "depart": 2603,
+        "summary": "C arrived at South Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0063",
+        "seq": 63,
+        "time": 2896,
+        "kind": "depart",
+        "from_id": "south",
+        "to_id": "linden",
+        "edge_id": "south>linden",
+        "arrive": 3104,
+        "distance_m": 1211,
+        "summary": "C travelling to Linden House.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0064",
+        "seq": 64,
+        "time": 2913,
+        "kind": "delivery",
+        "node_id": "river",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 2733,
+        "delivery_id": "A-river",
+        "summary": "24 meals delivered to River House.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0065",
+        "seq": 65,
+        "time": 2913,
+        "kind": "depart",
+        "from_id": "river",
+        "to_id": "west",
+        "edge_id": "river>west",
+        "arrive": 3156,
+        "distance_m": 1451,
+        "summary": "A travelling to West Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0066",
+        "seq": 66,
+        "time": 3104,
+        "kind": "arrive",
+        "from_id": "south",
+        "node_id": "linden",
+        "edge_id": "south>linden",
+        "distance_m": 1211,
+        "depart": 2896,
+        "summary": "C arrived at Linden House.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0067",
+        "seq": 67,
+        "time": 3104,
+        "kind": "service_start",
+        "node_id": "linden",
+        "quantity": 16,
+        "commodity": "chilled",
+        "complete_at": 3404,
+        "summary": "C serving Linden House.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0068",
+        "seq": 68,
+        "time": 3156,
+        "kind": "arrive",
+        "from_id": "river",
+        "node_id": "west",
+        "edge_id": "river>west",
+        "distance_m": 1451,
+        "depart": 2913,
+        "summary": "A arrived at West Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0069",
+        "seq": 69,
+        "time": 3156,
+        "kind": "depart",
+        "from_id": "west",
+        "to_id": "maple",
+        "edge_id": "west>maple",
+        "arrive": 3465,
+        "distance_m": 1913,
+        "summary": "A travelling to Maple Centre.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0070",
+        "seq": 70,
+        "time": 3404,
+        "kind": "delivery",
+        "node_id": "linden",
+        "quantity": 16,
+        "commodity": "chilled",
+        "service_start": 3104,
+        "delivery_id": "C-linden",
+        "summary": "16 meals delivered to Linden House.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0071",
+        "seq": 71,
+        "time": 3404,
+        "kind": "depart",
+        "from_id": "linden",
+        "to_id": "south",
+        "edge_id": "linden>south",
+        "arrive": 3612,
+        "distance_m": 1211,
+        "summary": "C travelling to South Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0072",
+        "seq": 72,
+        "time": 3465,
+        "kind": "arrive",
+        "from_id": "west",
+        "node_id": "maple",
+        "edge_id": "west>maple",
+        "distance_m": 1913,
+        "depart": 3156,
+        "summary": "A arrived at Maple Centre.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0073",
+        "seq": 73,
+        "time": 3465,
+        "kind": "service_start",
+        "node_id": "maple",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 3765,
+        "summary": "A serving Maple Centre.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0074",
+        "seq": 74,
+        "time": 3612,
+        "kind": "arrive",
+        "from_id": "linden",
+        "node_id": "south",
+        "edge_id": "linden>south",
+        "distance_m": 1211,
+        "depart": 3404,
+        "summary": "C arrived at South Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0075",
+        "seq": 75,
+        "time": 3612,
+        "kind": "depart",
+        "from_id": "south",
+        "to_id": "park",
+        "edge_id": "south>park",
+        "arrive": 4000,
+        "distance_m": 2471,
+        "summary": "C travelling to Park Shelter.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0076",
+        "seq": 76,
+        "time": 3765,
+        "kind": "delivery",
+        "node_id": "maple",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 3465,
+        "delivery_id": "A-maple",
+        "summary": "24 meals delivered to Maple Centre.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0077",
+        "seq": 77,
+        "time": 3765,
+        "kind": "depart",
+        "from_id": "maple",
+        "to_id": "west",
+        "edge_id": "maple>west",
+        "arrive": 4074,
+        "distance_m": 1913,
+        "summary": "A travelling to West Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0078",
+        "seq": 78,
+        "time": 4000,
+        "kind": "arrive",
+        "from_id": "south",
+        "node_id": "park",
+        "edge_id": "south>park",
+        "distance_m": 2471,
+        "depart": 3612,
+        "summary": "C arrived at Park Shelter.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0079",
+        "seq": 79,
+        "time": 4000,
+        "kind": "service_start",
+        "node_id": "park",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 4180,
+        "summary": "C serving Park Shelter.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0080",
+        "seq": 80,
+        "time": 4074,
+        "kind": "arrive",
+        "from_id": "maple",
+        "node_id": "west",
+        "edge_id": "maple>west",
+        "distance_m": 1913,
+        "depart": 3765,
+        "summary": "A arrived at West Junction.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0081",
+        "seq": 81,
+        "time": 4074,
+        "kind": "depart",
+        "from_id": "west",
+        "to_id": "depot",
+        "edge_id": "west>depot",
+        "arrive": 4367,
+        "distance_m": 1800,
+        "summary": "A travelling to Riverton Food Hub.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0082",
+        "seq": 82,
+        "time": 4180,
+        "kind": "delivery",
+        "node_id": "park",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 4000,
+        "delivery_id": "C-park",
+        "summary": "24 meals delivered to Park Shelter.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0083",
+        "seq": 83,
+        "time": 4180,
+        "kind": "depart",
+        "from_id": "park",
+        "to_id": "south",
+        "edge_id": "park>south",
+        "arrive": 4568,
+        "distance_m": 2471,
+        "summary": "C travelling to South Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0084",
+        "seq": 84,
+        "time": 4367,
+        "kind": "arrive",
+        "from_id": "west",
+        "node_id": "depot",
+        "edge_id": "west>depot",
+        "distance_m": 1800,
+        "depart": 4074,
+        "summary": "A arrived at Riverton Food Hub.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0085",
+        "seq": 85,
+        "time": 4367,
+        "kind": "return",
+        "node_id": "depot",
+        "summary": "A returned to depot.",
+        "vehicle_id": "A",
+        "revision": 1
+      },
+      {
+        "id": "event-0086",
+        "seq": 86,
+        "time": 4568,
+        "kind": "arrive",
+        "from_id": "park",
+        "node_id": "south",
+        "edge_id": "park>south",
+        "distance_m": 2471,
+        "depart": 4180,
+        "summary": "C arrived at South Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0087",
+        "seq": 87,
+        "time": 4568,
+        "kind": "depart",
+        "from_id": "south",
+        "to_id": "east",
+        "edge_id": "south>east",
+        "arrive": 4986,
+        "distance_m": 2676,
+        "summary": "C travelling to East Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0088",
+        "seq": 88,
+        "time": 4986,
+        "kind": "arrive",
+        "from_id": "south",
+        "node_id": "east",
+        "edge_id": "south>east",
+        "distance_m": 2676,
+        "depart": 4568,
+        "summary": "C arrived at East Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0089",
+        "seq": 89,
+        "time": 4986,
+        "kind": "depart",
+        "from_id": "east",
+        "to_id": "garden",
+        "edge_id": "east>garden",
+        "arrive": 5297,
+        "distance_m": 1932,
+        "summary": "C travelling to Garden Kitchen.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0090",
+        "seq": 90,
+        "time": 5297,
+        "kind": "arrive",
+        "from_id": "east",
+        "node_id": "garden",
+        "edge_id": "east>garden",
+        "distance_m": 1932,
+        "depart": 4986,
+        "summary": "C arrived at Garden Kitchen.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0091",
+        "seq": 91,
+        "time": 5297,
+        "kind": "service_start",
+        "node_id": "garden",
+        "quantity": 24,
+        "commodity": "ambient",
+        "complete_at": 5597,
+        "summary": "C serving Garden Kitchen.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0092",
+        "seq": 92,
+        "time": 5597,
+        "kind": "delivery",
+        "node_id": "garden",
+        "quantity": 24,
+        "commodity": "ambient",
+        "service_start": 5297,
+        "delivery_id": "C-garden",
+        "summary": "24 meals delivered to Garden Kitchen.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0093",
+        "seq": 93,
+        "time": 5597,
+        "kind": "depart",
+        "from_id": "garden",
+        "to_id": "east",
+        "edge_id": "garden>east",
+        "arrive": 5908,
+        "distance_m": 1932,
+        "summary": "C travelling to East Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0094",
+        "seq": 94,
+        "time": 5908,
+        "kind": "arrive",
+        "from_id": "garden",
+        "node_id": "east",
+        "edge_id": "garden>east",
+        "distance_m": 1932,
+        "depart": 5597,
+        "summary": "C arrived at East Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0095",
+        "seq": 95,
+        "time": 5908,
+        "kind": "depart",
+        "from_id": "east",
+        "to_id": "spruce",
+        "edge_id": "east>spruce",
+        "arrive": 6093,
+        "distance_m": 1050,
+        "summary": "C travelling to Spruce Centre.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0096",
+        "seq": 96,
+        "time": 6093,
+        "kind": "arrive",
+        "from_id": "east",
+        "node_id": "spruce",
+        "edge_id": "east>spruce",
+        "distance_m": 1050,
+        "depart": 5908,
+        "summary": "C arrived at Spruce Centre.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0097",
+        "seq": 97,
+        "time": 6093,
+        "kind": "service_start",
+        "node_id": "spruce",
+        "quantity": 16,
+        "commodity": "chilled",
+        "complete_at": 6273,
+        "summary": "C serving Spruce Centre.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0098",
+        "seq": 98,
+        "time": 6273,
+        "kind": "delivery",
+        "node_id": "spruce",
+        "quantity": 16,
+        "commodity": "chilled",
+        "service_start": 6093,
+        "delivery_id": "C-spruce",
+        "summary": "16 meals delivered to Spruce Centre.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0099",
+        "seq": 99,
+        "time": 6273,
+        "kind": "depart",
+        "from_id": "spruce",
+        "to_id": "east",
+        "edge_id": "spruce>east",
+        "arrive": 6458,
+        "distance_m": 1050,
+        "summary": "C travelling to East Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0100",
+        "seq": 100,
+        "time": 6458,
+        "kind": "arrive",
+        "from_id": "spruce",
+        "node_id": "east",
+        "edge_id": "spruce>east",
+        "distance_m": 1050,
+        "depart": 6273,
+        "summary": "C arrived at East Junction.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0101",
+        "seq": 101,
+        "time": 6458,
+        "kind": "depart",
+        "from_id": "east",
+        "to_id": "depot",
+        "edge_id": "east>depot",
+        "arrive": 6776,
+        "distance_m": 1980,
+        "summary": "C travelling to Riverton Food Hub.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0102",
+        "seq": 102,
+        "time": 6776,
+        "kind": "arrive",
+        "from_id": "east",
+        "node_id": "depot",
+        "edge_id": "east>depot",
+        "distance_m": 1980,
+        "depart": 6458,
+        "summary": "C arrived at Riverton Food Hub.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0103",
+        "seq": 103,
+        "time": 6776,
+        "kind": "return",
+        "node_id": "depot",
+        "summary": "C returned to depot.",
+        "vehicle_id": "C",
+        "revision": 1
+      },
+      {
+        "id": "event-0104",
+        "seq": 104,
+        "time": 14400,
+        "kind": "horizon",
+        "summary": "Mission horizon reached."
+      }
+    ],
+    "final_state": {
+      "depot_inventory": {
+        "ambient": 0,
+        "chilled": 0
+      },
+      "onboard": {
+        "A": {
+          "ambient": 0,
+          "chilled": 0
+        },
+        "B": {
+          "ambient": 0,
+          "chilled": 0
+        },
+        "C": {
+          "ambient": 0,
+          "chilled": 0
+        }
+      },
+      "stranded": {
+        "ambient": 0,
+        "chilled": 0
+      },
+      "delivered": {
+        "ambient": 192,
+        "chilled": 48
+      },
+      "vehicles": {
+        "A": {
+          "node_id": "depot",
+          "status": "available",
+          "position": [
+            480,
+            340
+          ]
+        },
+        "B": {
+          "node_id": "depot",
+          "status": "failed",
+          "position": [
+            480,
+            340
+          ]
+        },
+        "C": {
+          "node_id": "depot",
+          "status": "available",
+          "position": [
+            480,
+            340
+          ]
+        }
+      }
+    },
+    "metrics": {
+      "meals_delivered": 240,
+      "demand": 264,
+      "coverage": 0.9090909090909091,
+      "on_time_meals": 176,
+      "on_time_coverage": 0.6666666666666666,
+      "priority_coverage": 1.0,
+      "priority_weighted_coverage": 0.8142857142857143,
+      "destinations_served": 11,
+      "late_deliveries": 3,
+      "unserved_meals": 24,
+      "distance_m": 59802.0,
+      "cost_cents": 5557,
+      "emissions_g": 14197,
+      "violations": 0
+    },
+    "solver": {
+      "algorithm": "OR-Tools Routing / parallel cheapest insertion",
+      "status": "feasible_constructive_incumbent",
+      "budget": {
+        "solution_limit_per_candidate": 1,
+        "watchdog_seconds_per_candidate": 3,
+        "candidates": 1
+      },
+      "optimal": false,
+      "deterministic_work_limit": true,
+      "objective": "Integer distance metres + meal omission penalties + service-start tardiness seconds; proxy objective, not exact on-time coverage."
+    },
+    "policy_config": {
+      "meal_penalty": 1800,
+      "priority_power": 1,
+      "lateness_per_second": 4,
+      "distance_weight": 1,
+      "reserve_ambient": 32,
+      "reserve_chilled": 0
+    },
+    "mode": "deterministic",
+    "disruption": {
+      "vehicle_id": "B",
+      "time": 1800
+    },
+    "adapt": true,
+    "recovery_plan": {
+      "routes": [
+        {
+          "vehicle_id": "A",
+          "stops": [
+            "river",
+            "maple"
+          ],
+          "manifest": {
+            "ambient": 0,
+            "chilled": 0
+          },
+          "schedule": [
+            {
+              "node_id": "river",
+              "service_start": 2733
+            },
+            {
+              "node_id": "maple",
+              "service_start": 3465
+            }
+          ],
+          "start_node": "station",
+          "ready_at": 1855,
+          "return_at": 4367,
+          "reload": false,
+          "preload_node": "station",
+          "preload_ready": 1855,
+          "onboard": {
+            "ambient": 48,
+            "chilled": 0
+          }
+        },
+        {
+          "vehicle_id": "C",
+          "stops": [
+            "linden",
+            "park",
+            "garden",
+            "spruce"
+          ],
+          "manifest": {
+            "ambient": 48,
+            "chilled": 0
+          },
+          "schedule": [
+            {
+              "node_id": "linden",
+              "service_start": 3104
+            },
+            {
+              "node_id": "park",
+              "service_start": 4000
+            },
+            {
+              "node_id": "garden",
+              "service_start": 5297
+            },
+            {
+              "node_id": "spruce",
+              "service_start": 6093
+            }
+          ],
+          "start_node": "depot",
+          "ready_at": 2603,
+          "return_at": 6776,
+          "reload": true,
+          "preload_node": "east",
+          "preload_ready": 2165,
+          "onboard": {
+            "ambient": 0,
+            "chilled": 32
+          }
+        }
+      ],
+      "solver": {
+        "algorithm": "OR-Tools Routing / parallel cheapest insertion",
+        "status": "feasible_constructive_incumbent",
+        "budget": {
+          "solution_limit_per_candidate": 1,
+          "watchdog_seconds_per_candidate": 3,
+          "candidates": 4
+        },
+        "optimal": false,
+        "deterministic_work_limit": true,
+        "objective": "Integer distance metres + meal omission penalties + service-start tardiness seconds; proxy objective, not exact on-time coverage."
+      },
+      "input_snapshot": {
+        "time": 1800,
+        "vehicles": {
+          "A": {
+            "node_id": "station",
+            "ready": 1800,
+            "onboard": {
+              "ambient": 72,
+              "chilled": 0
+            }
+          },
+          "B": {
+            "node_id": "depot",
+            "ready": 1800,
+            "onboard": {
+              "ambient": 0,
+              "chilled": 0
+            }
+          },
+          "C": {
+            "node_id": "north",
+            "ready": 1800,
+            "onboard": {
+              "ambient": 0,
+              "chilled": 32
+            }
+          }
+        },
+        "depot_inventory": {
+          "ambient": 48,
+          "chilled": 0
+        },
+        "completed_orders": [
+          "cedar",
+          "clinic",
+          "harbor",
+          "hill"
+        ],
+        "disruption": {
+          "vehicle_id": "B",
+          "time": 1800
+        }
+      },
+      "locked_commitments": [
+        {
+          "kind": "service",
+          "vehicle_id": "A",
+          "start": 1675,
+          "end": 1855,
+          "node_id": "station",
+          "quantity": 24,
+          "commodity": "ambient",
+          "revision": 0
+        },
+        {
+          "kind": "travel",
+          "vehicle_id": "C",
+          "start": 1756,
+          "end": 2165,
+          "from_id": "north",
+          "to_id": "east",
+          "edge_id": "north>east",
+          "distance_m": 2616,
+          "revision": 0
+        }
+      ],
+      "input_state_hash": "401f50991e97301104839e0b50e5e9ceda933981c18f055ac49e63496332a338"
+    },
+    "baseline_kind": null,
+    "verification": {
+      "valid": true,
+      "violations": [],
+      "metrics": {
+        "meals_delivered": 240,
+        "demand": 264,
+        "coverage": 0.9090909090909091,
+        "on_time_meals": 176,
+        "on_time_coverage": 0.6666666666666666,
+        "priority_coverage": 1.0,
+        "priority_weighted_coverage": 0.8142857142857143,
+        "destinations_served": 11,
+        "late_deliveries": 3,
+        "unserved_meals": 24,
+        "distance_m": 59802.0,
+        "cost_cents": 5557,
+        "emissions_g": 14197,
+        "violations": 0
+      },
+      "checks": [
+        {
+          "id": "provenance",
+          "label": "Common initial scenario and evidence",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "custody",
+          "label": "Stock and cargo custody",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "capacity",
+          "label": "Vehicle capacity and cold compatibility",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "delivery",
+          "label": "Unique completed delivery ledger",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "movement",
+          "label": "Road travel and continuous locations",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "timing",
+          "label": "Service windows, duration and shifts",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "availability",
+          "label": "Failed vehicles do no further work",
+          "passed": true,
+          "detail": "Independent replay passed"
+        }
+      ],
+      "scenario_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+      "event_hash": "744e82a715a1371610256091aa273adb1d6bcb6f4c4c33865fbeb707be1cde0d",
+      "version": "fork-referee-1.0"
+    },
+    "compute_seconds": 0.0197,
+    "baseline_metrics": {
+      "meals_delivered": 192,
+      "demand": 264,
+      "coverage": 0.7272727272727273,
+      "on_time_meals": 168,
+      "on_time_coverage": 0.6363636363636364,
+      "priority_coverage": 1.0,
+      "priority_weighted_coverage": 0.7857142857142857,
+      "destinations_served": 9,
+      "late_deliveries": 1,
+      "unserved_meals": 72,
+      "distance_m": 48152.0,
+      "cost_cents": 4248,
+      "emissions_g": 10879,
+      "violations": 0
+    },
+    "unadapted_metrics": {
+      "meals_delivered": 192,
+      "demand": 264,
+      "coverage": 0.7272727272727273,
+      "on_time_meals": 168,
+      "on_time_coverage": 0.6363636363636364,
+      "priority_coverage": 1.0,
+      "priority_weighted_coverage": 0.7857142857142857,
+      "destinations_served": 9,
+      "late_deliveries": 1,
+      "unserved_meals": 72,
+      "distance_m": 48152.0,
+      "cost_cents": 4248,
+      "emissions_g": 10879,
+      "violations": 0
+    },
+    "unadapted_verification": {
+      "valid": true,
+      "violations": [],
+      "metrics": {
+        "meals_delivered": 192,
+        "demand": 264,
+        "coverage": 0.7272727272727273,
+        "on_time_meals": 168,
+        "on_time_coverage": 0.6363636363636364,
+        "priority_coverage": 1.0,
+        "priority_weighted_coverage": 0.7857142857142857,
+        "destinations_served": 9,
+        "late_deliveries": 1,
+        "unserved_meals": 72,
+        "distance_m": 48152.0,
+        "cost_cents": 4248,
+        "emissions_g": 10879,
+        "violations": 0
+      },
+      "checks": [
+        {
+          "id": "provenance",
+          "label": "Common initial scenario and evidence",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "custody",
+          "label": "Stock and cargo custody",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "capacity",
+          "label": "Vehicle capacity and cold compatibility",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "delivery",
+          "label": "Unique completed delivery ledger",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "movement",
+          "label": "Road travel and continuous locations",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "timing",
+          "label": "Service windows, duration and shifts",
+          "passed": true,
+          "detail": "Independent replay passed"
+        },
+        {
+          "id": "availability",
+          "label": "Failed vehicles do no further work",
+          "passed": true,
+          "detail": "Independent replay passed"
+        }
+      ],
+      "scenario_hash": "b258f3fa62655790539906ecd0eb7bc7b639294d81d386bfc243df1f3c78e81b",
+      "event_hash": "5fd823cbf1a59b87eba992a380bbbbcf2d86e1c0b9d19fba8cd98b6f7811369f",
+      "version": "fork-referee-1.0"
+    },
+    "recovery_gain": 48,
+    "adaptation_delta": {
+      "meals_delivered": 48,
+      "cost_cents": 1309,
+      "distance_m": 11650.0,
+      "emissions_g": 3318
+    }
+  },
+  "comparison": {
+    "recommended_id": "resilience",
+    "pareto_ids": [
+      "velocity",
+      "resilience",
+      "equity"
+    ],
+    "scores": {
+      "velocity": 0.74554577,
+      "resilience": 0.78888167,
+      "equity": 0.77877
+    },
+    "weights": {
+      "coverage": 0.55,
+      "equity": 0.35,
+      "cost": 0.1
+    },
+    "tied_ids": [
+      "resilience"
+    ],
+    "eligible_ids": [
+      "velocity",
+      "resilience",
+      "equity"
+    ],
+    "explanation": "Resilience leads under your current preferences: 240 meals delivered, 100% on-time high-need coverage, $55.57 modeled travel cost.",
+    "normalization": {
+      "cost_bound_cents": 20000,
+      "coverage": "on_time_meals / total_requested",
+      "equity": "on_time_priority_3_meals / priority_3_requested"
+    }
+  },
+  "limitations": [
+    "Entire scenario, names, priorities and coefficients are synthetic.",
+    "Each order is indivisible; loading takes 120 seconds. Initial routes make one trip; recovery permits at most one depot reload per healthy vehicle.",
+    "Cold-chain is vehicle compatibility only; no food-safety certification claim.",
+    "Roads are directed; shortest travel-time paths are used. Vehicles must return before their original shifts end.",
+    "Cost is distance \u00d7 cents/km; emissions are distance \u00d7 grams CO2e/km, rounded per vehicle. No fixed or service costs are modeled.",
+    "Planning wall time does not advance scenario time. Failed cargo is stranded without rescue or transfer."
+  ]
+}

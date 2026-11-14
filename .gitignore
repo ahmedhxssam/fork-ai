@@ -1,0 +1,26 @@
+.venv/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.cache/
+.superpowers/
+data/*.sqlite*
+data/*.db*
+test-results/
+playwright-report/
+.DS_Store
+artifacts/*.zip
+# Keep preparation and internal build coordination local.
+/FORK_PREPARATION_BLUEPRINT.txt
+/docs/BUILD_LEDGER.md
+/docs/superpowers/
+/docs/CODE_REVIEW.md
+/docs/FIX_REVIEW.md
+/docs/DOCS_REPORT.md
+

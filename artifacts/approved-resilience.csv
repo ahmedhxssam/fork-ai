@@ -1,0 +1,12 @@
+vehicle_id,volunteer_id,stop_order,destination_id,destination,commodity,quantity,service_start_seconds,completed_at_seconds,on_time,status,plan_revision
+A,v1,1,cedar,Cedar Hall,ambient,24,776,1076,True,simulated completion,2
+A,v1,2,station,Station Pantry,ambient,24,1675,1855,True,simulated completion,2
+A,v1,3,river,River House,ambient,24,2733,2913,True,simulated completion,2
+A,v1,4,maple,Maple Centre,ambient,24,3465,3765,False,simulated completion,2
+B,v2,1,harbor,Harbor Centre,ambient,24,783,1083,True,simulated completion,2
+C,v3,1,clinic,Clinic Meal Hub,chilled,16,590,830,True,simulated completion,2
+C,v3,2,hill,Hill Community,ambient,24,1268,1508,True,simulated completion,2
+C,v3,3,linden,Linden House,chilled,16,3104,3404,True,simulated completion,2
+C,v3,4,park,Park Shelter,ambient,24,4000,4180,True,simulated completion,2
+C,v3,5,garden,Garden Kitchen,ambient,24,5297,5597,False,simulated completion,2
+C,v3,6,spruce,Spruce Centre,chilled,16,6093,6273,False,simulated completion,2
