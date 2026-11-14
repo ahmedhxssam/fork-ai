@@ -29,7 +29,13 @@ npm --prefix frontend run build
 npm --prefix frontend run test:e2e
 ```
 
-## Current conversational release
+## Current judge-readiness release
+
+November 14, 2026: `make test` passed **252 Python tests**, **4 frontend model tests**, TypeScript and production build. The final judge-readiness browser suite passed **38/38** (reported 1.2 minutes) and adds two end-to-end cases to the retained 36: category and above-fold demo discovery, real shared-shock/referee/current-approval export, plus a 390px mobile path with readable primary controls and no horizontal overflow. See [judge-readiness verification](docs/JUDGE_READINESS.md) for the final browser result, current screenshots/media, limitations and exact run provenance.
+
+The focused new checks were observed failing before the presentation changes, then passing. A later readability assertion exposed a 13px shared button override; the mobile CTA was corrected to 16px. Earlier screenshots/exports were preserved rather than overwritten by the new proof run.
+
+## Earlier conversational release
 
 Fresh integration on November 14, 2026: `make test` passed **252 Python tests**, **4 frontend model tests**, TypeScript and Vite build. The final real-browser suite passed **36/36** in 46.8 seconds, including 14 retained logistics cases and 22 Studio/conversation cases. The final scope-revision UI adjustment also passed a fresh production build and independent focused Chrome review.
 

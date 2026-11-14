@@ -1,53 +1,60 @@
-# Demo and recording
+# FORK: two-minute food-bank demo
 
-The default demo is **Scenario Studio**: natural issue description → missing/conflicting-detail questions → plain model review → three computed futures → common outages → independent evidence → human approval. Use [the conversational guide](docs/CONVERSATIONAL_INTAKE.md) and [two-minute pitch](docs/PITCH.md). Runtime remains deterministic and credential-free; the interview has bounded language/model support.
+**Business & Enterprise → Operations planning → Food-bank delivery resilience**
 
-For the incomplete repair example, answer “Six bikes”, “About 45 minutes each”, and “We have two hours”. Review its simplified scope and run: two volunteers complete four of six modeled repairs. Then show the conflicting-details example and explicitly resolve available staff and the room window. Choose three technicians and 90 minutes: all six 45-minute jobs finish in that model. Read actual results; do not promise different policies or a preferred strategy must win. The demonstration is that clarified facts change executable inputs and consequences.
+Use **http://127.0.0.1:8000/?view=logistics**. The root page remains Scenario Studio and links to the food-bank demo. Tell one story: a delivery vehicle breaks down; the coordinator compares replanning with a fixed plan under the same shock, checks the evidence, then approves a simulated result.
 
-The retained logistics walkthrough below runs at `http://127.0.0.1:8000/?view=logistics`. Its measured recovery story has no predetermined winning policy. The earlier silent video documents that logistics version.
+Runtime is **Deterministic Planner Mode**. The three strategy names describe published priorities, not autonomous LLM agents. All mission data is synthetic. Use [the spoken pitch](docs/PITCH.md).
+
+Current backup: [92-second narrated recording](artifacts/FORK-judge-demo.mp4), [captions](artifacts/FORK-judge-demo.srt) and [verification](docs/JUDGE_READINESS.md). It contains genuine browser actions with a local system voice.
 
 ## Before presenting
 
 ```sh
 make setup
+make test
 make demo
 ```
 
-Open `http://127.0.0.1:8000` for Studio or add `?view=logistics` for the food-bank lab. Use a legible laptop viewport and close unrelated tabs/notifications. Complete `make test` and the real-browser journey before relying on the demo. Keep the server terminal running. Install dependencies and browser binaries before disconnecting the network.
+In another terminal, run `make test-browser` against the running server. Record actual results and any failure in the release evidence; an unavailable browser is not a pass. Install dependencies and browser binaries before relying on an offline demonstration. Keep the server terminal running and use one backend worker.
 
-Start a fresh seed-26 experiment using the interface's reset/new-experiment action, or `make reset`. Reset preserves stored history. Confirm the mode and synthetic-data labels. If resuming, say **saved replay**; do not present it as freshly computed execution. A backup recording is useful only after it has actually been captured and checked.
+Start a fresh seed-26 experiment using the interface or `make reset`; stored history is preserved. Confirm the category, synthetic-data and deterministic-mode labels. A resumed experiment is a **saved replay**, not fresh computation. Close unrelated tabs and notifications, and use a legible laptop viewport.
 
 ## Exactly two minutes
 
-| Time | Visible action | Narrative purpose |
-| --- | --- | --- |
-| 0:00–0:15 | Show mission stock/demand and synthetic label | Establish 240 available meals for 264 requested |
-| 0:15–0:35 | Launch three worlds, point to different routes/settings | Identical resources, three declared preferences; deterministic mode |
-| 0:35–0:55 | Play synchronized clock, pause near a useful event | Physical custody and completed work are facts of the simulation |
-| 0:55–1:20 | Ask judge to choose vehicle; confirm time; inject breakdown | Same actual resource/time shock, genuine residual planning |
-| 1:20–1:45 | Show no-replan counterfactual and recovery gain; change weights | Isolate adaptation, then reveal preference-dependent tradeoffs |
-| 1:45–2:00 | Open a referee receipt, approve and download | Inspectable evidence and explicit human selection |
+| Time | Visible action | What to explain |
+|---|---|---|
+| 0:00–0:15 | Show the mission and choose **Fork the mission** | Food-bank planning: 240 meals available, 264 requested, three vehicles. |
+| 0:15–0:35 | Show the three worlds and initial benchmark | Same starting resources, different priorities. Greedy initially delivers more than all three named policies. |
+| 0:35–1:00 | Select vehicle A at elapsed 1,500 seconds (09:25); apply breakdown | Every isolated world gets the same vehicle/time shock. The engine replans only remaining work. |
+| 1:00–1:25 | Open the fixed-plan comparison and recovery gain | Compare adaptive execution with the original plan under the same shock. Read actual results; the unshocked reference is a different comparison. |
+| 1:25–1:40 | Inspect one cargo/event detail and referee receipt | The separate referee reconstructs movement, cargo, timing and results. A receipt checks modeled consistency. |
+| 1:40–2:00 | Change preferences, approve current evidence and download | The person chooses. Approval belongs to the current revision; exports contain simulated evidence, not dispatch orders. |
 
-Use the timed verbatim [pitch script](docs/PITCH.md). If computation takes longer than the rehearsal budget, explain that it is running and shorten commentary; do not substitute fabricated results or hide a saved replay. If gains are zero, say zero. If policies tie, show the tie. Mention the greedy benchmark honestly when discussing quality.
+For the seed-26 rehearsal, preserve these reference values:
 
-A common rehearsal choice is A at elapsed 1,500 seconds (09:25), but the judge may choose A, B or C and any supported time. The outcome is computed, not scripted. A late shock may have no effect; loss of the chilled vehicle can leave chilled demand unrecoverable.
+| Strategy | Initial meals | A-at-1,500 adaptive | Same-shock fixed plan | Recovery gain |
+|---|---:|---:|---:|---:|
+| Velocity | 216 | 168 | 144 | +24 |
+| Resilience | 192 | 168 | 120 | +48 |
+| Equity | 216 | 168 | 144 | +24 |
 
-## Recording checklist
+Initial greedy delivers **224**; the neutral solver delivers **216**. All three adapted outcomes above tie on delivered meals. Resilience's larger gain is relative to its weaker fixed-plan control. These figures describe this scenario and shock; confirm them on the release being shown.
 
-- [ ] Run the exact local setup and current checks; note any unresolved failure.
-- [ ] Reset to seed 26 and confirm the visible mode, scenario and synthetic assumptions.
-- [ ] Record genuine browser actions and actual computed changes; show saved replay labels when applicable.
-- [ ] Keep all three worlds, clock, shock choice and counterfactual readable.
-- [ ] Show actual recovery gain, including zero or negative values; do not promise a winner.
-- [ ] Show one physical detail: stranded cargo, locked service, depot stock or remaining shift.
-- [ ] Briefly open the independent receipt and show its validity/checks/hash.
-- [ ] Change a preference, approve the current revision, and verify the downloaded artifact opens.
+A judge may choose A, B or C and another supported time. If so, read the computed result and abandon the reference-number narration. A late shock may have no effect; a chilled-vehicle failure may leave chilled demand unrecoverable. Say zero when gain is zero, show ties, and never promise that one named policy wins. If computation takes longer, explain that it is running and shorten narration.
+
+## Recording and release checklist
+
+- [ ] Verify the actual judging-laptop launch, shock, comparison, receipt, approval and download journey.
+- [ ] Record fresh actions and genuine computed changes; label saved replay or fallback video honestly.
+- [ ] Keep the mission, three worlds, chosen shock and fixed-plan control readable.
+- [ ] Preserve greedy's initial win, unmet demand, ties and any zero/negative recovery gain.
+- [ ] Inspect one physical detail and one independent receipt.
+- [ ] Change a preference, approve the current revision and open the downloaded artifact.
 - [ ] Keep credentials, private notifications and unrelated personal content off-screen.
-- [ ] Check audio, legibility and final duration **at most 2:00** in the actual exported video.
-- [ ] Verify the video file and its playback before describing it as delivered.
+- [ ] Check narration, playback, legibility and exported duration **at most 2:00**.
+- [ ] Record the exact source/release and video used. Existing silent clips are historical version evidence until the final recording is captured and inspected.
 
-## Recovery during a presentation
+If the browser fails, refresh and resume the persisted experiment. Diagnose a command error before retrying. If fresh computation cannot run, use a genuine inspected recording or saved experiment with explicit labeling. Do not claim an unobserved browser pass, offline run, publication or submission.
 
-If the browser fails, refresh and resume the persisted experiment. If a command fails, show its actual error and retry only after understanding it. If fresh computation cannot run, use a genuinely recorded backup or saved experiment with explicit labeling. Do not claim an unrecorded video, browser pass, publication or live integration.
-
-The JSON export is full approved simulated evidence. The CSV lists completed simulated deliveries with fixed volunteers; it is not an outbound dispatch integration. All costs/emissions, priorities and geography are synthetic. See [SIMULATION.md](SIMULATION.md) for the precise model boundaries.
+Scenario Studio is secondary: show its bounded clarification/model-authoring flow only if asked or if time remains after the logistics story. It is not needed to explain the main use case. [Simulation semantics](SIMULATION.md), [checks and evidence](TESTING.md), [Devpost draft](DEVPOST.md).

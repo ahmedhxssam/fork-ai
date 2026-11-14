@@ -1,102 +1,88 @@
 # FORK
 
+**Business & Enterprise · Operations planning · Food-bank delivery resilience**
+
 **Rehearse a decision before its consequences become real.**
 
-FORK is a local decision laboratory. Describe an operational issue in ordinary words; Scenario Studio asks for missing details, helps resolve conflicting claims, and turns the reviewed answers into an executable resource-and-task model. Three scheduling choices face the same disruptions. An independent referee reconstructs the evidence before an outcome can be approved.
+A delivery vehicle breaks down. Which meals can still arrive, and what does changing the plan actually recover? FORK lets an operations coordinator rehearse that decision before dispatch: compare three planning strategies, apply the same breakdown, inspect independently checked results, then approve a simulated plan for export.
 
-The current release runs entirely in **deterministic mode**. Bounded phrase recognition and a guided interview run locally with the workflow scheduler. The retained food-bank logistics lab uses OR-Tools and NetworkX. No language model, deepagents or API key is used. The typed model and clarification contract are ready for a later AI authoring adapter; unrestricted language understanding is not claimed today.
+The primary demo is a **synthetic food-bank delivery mission**. FORK runs locally in **Deterministic Planner Mode**: OR-Tools proposes routes, a simulator executes them, and a separate referee reconstructs movement, cargo and results. A person makes the final choice. Runtime uses no language model, deepagents or API key. OpenAI Codex substantially assisted development.
 
-## Run locally
+![FORK food-bank demo: clear category, coordinator use case and shared-breakdown workflow](docs/assets/judge/02-food-bank.png)
 
-Prerequisites: Python **3.13**, Node.js **24**, npm, and Make. `uv` is optional. Install dependencies while online; the installed application uses only localhost during operation.
+## Run the food-bank demo
+
+Prerequisites: Python **3.13**, Node.js **24**, npm and Make. `uv` is optional.
 
 ```sh
 make setup
 make demo
 ```
 
-Open **http://127.0.0.1:8000**. `make demo` builds the frontend and serves it through FastAPI on one origin. Keep that terminal running. No hosted service is required. Run one backend worker; the local command serializer does not support multiple Uvicorn workers.
+Open **http://127.0.0.1:8000/?view=logistics**. The root page opens Scenario Studio; its **Try the food-bank demo** link reaches the same logistics view. Keep the server terminal running. `make demo` builds the frontend and serves it through FastAPI on one origin; use one backend worker.
 
-![Natural issue description with an explicit staffing-conflict question](docs/assets/conversation-02-conflict.png)
+1. Choose **Fork the mission**: 240 meals available for 264 requested, 12 orders and three vehicles.
+2. Compare Velocity, Resilience and Equity. Their names describe different priorities and reserve settings, not autonomous agents or a guaranteed winner.
+3. Select a vehicle and breakdown time. Every isolated world receives the same shock.
+4. Compare **adaptive execution with the same initial plan under the same shock without replanning**. This fixed-plan control isolates modeled recovery; the unshocked reference answers a different question.
+5. Inspect a referee receipt, adjust preferences, approve the current evidence and download JSON or a CSV of simulated completed deliveries.
+
+Export does not dispatch vehicles or contact volunteers. Changing the experiment or preferences invalidates approval. Reset creates a new experiment and preserves saved history.
+
+## Read the comparison honestly
+
+The conventional greedy baseline initially delivers more meals than the named policies:
+
+| Seed-26 initial plan | Simulated meals delivered |
+|---|---:|
+| Nearest-feasible greedy | **224** |
+| Neutral solver | 216 |
+| Velocity | 216 |
+| Resilience | 192 |
+| Equity | 216 |
+
+For the recorded **vehicle A breakdown at elapsed 1,500 seconds (09:25)**, the paired comparison is:
+
+| Strategy | Adaptive | Fixed plan, same shock | Recovery gain |
+|---|---:|---:|---:|
+| Velocity | 168 | 144 | +24 |
+| Resilience | 168 | 120 | +48 |
+| Equity | 168 | 144 | +24 |
+
+All three finish with the same delivered meals in this example. Resilience's larger gain is relative to its weaker control. Other supported shocks can produce different results, ties or zero gains. These are consequences inside the declared simulator, not meals delivered in the world or proof that the named policies outperform conventional optimization.
+
+## Scenario Studio: author another bounded scenario
+
+Scenario Studio is an existing secondary capability at **http://127.0.0.1:8000**. Describe an operational issue; a bounded deterministic interview asks for missing facts and quotes conflicting claims. Review the agreed assumptions, then run three resource/task schedules, apply common outages and inspect the independent checks before approval/export.
+
+The interview uses phrase recognition and clarification, not unrestricted language understanding. Its generic workflow model supports checkpointable jobs, resource pools, skills, dependencies, deadlines, materials, budgets and capacity outages. It does not infer routing or domain physics. The typed clarification/model contract is a possible future AI authoring boundary; no provider is connected. See [conversational intake](docs/CONVERSATIONAL_INTAKE.md) and [Scenario Studio](docs/SCENARIO_STUDIO.md).
+
+## Implementation, checks and limits
+
+FastAPI coordinates transactional SQLite snapshots and idempotent commands. React, TypeScript and Vite render synchronized maps, timelines, evidence and human approval. The logistics engine uses directed-road routing, explicit load/service durations, stranded cargo and bounded recovery. The independent standard-library referee recomputes movement, custody, timing and metrics without importing planner/simulator validation helpers.
 
 ```sh
+make test          # Python and frontend model checks, typecheck/build
+make test-browser  # Actual browser journey; needs a running demo server
 make dev           # API on :8000 and Vite on :5173
-make test          # Python suite, frontend typecheck and production build
-make test-browser  # Real-browser journey; installs official Chromium if missing
-make reset         # Create a new seed-26 experiment; preserve saved history
+make reset         # New seed-26 experiment; preserve saved history
 ```
 
-`make setup` creates `.venv` using `uv` when available, otherwise Python 3.13, installs `requirements.lock`, and runs `npm ci` in `frontend/`. Initial setup and a missing browser download require network access. Browser tests require a running demo server. See [TESTING.md](TESTING.md) for individual commands and evidence boundaries.
+See [TESTING.md](TESTING.md) for executed checks, snapshot-specific results and their limits. Initial dependency installation and any missing browser download require network access. Experiments persist in `data/fork.sqlite`; set `FORK_DB_PATH` before startup to use a different database. The local command serializer does not support multiple Uvicorn workers.
 
-Experiments persist in `data/fork.sqlite`; set `FORK_DB_PATH` before starting the backend to use another database. Reset starts a new experiment rather than deleting previous records. Resume an experiment through its saved browser session.
+Roads, orders, priorities, volunteer identities, costs and emissions are synthetic. Logistics supports one depot, one breakdown per experiment, fixed drivers, indivisible orders and deterministic travel. Initial routes make one trip; each healthy vehicle may make at most one recovery reload. Failed cargo cannot be rescued or transferred. No production dispatch, live telemetry, real-data integration, global optimality or field-validation claim is made.
 
-## Start with Scenario Studio
+## Presentation and source
 
-1. Describe an issue in your own words, or try incomplete details, conflicting details or another operation.
-2. Choose **Understand scenario**. Answer one question at a time; conflicting claims are quoted instead of silently resolved.
-3. Review the plain-language plan and its agreed assumptions, then run three genuinely computed futures and inspect their timelines and independent checks.
-4. Add resource outages and rerun the same counterfactual for every policy. Compare adaptive execution with a fixed-plan control under the same outages.
-5. Adjust preferences, review the current evidence, approve a future and export JSON or worked-segment CSV.
+- [Submission pack](SUBMISSION_READY.md) · [92-second narrated demo](artifacts/FORK-judge-demo.mp4) · [captions](artifacts/FORK-judge-demo.srt)
+- [Two-minute food-bank demo](DEMO.md) · [spoken pitch](docs/PITCH.md) · [copy-ready Devpost draft](DEVPOST.md)
+- [Simulation and metric definitions](SIMULATION.md) · [architecture and API](ARCHITECTURE.md)
+- [Runtime roles and AI disclosure](AGENTS.md) · [tests and evidence](TESTING.md)
+- [Engine evidence](docs/ENGINE_REPORT.md) · [independent referee evidence](docs/VERIFIER_REPORT.md)
+- [Scenario Studio](docs/SCENARIO_STUDIO.md) · [conversational authoring](docs/CONVERSATIONAL_INTAKE.md) · [roadmap](ROADMAP.md)
 
-Changing the issue or an earlier answer makes old results stale. New scenario starts an empty draft and preserves saved experiments. Advanced JSON remains optional. The deterministic interview handles a bounded workflow abstraction and explicitly asks about missing, ambiguous or unsupported details. See [conversational intake](docs/CONVERSATIONAL_INTAKE.md) and [the underlying model](docs/SCENARIO_STUDIO.md).
+Source repository: **[ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai)**. [Publication evidence](docs/PUBLICATION.md) identifies the previously published snapshot; it does not establish that later local changes are public. Existing [logistics](artifacts/FORK-demo-silent.webm), [Studio](artifacts/FORK-studio-demo-silent.webm) and [conversation](artifacts/FORK-conversation-demo-silent.webm) clips are silent recordings of their documented versions. The new [judge walkthrough](artifacts/FORK-judge-demo.mp4) is a genuine 92-second recording with local system-voice narration; see [current verification](docs/JUDGE_READINESS.md). Review it before submission. No hosted application or completed competition entry is claimed.
 
-## Retained logistics lab
+Built with Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScript, Vite, pytest, HTTPX and Playwright. Exact dependencies are in `requirements.lock` and `frontend/package-lock.json`.
 
-Open **http://127.0.0.1:8000/?view=logistics** or use the studio's logistics link.
-
-1. Launch the Riverton mission: 240 meals available for 264 requested, 12 orders, three vehicles and fixed volunteers.
-2. Compare Velocity, Resilience and Equity on synchronized maps and clocks.
-3. Choose vehicle A, B or C and a breakdown time. Apply the same shock to all worlds.
-4. Read **recovery gain**: adaptive execution minus the same initial plan under the same shock without replanning. The unshocked reference answers a different question.
-5. Change coverage, high-need service and cost preferences. Inspect actual routes, cargo, events and referee checks.
-6. Approve a verified revision and download JSON evidence or a CSV of simulated completed deliveries.
-
-Export never dispatches a vehicle or contacts a volunteer. Changing the experiment or preferences invalidates approval.
-
-## What the logistics comparison means
-
-The policies share the routing method and bounded search budget, with different published objective coefficients and reserve settings. Their names describe preferences, not proven superiority. The default initial fixture delivers **Velocity 216, Resilience 192, Equity 216 meals**. A conventional nearest-feasible greedy comparator delivers **224**; a neutral solver comparator delivers **216**. The greedy result beats all three named policies on aggregate initial meals. This is a decision-inspection tool, not evidence that the policies outperform conventional optimization.
-
-The distinctive demonstration is the paired recovery comparison: hold the scenario, initial plan, shock resource and shock time fixed; change whether replanning is allowed. Inspect both outcomes and their evidence. This isolates the modeled effect of adaptation within this simulator, not a causal estimate for real food-bank operations.
-
-## Implementation and evidence
-
-- Natural-prose conversation, missing-fact questions, explicit conflict resolution, typed data-only model boundary, one generic workflow scheduler and an independent workflow referee.
-- React/TypeScript/Vite workspace with workflow processing timelines and a retained SVG logistics lab, playback, preference comparison and evidence inspection.
-- FastAPI coordinator, transactional SQLite snapshots, idempotent launch/shock/approval commands and revision-bound exports.
-- Directed-road routing, explicit timed loads/services, stranded cargo and bounded recovery reloads.
-- Independent standard-library referee that reconstructs custody, movement, timing and metrics without importing planner/simulator validation helpers.
-
-The current combined release passes **252 Python tests**, **4 frontend model tests** and **36 real-browser checks**, including conversational authoring and the retained workflows. Independent acceptance checks show that clarified staffing and durations change real model outputs. See [conversational release verification](docs/CONVERSATION_RELEASE_VERIFICATION.md) and [TESTING.md](TESTING.md). The earlier 1,000-model workflow audit checked 6,000 physical results; these finite checks do not prove optimality, real-world model fidelity or unrestricted language understanding.
-
-The current [58-second conversational walkthrough](artifacts/FORK-conversation-demo-silent.webm) records an incomplete issue, plain-language answers, quoted conflicts, model review, real changed outcomes, independent checks and an approved download. It is silent; use the [two-minute spoken pitch](docs/PITCH.md) for narration. See [recording provenance](docs/CONVERSATION_RECORDING_REPORT.md). Earlier Studio and logistics clips remain as historical artifacts of those versions.
-
-## Deliberate limits
-
-Studio examples are synthetic. Its generic model supports checkpointable jobs, resource pools, skills, dependencies, deadlines, materials, work budgets and capacity outages. It does not model routing, stochastic arrivals or physical dynamics. A domain's name does not establish that these assumptions fit it.
-
-The logistics lab has synthetic roads, orders, priorities, volunteer identities, costs and emissions; one depot, one breakdown per experiment, fixed drivers, indivisible orders and deterministic travel. Initial routes make one trip; each healthy vehicle may make at most one recovery depot reload. Failed cargo cannot be rescued or transferred. No production dispatch, real data integration, live LLM strategist or global optimality guarantee is implemented.
-
-## Documentation
-
-- [Architecture and API](ARCHITECTURE.md)
-- [Conversational authoring and clarification](docs/CONVERSATIONAL_INTAKE.md)
-- [Scenario Studio and AI authoring boundary](docs/SCENARIO_STUDIO.md)
-- [Simulation, policies and metric definitions](SIMULATION.md)
-- [Deterministic roles and AI disclosure](AGENTS.md)
-- [Tests and measured evidence](TESTING.md)
-- [Two-minute demo and recording checklist](DEMO.md)
-- [Pitch script](docs/PITCH.md)
-- [Devpost draft](DEVPOST.md)
-- [Roadmap](ROADMAP.md)
-- [Engine evidence](docs/ENGINE_REPORT.md) · [Independent referee evidence](docs/VERIFIER_REPORT.md)
-
-Public source: **[github.com/ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai)**. The repository was created November 13, 2026 at 11:13 PM Eastern, and anonymous source access was verified. The app runs locally; no hosted deployment or completed competition entry is claimed. [DEVPOST.md](DEVPOST.md) is the submission draft, ready for the owner's final entry review.
-
-The public repository includes the reviewed Scenario Studio and conversational flow, updated documentation, screenshots and demo recordings. Publication was verified against the exact source commit and demo-video Git blob; see [publication evidence](docs/PUBLICATION.md).
-
-## Credits and AI assistance
-
-Built with Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScript, Vite, pytest, HTTPX and Playwright. Exact installed dependencies are recorded in `requirements.lock` and `frontend/package-lock.json`.
-
-OpenAI Codex provided substantial assistance with architecture, implementation, test authoring, debugging, review and documentation. This development assistance is distinct from runtime capability: the application currently makes no LLM calls. No percentage of human-authored code or organizer eligibility determination is asserted. No sponsor integration or award outcome is claimed.
+**AI assistance:** OpenAI Codex substantially assisted architecture, implementation, tests, debugging, review and documentation. This development assistance is separate from runtime capability. No human-authorship percentage, organizer eligibility ruling, sponsor integration or award outcome is asserted.

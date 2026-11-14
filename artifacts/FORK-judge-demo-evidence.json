@@ -1,0 +1,72 @@
+{
+  "synthetic": true,
+  "mode": "deterministic",
+  "narration": "Offline macOS Samantha system voice; not the owner voice",
+  "source": "Genuine browser actions on current local production build",
+  "external_requests": [],
+  "timeline": [
+    {
+      "index": 0,
+      "start": 0,
+      "speech": 8.430295
+    },
+    {
+      "index": 1,
+      "start": 9.832,
+      "speech": 10.133696
+    },
+    {
+      "index": 2,
+      "start": 21.365,
+      "speech": 12.911746
+    },
+    {
+      "index": 3,
+      "start": 35.678,
+      "speech": 9.550023
+    },
+    {
+      "index": 4,
+      "start": 46.63,
+      "speech": 15.153333
+    },
+    {
+      "index": 5,
+      "start": 63.185,
+      "speech": 12.013016
+    },
+    {
+      "index": 6,
+      "start": 76.598,
+      "speech": 12.965034
+    }
+  ],
+  "recorded_elapsed_seconds": 92.166,
+  "experiment_id": "fbc73b713b43497b",
+  "revision": 2,
+  "shock": {
+    "vehicle_id": "A",
+    "time": 1500
+  },
+  "worlds": [
+    {
+      "id": "velocity",
+      "delivered": 168,
+      "fixed_plan_delivered": 144,
+      "valid": true
+    },
+    {
+      "id": "resilience",
+      "delivered": 168,
+      "fixed_plan_delivered": 120,
+      "valid": true
+    },
+    {
+      "id": "equity",
+      "delivered": 168,
+      "fixed_plan_delivered": 144,
+      "valid": true
+    }
+  ],
+  "video": "artifacts/FORK-judge-demo.mp4"
+}

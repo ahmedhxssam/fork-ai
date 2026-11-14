@@ -10,7 +10,7 @@ async function launch(page:Page){
 
 test('prefilled editable brief, cross-domain model review and unsupported requests block',async({page})=>{
   await page.goto('/');
-  await expect(page.getByRole('heading',{name:'Every plan has a fork.',exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Test the plan. Before the disruption.',exact:true})).toBeVisible();
   await expect(page.getByRole('textbox',{name:'Describe what is happening'})).not.toHaveValue('');
   const first=await page.getByRole('textbox',{name:'Describe what is happening'}).inputValue();
   await compile(page);

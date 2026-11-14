@@ -1,0 +1,46 @@
+1
+00:00:00,000 --> 00:00:08,430
+FORK is operations planning in the Business and Enterprise
+track. It helps a coordinator test a plan before a disruption
+makes the consequences real.
+
+2
+00:00:09,832 --> 00:00:19,966
+This synthetic food bank has two hundred forty meals, two
+hundred sixty four requested, and three delivery vehicles. The
+coordinator can compare plans before dispatch.
+
+3
+00:00:21,365 --> 00:00:34,277
+Three strategies use identical starting resources and different
+priorities. We show ordinary greedy routing too. It initially
+delivers two hundred twenty four meals, more than every named
+policy. The tradeoffs stay visible.
+
+4
+00:00:35,678 --> 00:00:45,228
+Now the same vehicle fails at the same time in every world.
+Completed deliveries stay completed, failed cargo stays
+stranded, and only the remaining plan can change.
+
+5
+00:00:46,630 --> 00:01:01,783
+With this breakdown, every adapted plan delivers one hundred
+sixty eight meals. Their fixed-plan controls deliver one hundred
+forty four, one hundred twenty, and one hundred forty four.
+Recovery is measured against the same shock, not an easier
+scenario.
+
+6
+00:01:03,185 --> 00:01:15,198
+A separate referee reconstructs movement, cargo, and timing,
+then recomputes the outcomes. This verifies consistency inside
+the declared model. It does not prove an optimal route or real-
+world safety.
+
+7
+00:01:16,598 --> 00:01:29,563
+A person reviews the evidence, approves the current revision,
+and exports the simulated plan. No vehicle is dispatched. FORK
+makes operational tradeoffs visible, with independent checks and
+a human making the decision.

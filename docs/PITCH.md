@@ -1,39 +1,43 @@
-# FORK: two-minute conversational pitch
+# FORK: two-minute food-bank pitch
 
-Use the real interface and actual outcomes. Runtime is a bounded deterministic interview and simulator, not a connected language model. Do not preselect a winning strategy. The older clips document earlier interfaces; the conversational clip is the current walkthrough.
+**Track:** Business & Enterprise. **Use case:** Operations planning → Food-bank delivery resilience.
 
-**0:00–0:15 — Show the ordinary incomplete description.**
+Open `http://127.0.0.1:8000/?view=logistics`. Use real computed outcomes. The rehearsal below uses seed 26, vehicle A and elapsed 1,500 seconds (09:25). If a judge changes the shock, read the actual result instead. See [the demo guide](../DEMO.md) for reference numbers and the release checklist.
 
-“People describe problems, not simulation schemas. FORK starts with an issue like this: we have volunteers and bikes waiting, but we do not know how much we can finish.”
+**0:00–0:15 — Show the mission; choose Fork the mission.**
 
-**0:15–0:40 — Understand scenario; answer quantity, time per job and time available.**
+“A food bank has 240 meals, 264 requested, and three delivery vehicles. What happens when one vehicle breaks down? FORK lets the coordinator rehearse that decision before dispatch.”
 
-“It asks only for the missing facts, one at a time. I can answer in a short phrase. These answers become actual capacity and processing constraints, with source evidence I can inspect.”
+**0:15–0:35 — Show the three plans and initial benchmark.**
 
-**0:40–1:00 — Review assumptions and run.**
+“Three strategies start with identical resources and different priorities. This runs deterministically with a routing solver and simulator. We show the conventional greedy baseline too: it initially delivers 224 meals and beats all three named policies.”
 
-“Here is the plain-language model. This version assumes checkpointable work and explicitly excludes costs, materials and travel. With two volunteers, six 45-minute jobs and two hours, four repairs complete. The timelines are computed; the numbers are not generated narration.”
+**0:35–1:00 — Apply vehicle A's breakdown at 1,500 seconds.**
 
-**1:00–1:25 — Show conflicting-details example and resolve both conflicts.**
+“Now the same vehicle fails at the same time in every world. Completed work stays completed, failed cargo stays stranded, and recovery can change only the remaining plan. The question is how much replanning helps under this exact disruption.”
 
-“What if the description contradicts itself? It quotes two versus three technicians and one hour versus 90 minutes. It asks which facts to use instead of quietly choosing the last number. Three technicians with 90 minutes complete all six jobs in this model.”
+**1:00–1:25 — Show adaptive versus fixed-plan outcomes.**
 
-**1:25–1:45 — Point to shared worlds, optional outage controls and independent receipt.**
+“Here, all three adapted plans deliver 168 meals. Their fixed-plan controls deliver 144, 120 and 144 under the same shock. The larger recovery gain does not mean a better final outcome. Different shocks can produce ties or no gain.”
 
-“The same workflow engine handles the changed problem. We can apply one common outage to every scheduling choice and compare adaptation with a locked-plan control. A separate referee reconstructs every worked minute and recomputes the results.”
+**1:25–1:40 — Open one cargo/event detail and referee receipt.**
 
-**1:45–2:00 — Approve current evidence and export.**
+“A separate referee reconstructs movement, cargo and timing, then recomputes the results. This checks consistency inside our synthetic model. It does not prove real-world safety or an optimal route.”
 
-“A person reviews and approves the current evidence. A future OpenAI adapter can interpret freer language through the same model and clarification contract; it cannot invent outcomes or bypass verification. This version runs locally without a key or model calls.”
+**1:40–2:00 — Change preferences, approve and download.**
 
-## Judge questions
+“The coordinator reviews priorities, approves the current evidence and exports a simulated-plan packet. Nothing is dispatched. FORK is operations planning with a fair comparison, inspectable evidence and a person making the final decision.”
 
-**What is new?** The integrated experience: natural issue clarification, visible conflict resolution, traceable model inputs, shared starting conditions, common disruptions, paired controls, independent evidence and revision-bound human choice. Scheduling and simulation themselves already exist.
+## Short answers for judges
 
-**How general is it?** The engine handles bounded resource/task workflows. The current conversational interview deliberately offers a simpler scope and asks when facts are missing or ambiguous. It cannot infer arbitrary domain physics, travel, clinical judgment or the truth of user claims.
+**What is the product?** A local decision-rehearsal tool for an operations coordinator. The primary example is food-bank delivery resilience; Scenario Studio is an existing secondary way to clarify and author bounded resource/task scenarios.
 
-**What is AI today?** Codex substantially assisted development. Runtime remains deterministic because the user deferred API-key setup. The authoring/clarification schema is ready for a bounded provider adapter; no LLM/deepagents/sponsor integration is claimed.
+**What is technically distinctive?** The same disruption across isolated worlds, an adaptive-versus-fixed-plan control, independent evidence reconstruction and approval/export tied to current evidence. Routing, scheduling and simulation themselves already exist.
 
-**Which track?** Intended main-track fit is Business and Enterprise: operational planning and analytics. Final category selection and entry submission remain owner actions. No award outcome is promised.
+**Are these AI agents?** No. Runtime uses deterministic policy configurations, a simulator, a separate referee and fixed preference comparison. OpenAI Codex substantially assisted development. No runtime LLM, deepagents, model API key or sponsor integration is implemented.
 
-**What do checks prove?** Consistency inside a declared model and the tested UI/recovery behavior. They do not establish optimality, operational safety, real-world model fidelity or unrestricted language understanding.
+**Why does greedy initially win?** The named strategies encode different priorities and reserve settings, not proven superiority. The initial totals are greedy **224**, Velocity **216**, Resilience **192**, Equity **216**. Under A at 1,500 seconds, adapted totals are **168 / 168 / 168**, controls **144 / 120 / 144**, gains **+24 / +48 / +24**. Read each comparison for what it measures.
+
+**How general is it?** Logistics has declared vehicle/cargo/road rules. Scenario Studio separately supports a bounded resource/task model and asks about missing or conflicting inputs; it does not infer arbitrary domain physics or unrestricted prose.
+
+**What do checks establish?** The tested behavior and consistency of declared models. Current release/browser evidence belongs in [TESTING.md](../TESTING.md); it does not establish field impact, operational safety or competition eligibility.

@@ -1,0 +1,9 @@
+vehicle_id,volunteer_id,stop_order,destination_id,destination,commodity,quantity,service_start_seconds,completed_at_seconds,on_time,status,plan_revision
+A,v1,1,hill,Hill Community,ambient,24,648,888,True,simulated completion,2
+B,v2,1,garden,Garden Kitchen,ambient,24,749,1049,True,simulated completion,2
+B,v2,2,station,Station Pantry,ambient,24,3017,3197,True,simulated completion,2
+B,v2,3,cedar,Cedar Hall,ambient,24,3796,4096,True,simulated completion,2
+C,v3,1,clinic,Clinic Meal Hub,chilled,16,590,830,True,simulated completion,2
+C,v3,2,oak,Oak Pantry,ambient,24,1240,1420,True,simulated completion,2
+C,v3,3,spruce,Spruce Centre,chilled,16,2234,2414,True,simulated completion,2
+C,v3,4,linden,Linden House,chilled,16,3225,3525,True,simulated completion,2
