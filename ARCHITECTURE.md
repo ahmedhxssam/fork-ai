@@ -1,6 +1,14 @@
 # Architecture
 
-FORK is a local Python service and React single-page application. Deterministic planning and physical simulation produce persisted evidence; the browser projects that evidence onto a playback clock.
+FORK is a local Python service and React single-page application with two model families. The default workflow studio compiles bounded briefs into typed resource/task models. The retained logistics lab computes physical vehicle routes. Each has a separate independent referee and metric contract; both use the same durable store and revision-bound human approval pattern.
+
+## Scenario Studio
+
+`frontend/src/studio/` provides editable briefs, model review and workflow timelines. `backend/studio/compiler.py` emits only validated data defined in `schema.py`. `engine.py` schedules checkpointable work in integer minutes. `referee.py` independently reconstructs physical feasibility and metrics using the standard library. `api.py` coordinates three policies, an unshocked baseline, paired fixed-plan controls, comparison, versioned mutations and evidence-checked exports.
+
+The studio routes are `/api/studio/templates`, `/compile`, `/schema`, `/experiments`, and `/experiments/{id}` with `/events`, `/preferences`, `/approve` and `/export`. Mutations require the current revision; launch takes the reviewed model and its canonical hash. Generic experiment IDs are isolated from logistics routes. The model JSON schema is an AI adapter boundary, not a current provider integration. See [the full studio contract and limits](docs/SCENARIO_STUDIO.md).
+
+The remaining architecture below describes the retained logistics lab, accessible at `/?view=logistics`.
 
 ```mermaid
 flowchart LR

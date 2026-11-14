@@ -1,6 +1,8 @@
 # Demo and recording
 
-The demo is a local executable experiment in **Deterministic Planner Mode**. The story is a measured recovery comparison, not a contest with a predetermined winning policy.
+The default demo is **Scenario Studio**: editable brief → reviewable model → three computed futures → common outages → independent evidence → human approval. Use the updated [two-minute studio pitch](docs/PITCH.md) and [studio model guide](docs/SCENARIO_STUDIO.md). Runtime remains deterministic and credential-free. Demonstrate two genuinely different templates using the same engine; explain that arbitrary prose and new physics remain unsupported.
+
+The retained logistics walkthrough below runs at `http://127.0.0.1:8000/?view=logistics`. Its measured recovery story has no predetermined winning policy. The earlier silent video documents that logistics version.
 
 ## Before presenting
 
@@ -9,7 +11,7 @@ make setup
 make demo
 ```
 
-Open `http://127.0.0.1:8000`. Use a legible laptop viewport and close unrelated tabs/notifications. Complete `make test` and the real-browser journey before relying on the demo. Keep the server terminal running. Install dependencies and browser binaries before disconnecting the network.
+Open `http://127.0.0.1:8000` for Studio or add `?view=logistics` for the food-bank lab. Use a legible laptop viewport and close unrelated tabs/notifications. Complete `make test` and the real-browser journey before relying on the demo. Keep the server terminal running. Install dependencies and browser binaries before disconnecting the network.
 
 Start a fresh seed-26 experiment using the interface's reset/new-experiment action, or `make reset`. Reset preserves stored history. Confirm the mode and synthetic-data labels. If resuming, say **saved replay**; do not present it as freshly computed execution. A backup recording is useful only after it has actually been captured and checked.
 

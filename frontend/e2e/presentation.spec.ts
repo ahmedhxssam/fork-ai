@@ -6,7 +6,7 @@ const assets=resolve(process.cwd(),'../docs/assets');
 const artifacts=resolve(process.cwd(),'../artifacts');
 
 async function launch(page:Page){
-  await page.goto('/');
+  await page.goto('/?view=logistics');
   await page.getByRole('button',{name:/fork the mission/i}).click();
   await expect(page.getByRole('heading',{name:'Velocity',exact:true})).toBeVisible();
 }
@@ -26,7 +26,7 @@ async function shock(page:Page,vehicle:string,minutes='30'){
 
 test('presentation screenshots, independent evidence, and real downloadable artifacts',async({page})=>{
   await mkdir(assets,{recursive:true}); await mkdir(artifacts,{recursive:true});
-  await page.goto('/');
+  await page.goto('/?view=logistics');
   await expect(page.getByRole('button',{name:/fork the mission/i})).toBeEnabled();
   await page.screenshot({path:resolve(assets,'01-mission.png'),fullPage:true});
   await page.getByRole('button',{name:/fork the mission/i}).click();

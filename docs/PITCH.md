@@ -1,39 +1,39 @@
-# FORK: two-minute pitch
+# FORK: two-minute studio pitch
 
-Rehearse these six timed segments with the actual interface. Actions are stage directions, not narration. Stop at 2:00. Read the actual measured recovery result; no number or winner is preselected.
+Rehearse with the actual interface and measured results. The default scenario studio is deterministic; the retained food-bank demo is available through Logistics lab. Stop at two minutes. Do not preselect a winning policy or imply a runtime AI connection.
 
-**0:00–0:15 — Show mission briefing.**
+**0:00–0:15 — Show the editable brief.**
 
-“FORK lets you rehearse a decision before its consequences become real. This fictional food bank has 240 meals for 264 requested. Every road, order and cost you see is synthetic.”
+“Before a team commits to a plan, what if it could rehearse the consequences? FORK turns a scenario into an inspectable model, then lets you explore different futures.”
 
-**0:15–0:35 — Launch and point to the three worlds.**
+**0:15–0:35 — Compile and show a resource, dependency and assumption.**
 
-“We give identical resources to three strategies: Velocity, Resilience and Equity. They use different published optimization preferences. This is Deterministic Planner Mode: real route computation, no language-model calls. The names describe choices, not guaranteed winners.”
+“This repair clinic has shared benches, limited parts and urgent jobs. The deterministic compiler shows exactly which facts became rules. It also exposes defaults. Unsupported requests block the run; nothing quietly becomes a made-up assumption.”
 
-**0:35–0:55 — Play, then pause.**
+**0:35–0:55 — Run three futures; show the work traces.**
 
-“The maps share one clock. Meals move through timed loads and completed deliveries. Cargo has a location. Work already completed stays completed. And our ordinary greedy benchmark actually delivers more initial meals than these named strategies.”
+“These scheduling choices share the same inputs. The bars are actual computed processing, constrained by capacity, prerequisites, materials and budget. They may tie. Their names describe preferences, not guaranteed winners.”
 
-**0:55–1:20 — Invite a vehicle choice, confirm time, apply shock.**
+**0:55–1:20 — Add a judge-selected outage and apply it.**
 
-“Choose a vehicle to lose. We apply that exact breakdown to every world. Its cargo becomes stranded; we cannot magically transfer it. Healthy vehicles preserve their ongoing work, then genuinely replan with remaining stock and shift time.”
+“Choose which resource goes offline and for how long. Every future gets the same disruption. Checkpointed work stays done. Here is the same shocked plan with its original assignments locked, compared with a schedule allowed to adapt. The difference can be zero or negative.”
 
-**1:20–1:45 — Show recovery gain and adjust preferences.**
+**1:20–1:40 — Switch to IT response or event production; compile and run.**
 
-“Here is the key comparison: the same initial plan, the same shock, with and without replanning. This difference measures adaptation inside our model. Read the actual gain here—even zero matters. Changing service and cost preferences changes how we rank verified tradeoffs.”
+“Now the problem changes completely: different skills, work and dependencies. We changed the model data, not the scheduling engine. The shared abstraction is resource-constrained work; we do not claim to model every kind of problem.”
 
-**1:45–2:00 — Inspect receipt, approve, export.**
+**1:40–2:00 — Open independent receipt; approve and export.**
 
-“An independent referee reconstructs the physical evidence. I can inspect its checks, approve this revision and export it. Nothing is dispatched. FORK makes a decision's consequences, assumptions and proof inspectable before a human chooses.”
+“A separate referee reconstructs the processing and recomputes the results. A human approves the current model and evidence. A future OpenAI adapter can propose this same typed model from freer language; it cannot fabricate outcomes or bypass the referee. No model calls run in this version.”
 
-## If asked about AI
+## Judge questions
 
-“Codex substantially assisted development. The application currently uses deterministic optimization and simulation, not a live LLM agent. A future strategist would propose bounded choices while the simulator and referee retain authority.”
+**What is new?** The contribution is the integrated workflow: traceable model authoring, shared starting conditions, common disruptions, paired fixed-plan controls, independent evidence and revision-bound human choice. Simulation, scheduling and scenario comparison themselves already exist.
 
-## If asked what is new
+**Is this AI?** Codex substantially assisted development. Runtime is deliberately deterministic until API-key setup is enabled later. The authoring boundary is an exposed typed JSON schema; no LLM/deepagents/sponsor integration is claimed today.
 
-“The integration is the contribution: equal starting worlds, a common shock, the paired no-replan control, preference-sensitive comparison, independently reconstructed evidence and revision-bound human approval. We are not claiming routing or simulation itself is new.”
+**How general is it?** One engine handles bounded resource/task workflows across domains. A domain needing travel, stochastic behavior, noncheckpointable processes or other physics needs a validated model extension. A persuasive description alone cannot establish that a model fits reality.
 
-## If asked what the tests prove
+**Which track?** Business and Enterprise is the intended main-track fit: operational planning and analytics. Creativity is demonstrated by traceable authoring and counterfactual evidence; utility by measurable tradeoffs; charity by explicit human priorities; avidity by a working, inspected implementation. Track selection and competition submission remain the owner's final entry action.
 
-“The final Python run passed 84 tests, with 14 browser checks passing; a finite 6,780-world synthetic sweep had no invalid receipts or metric discrepancies. That supports this implementation's modeled consistency. It does not establish optimality or real-world performance.”
+**What does verification prove?** Consistency inside a declared synthetic minute/capacity model. Tests and independent replay do not establish global optimality, field performance, faithful domain assumptions or safety.

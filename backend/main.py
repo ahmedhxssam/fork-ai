@@ -94,7 +94,7 @@ def create_app(store_path: str | Path | None = None):
 
     def get_experiment(experiment_id):
         value = store.get(experiment_id)
-        if value is None:
+        if value is None or value.get("kind") == "workflow":
             raise HTTPException(404, "Experiment not found. Launch a new simulation.")
         return value
 
@@ -276,6 +276,9 @@ def create_app(store_path: str | Path | None = None):
                     yield f"id: {index}\nevent: simulation\ndata: {json.dumps(record)}\n\n"
             yield 'event: complete\ndata: {}\n\n'
         return StreamingResponse(stream(), media_type="text/event-stream")
+
+    from backend.studio.api import install_studio_routes
+    install_studio_routes(application, store, mutation_lock)
 
     dist = ROOT / "frontend/dist"
     if (dist / "assets").exists():

@@ -29,11 +29,21 @@ npm --prefix frontend run build
 npm --prefix frontend run test:e2e
 ```
 
-## Recorded results
+## Current Studio release
+
+Fresh combined checks on November 14, 2026: `make test` passed **182 Python tests**, **4 frontend model tests**, TypeScript and production Vite build. After a small skip-link clipping fix for full-page captures, the build passed again and the complete real-browser suite passed **26/26** in 22.8 seconds: 14 retained logistics cases and 12 Studio cases. Four existing Python dependency deprecation warnings remain.
+
+Studio contributes 36 compiler/scheduler tests, 48 independent-referee tests and 14 real API tests. The browser checks exercise all three domains through fresh computation, multiple outages, real approved JSON/CSV downloads, unsupported requests, empty reset, keyboard/mobile layout, stale inputs, draft restore, transient errors, lost successful responses, idempotent retry and delayed template responses. External origins were blocked during a fresh three-domain Studio journey; none were requested. Initial dependency installation still requires network access.
+
+The reproducible independent audit is `PYTHONPATH=. .venv/bin/python scripts/studio_backend_review_sweep.py`: 1,000 random bounded models, 6,000 actual adaptive/control results independently valid, 3,000 nominal/control parity pairs, 3,000 no-future-peek prefixes and 3,000 outage-order pairs. These are different checks over the same finite cases, not independent field samples.
+
+See [Studio release verification](docs/STUDIO_RELEASE_VERIFICATION.md), [engine report](docs/STUDIO_ENGINE_REPORT.md), [referee report](docs/STUDIO_REFEREE_REPORT.md), [backend review](docs/STUDIO_BACKEND_REVIEW.md), [whole-change review](docs/STUDIO_FINAL_REVIEW.md), and [recording evidence](docs/STUDIO_RECORDING_REPORT.md). The reports have snapshot-specific counts; the combined integration totals above are the final run.
+
+## Original logistics release results
 
 | Check | Recorded evidence | Boundary |
 | --- | --- | --- |
-| Full Python suite | 84 passed; four third-party deprecation warnings | Engine, independent referee, comparison, persistence and real API |
+| Original Python suite | 84 passed; four third-party deprecation warnings | Logistics engine, independent referee, comparison, persistence and real API |
 | Engine suite | 35 passed | Directed routes, shock boundaries, custody, locking, recovery and baselines |
 | Independent referee suite | 40 passed | Hand-derived fixtures, malformed evidence, deliberate tampering and recovery-load limit |
 | Full-world sweep | 6,780 worlds; zero invalid receipts, zero recomputed-metric differences | Finite synthetic audit, not exhaustive proof |

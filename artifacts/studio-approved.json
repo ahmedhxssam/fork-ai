@@ -1,0 +1,2879 @@
+{
+  "id": "wf-964598db24524f84",
+  "kind": "workflow",
+  "revision": 2,
+  "mode": "deterministic",
+  "brief": "Title: IT service response\nNote: Synthetic service tasks; no actual systems are accessed.\nHorizon: 80 minutes\nBudget: 1800 cents\nStock: licenses=2\nResource ops: Operations team has capacity 2, skills ops, and costs 6 cents per minute.\nResource security: Security specialist has capacity 1, skills security, and costs 8 cents per minute.\nTask diagnose: Diagnose incident takes 8 minutes using skill ops; needs 1 unit; available at 0; due by 10; priority 3; value 6; after none; consumes none.\nTask restore: Restore customer service takes 22 minutes using skill ops; needs 2 units; available at 0; due by 35; priority 3; value 15; after diagnose; consumes 1 licenses.\nTask dashboard: Repair internal dashboard takes 10 minutes using skill ops; needs 1 unit; available at 0; due by 28; priority 1; value 4; after diagnose; consumes none.\nTask audit: Audit compromised access takes 18 minutes using skill security; needs 1 unit; available at 0; due by 30; priority 3; value 9; after diagnose; consumes none.\nTask rotate: Rotate service credentials takes 12 minutes using skill security; needs 1 unit; available at 0; due by 45; priority 3; value 8; after audit; consumes 1 licenses.\nTask validate: Validate restored service takes 10 minutes using skill ops; needs 1 unit; available at 0; due by 50; priority 3; value 10; after restore,rotate; consumes none.",
+  "model": {
+    "schema_version": "fork-workflow/1",
+    "title": "IT service response",
+    "horizon": 80,
+    "resources": [
+      {
+        "id": "ops",
+        "label": "Operations team",
+        "capacity": 2,
+        "skills": [
+          "ops"
+        ],
+        "cost_per_minute": 6
+      },
+      {
+        "id": "security",
+        "label": "Security specialist",
+        "capacity": 1,
+        "skills": [
+          "security"
+        ],
+        "cost_per_minute": 8
+      }
+    ],
+    "tasks": [
+      {
+        "id": "diagnose",
+        "label": "Diagnose incident",
+        "duration": 8,
+        "skill": "ops",
+        "units": 1,
+        "release": 0,
+        "due": 10,
+        "priority": 3,
+        "value": 6,
+        "depends_on": [],
+        "materials": {}
+      },
+      {
+        "id": "restore",
+        "label": "Restore customer service",
+        "duration": 22,
+        "skill": "ops",
+        "units": 2,
+        "release": 0,
+        "due": 35,
+        "priority": 3,
+        "value": 15,
+        "depends_on": [
+          "diagnose"
+        ],
+        "materials": {
+          "licenses": 1
+        }
+      },
+      {
+        "id": "dashboard",
+        "label": "Repair internal dashboard",
+        "duration": 10,
+        "skill": "ops",
+        "units": 1,
+        "release": 0,
+        "due": 28,
+        "priority": 1,
+        "value": 4,
+        "depends_on": [
+          "diagnose"
+        ],
+        "materials": {}
+      },
+      {
+        "id": "audit",
+        "label": "Audit compromised access",
+        "duration": 18,
+        "skill": "security",
+        "units": 1,
+        "release": 0,
+        "due": 30,
+        "priority": 3,
+        "value": 9,
+        "depends_on": [
+          "diagnose"
+        ],
+        "materials": {}
+      },
+      {
+        "id": "rotate",
+        "label": "Rotate service credentials",
+        "duration": 12,
+        "skill": "security",
+        "units": 1,
+        "release": 0,
+        "due": 45,
+        "priority": 3,
+        "value": 8,
+        "depends_on": [
+          "audit"
+        ],
+        "materials": {
+          "licenses": 1
+        }
+      },
+      {
+        "id": "validate",
+        "label": "Validate restored service",
+        "duration": 10,
+        "skill": "ops",
+        "units": 1,
+        "release": 0,
+        "due": 50,
+        "priority": 3,
+        "value": 10,
+        "depends_on": [
+          "restore",
+          "rotate"
+        ],
+        "materials": {}
+      }
+    ],
+    "stock": {
+      "licenses": 2
+    },
+    "budget_cents": 1800,
+    "events": [
+      {
+        "id": "outage-mwfyjkh1-0",
+        "kind": "resource_outage",
+        "resource_id": "ops",
+        "at": 5,
+        "duration": 10,
+        "capacity_lost": 1,
+        "label": "Outage 1"
+      },
+      {
+        "id": "outage-mwfyjkhz-1",
+        "kind": "resource_outage",
+        "resource_id": "ops",
+        "at": 25,
+        "duration": 8,
+        "capacity_lost": 1,
+        "label": "Outage 2"
+      }
+    ]
+  },
+  "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+  "worlds": [
+    {
+      "id": "throughput",
+      "name": "Throughput",
+      "policy": "throughput",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 18,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 18,
+          "end": 25,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 33,
+          "end": 48,
+          "units": 2
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "dashboard",
+          "time": 18
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 48
+        },
+        {
+          "task_id": "validate",
+          "time": 58
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "task_paused",
+          "summary": "Paused Restore customer service: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 33,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for Restore customer service on its original pool.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 4,
+        "priority_on_time": 3,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 58
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 4,
+          "priority_on_time": 3,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 58
+        },
+        "evidence_hash": "19d48c87eb2df601d72874012e9b9fc96f879faf27c5ffb2a12f465851aa2b15"
+      },
+      "compute_seconds": 0.00053
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "policy": "resilience",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 18,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 18,
+          "end": 25,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 33,
+          "end": 48,
+          "units": 2
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "dashboard",
+          "time": 18
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 48
+        },
+        {
+          "task_id": "validate",
+          "time": 58
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "task_paused",
+          "summary": "Paused Restore customer service: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 33,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for Restore customer service on its original pool.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 4,
+        "priority_on_time": 3,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 58
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 4,
+          "priority_on_time": 3,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 58
+        },
+        "evidence_hash": "008b701224f37789cac44080fc20262f2c7887f19ef775a05c6d6d99ac161f62"
+      },
+      "compute_seconds": 0.00054
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "policy": "priority",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 18,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 18,
+          "end": 25,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 33,
+          "end": 48,
+          "units": 2
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "dashboard",
+          "time": 18
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 48
+        },
+        {
+          "task_id": "validate",
+          "time": 58
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "task_paused",
+          "summary": "Paused Restore customer service: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 33,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for Restore customer service on its original pool.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 4,
+        "priority_on_time": 3,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 58
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 4,
+          "priority_on_time": 3,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 58
+        },
+        "evidence_hash": "d181937c46669f565dad0aa0ed0bc42c1264c2ae509bd340e77908899461ad70"
+      },
+      "compute_seconds": 0.00052
+    }
+  ],
+  "baseline_worlds": [
+    {
+      "id": "throughput",
+      "name": "Throughput",
+      "policy": "throughput",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 18,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 18,
+          "end": 40,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 40,
+          "end": 50,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "dashboard",
+          "time": 18
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 40
+        },
+        {
+          "task_id": "validate",
+          "time": 50
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 18,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 40,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 40,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 50,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 5,
+        "priority_on_time": 4,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 50
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 5,
+          "priority_on_time": 4,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 50
+        },
+        "evidence_hash": "af053fb8897922bf2bd575a0d9190fc88be3769d478c8e51d1069855cc054d8a"
+      },
+      "compute_seconds": 0.00057
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "policy": "resilience",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 30,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 30,
+          "end": 40,
+          "units": 1
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 38,
+          "end": 48,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "restore",
+          "time": 30
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "dashboard",
+          "time": 40
+        },
+        {
+          "task_id": "validate",
+          "time": 48
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 38,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 40,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 5,
+        "priority_on_time": 5,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 48
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 5,
+          "priority_on_time": 5,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 48
+        },
+        "evidence_hash": "41d1b75be841c7d6417658bd14a25c175a8d7ad8c131bf65b179f18b620afd8e"
+      },
+      "compute_seconds": 0.00052
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "policy": "priority",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": true,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 30,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 30,
+          "end": 40,
+          "units": 1
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 38,
+          "end": 48,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "restore",
+          "time": 30
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "dashboard",
+          "time": 40
+        },
+        {
+          "task_id": "validate",
+          "time": 48
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 30,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 30,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 38,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 40,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 5,
+        "priority_on_time": 5,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 48
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 5,
+          "priority_on_time": 5,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 48
+        },
+        "evidence_hash": "c1da9d897677790c21923980756577fc3107997a64e5f90002dc75b568a88ee7"
+      },
+      "compute_seconds": 0.00052
+    }
+  ],
+  "controls": [
+    {
+      "id": "throughput",
+      "name": "Throughput",
+      "policy": "throughput",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": false,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 8,
+          "end": 18,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 18,
+          "end": 25,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 33,
+          "end": 48,
+          "units": 2
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 48,
+          "end": 58,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "dashboard",
+          "time": 18
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 48
+        },
+        {
+          "task_id": "validate",
+          "time": 58
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 18,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "task_paused",
+          "summary": "Paused Restore customer service: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 33,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for Restore customer service on its original pool.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 48,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 48,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 58,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 4,
+        "priority_on_time": 3,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 58
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 4,
+          "priority_on_time": 3,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 58
+        },
+        "evidence_hash": "39f5d8b44254f3aafda8fd4aa57de8b43567b92a00261a5cef471374fb7715a9"
+      },
+      "compute_seconds": 0.00107
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "policy": "resilience",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": false,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 15,
+          "end": 25,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 33,
+          "end": 45,
+          "units": 2
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 45
+        },
+        {
+          "task_id": "dashboard",
+          "time": 55
+        },
+        {
+          "task_id": "validate",
+          "time": 55
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "task_paused",
+          "summary": "Paused Restore customer service: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 33,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for Restore customer service on its original pool.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 3,
+        "priority_on_time": 3,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 55
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 3,
+          "priority_on_time": 3,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 55
+        },
+        "evidence_hash": "7e2d0fdea1e05bcabadb1870243ccfb16b783019ff18b50d5549923ce6bad411"
+      },
+      "compute_seconds": 0.00079
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "policy": "priority",
+      "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+      "adapt": false,
+      "segments": [
+        {
+          "task_id": "diagnose",
+          "resource_id": "ops",
+          "start": 0,
+          "end": 8,
+          "units": 1
+        },
+        {
+          "task_id": "audit",
+          "resource_id": "security",
+          "start": 8,
+          "end": 26,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 15,
+          "end": 25,
+          "units": 2
+        },
+        {
+          "task_id": "rotate",
+          "resource_id": "security",
+          "start": 26,
+          "end": 38,
+          "units": 1
+        },
+        {
+          "task_id": "restore",
+          "resource_id": "ops",
+          "start": 33,
+          "end": 45,
+          "units": 2
+        },
+        {
+          "task_id": "dashboard",
+          "resource_id": "ops",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        },
+        {
+          "task_id": "validate",
+          "resource_id": "ops",
+          "start": 45,
+          "end": 55,
+          "units": 1
+        }
+      ],
+      "completions": [
+        {
+          "task_id": "diagnose",
+          "time": 8
+        },
+        {
+          "task_id": "audit",
+          "time": 26
+        },
+        {
+          "task_id": "rotate",
+          "time": 38
+        },
+        {
+          "task_id": "restore",
+          "time": 45
+        },
+        {
+          "task_id": "dashboard",
+          "time": 55
+        },
+        {
+          "task_id": "validate",
+          "time": 55
+        }
+      ],
+      "events": [
+        {
+          "time": 0,
+          "kind": "task_started",
+          "summary": "Started Diagnose incident on Operations team; materials consumed once.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 5,
+          "kind": "resource_outage",
+          "summary": "Outage 1: 1 capacity unavailable until minute 15.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_completed",
+          "summary": "Completed Diagnose incident.",
+          "task_id": "diagnose",
+          "resource_id": "ops"
+        },
+        {
+          "time": 8,
+          "kind": "task_started",
+          "summary": "Started Audit compromised access on Security specialist; materials consumed once.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 15,
+          "kind": "resource_restored",
+          "summary": "Outage 1: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 15,
+          "kind": "task_started",
+          "summary": "Started Restore customer service on Operations team; materials consumed once.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "resource_outage",
+          "summary": "Outage 2: 1 capacity unavailable until minute 33.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 25,
+          "kind": "task_paused",
+          "summary": "Paused Restore customer service: insufficient available capacity or remaining budget; completed work retained.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 26,
+          "kind": "task_completed",
+          "summary": "Completed Audit compromised access.",
+          "task_id": "audit",
+          "resource_id": "security"
+        },
+        {
+          "time": 26,
+          "kind": "task_started",
+          "summary": "Started Rotate service credentials on Security specialist; materials consumed once.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 33,
+          "kind": "resource_restored",
+          "summary": "Outage 2: outage interval ended; other overlapping outages still apply.",
+          "resource_id": "ops"
+        },
+        {
+          "time": 33,
+          "kind": "task_resumed",
+          "summary": "Resumed checkpointed work for Restore customer service on its original pool.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 38,
+          "kind": "task_completed",
+          "summary": "Completed Rotate service credentials.",
+          "task_id": "rotate",
+          "resource_id": "security"
+        },
+        {
+          "time": 45,
+          "kind": "task_completed",
+          "summary": "Completed Restore customer service.",
+          "task_id": "restore",
+          "resource_id": "ops"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started Repair internal dashboard on Operations team; materials consumed once.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 45,
+          "kind": "task_started",
+          "summary": "Started Validate restored service on Operations team; materials consumed once.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed Repair internal dashboard.",
+          "task_id": "dashboard",
+          "resource_id": "ops"
+        },
+        {
+          "time": 55,
+          "kind": "task_completed",
+          "summary": "Completed Validate restored service.",
+          "task_id": "validate",
+          "resource_id": "ops"
+        },
+        {
+          "time": 80,
+          "kind": "horizon",
+          "summary": "Planning horizon reached; unfinished work remains unserved."
+        }
+      ],
+      "metrics": {
+        "completed": 6,
+        "total": 6,
+        "on_time": 3,
+        "priority_on_time": 3,
+        "priority_total": 5,
+        "value_completed": 52,
+        "value_total": 52,
+        "cost_cents": 672,
+        "work_minutes": 80,
+        "unserved": 0,
+        "makespan": 55
+      },
+      "verification": {
+        "valid": true,
+        "checks": [
+          {
+            "id": "model",
+            "label": "Independent model validation",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "hash",
+            "label": "Canonical model identity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "schedule",
+            "label": "Effective outage schedule",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "structure",
+            "label": "Typed evidence fields",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "work",
+            "label": "Task work and pool commitments",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "capacity",
+            "label": "Minute capacity and outages",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "precedence",
+            "label": "Release and dependency precedence",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "completion",
+            "label": "Exact work and completions",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "stock",
+            "label": "Materials debited once on first start",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "budget",
+            "label": "Worked-unit cost and budget",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          },
+          {
+            "id": "metrics",
+            "label": "Recomputed metric integrity",
+            "passed": true,
+            "detail": "Passed independent replay checks"
+          }
+        ],
+        "violations": [],
+        "metrics": {
+          "completed": 6,
+          "total": 6,
+          "on_time": 3,
+          "priority_on_time": 3,
+          "priority_total": 5,
+          "value_completed": 52,
+          "value_total": 52,
+          "cost_cents": 672,
+          "work_minutes": 80,
+          "unserved": 0,
+          "makespan": 55
+        },
+        "evidence_hash": "e686a5c9931358574c73f361af4da8eb517e07e16f65fd0973fbedb4afa33870"
+      },
+      "compute_seconds": 0.00076
+    }
+  ],
+  "comparison": {
+    "recommended_id": null,
+    "tied_ids": [
+      "throughput",
+      "resilience",
+      "priority"
+    ],
+    "ranking": [
+      {
+        "world_id": "throughput",
+        "score": 0.487333333,
+        "eligible": true
+      },
+      {
+        "world_id": "resilience",
+        "score": 0.487333333,
+        "eligible": true
+      },
+      {
+        "world_id": "priority",
+        "score": 0.487333333,
+        "eligible": true
+      }
+    ],
+    "weights": {
+      "completion": 0.5,
+      "priority": 0.35,
+      "cost": 0.15
+    }
+  },
+  "approved": {
+    "world_id": "throughput",
+    "revision": 2,
+    "evidence_hash": "19d48c87eb2df601d72874012e9b9fc96f879faf27c5ffb2a12f465851aa2b15",
+    "model_hash": "aba38fb13b125888aeae830de52291dd7ae176c283908afaedda5a7a3f50ba0f",
+    "weights_hash": "bf9c5ef4ff2c562aa03bbf9be5da26b2b5749bc9f6b7e3e2af7fcd52ad96eedb",
+    "approved_at": "2026-11-14T05:20:57.683792+00:00"
+  },
+  "created_at": "2026-11-14T05:20:57.409646+00:00"
+}

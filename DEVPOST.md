@@ -1,45 +1,47 @@
 # FORK — rehearse a decision before its consequences become real
 
-**Submission draft.** Public repository publication, final media, track selection and submission are not completed. Replace required submission fields with verified artifacts before posting; this document is not a submission receipt.
+**Submission draft, not a submission receipt.** The original logistics source is public at [ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai). The Scenario Studio enhancement is locally implemented and must complete its current review before publication. Competition submission, final entry media and track selection are not claimed completed.
 
 ## Inspiration
 
-A route plan can look convincing until a van fails with meals still onboard. We wanted a way to inspect what a decision survives before asking someone to act on it. Food-bank logistics gives that question concrete constraints: limited inventory, receiving windows, volunteer shifts and chilled-vehicle compatibility.
+A plan can look convincing while hiding assumptions about capacity, deadlines, stock and recovery. We wanted people to see those assumptions, rehearse disruptions and inspect the evidence before choosing a course of action. The first food-bank model made physical constraints concrete; the next step was to let different operations use a shared model instead of coding each domain from scratch.
 
 ## What it does
 
-FORK creates three isolated strategy worlds from the same synthetic mission. Velocity, Resilience and Equity use published routing preferences. A user applies the same vehicle breakdown at the same time to all three, then compares actual recovery against the **same shocked initial plan without replanning**.
+Scenario Studio starts with an editable brief. A deterministic bounded compiler turns supported statements into a typed resource-and-task model, with source facts, explicit defaults and blocking questions/errors. Community repair, event production and IT response use one scheduling engine with different input data.
 
-That paired view is the key moment: how much did adaptation change, separately from how much damage the shock caused? The answer can be zero. Users then adjust service/cost preferences, inspect routes, physical cargo events and independent checks, and approve a current verified revision for JSON or CSV export. Nothing is dispatched.
+FORK computes three scheduling choices from the same model. Users add resource outages, compare actual processing timelines and inspect the same shocked schedule with and without adaptation. Zero gains, losses and ties remain visible. A separate referee recomputes capacity, work, materials, dependencies, cost and completion metrics before a human can approve current evidence for export. Nothing is dispatched.
+
+The retained logistics lab models roads, vehicles, cargo and one breakdown using its own validated physical semantics. Generic workflow jobs do not impersonate vehicle routes.
 
 ## How we built it
 
-A Python/FastAPI coordinator combines OR-Tools routing, NetworkX directed roads, discrete-event execution and SQLite persistence. A separately implemented standard-library referee reconstructs movement, timing, inventory custody and metrics from evidence. React, TypeScript and Vite display synchronized local SVG maps and inspectable event histories.
+Python/FastAPI coordinates strict Pydantic model validation, bounded deterministic scheduling, independent standard-library replay and transactional SQLite snapshots. React, TypeScript and Vite provide editable briefs, traceable model review, synchronized processing timelines, disruption controls and human approval. The logistics lab additionally uses OR-Tools and NetworkX.
 
-This release uses **Deterministic Planner Mode**. It has no runtime LLM calls, deepagents integration, model API dependency or invented model activity. Development received substantial OpenAI Codex assistance across architecture, implementation, test authoring, debugging, review and documentation.
+No runtime language-model calls, deepagents orchestration or model API key is present. A future OpenAI adapter can propose the same JSON schema from freer language, but must pass human model review, schema validation, simulation and independent verification. It will not author authoritative outcomes.
+
+Development received substantial OpenAI Codex assistance across architecture, implementation, tests, debugging, review and documentation. No human-authorship percentage or independent organizer eligibility ruling is asserted.
 
 ## Challenges
 
-Breakdown recovery must preserve actual custody. An interrupted load cannot create cargo, a failed vehicle cannot donate stranded meals, and healthy in-progress services must remain locked. Joint depot grants must avoid promising the same stock twice. We made those rules explicit and checked them with independent replay and adversarial fixtures.
+A general-looking interface is easy; a model that actually changes behavior is harder. We separated domain data from executable primitives and made unsupported requests block compilation. Work checkpoints, resource commitments, stock consumption and overlapping outages have explicit semantics. The no-adaptation control preserves original resource assignments and unit-slot order so it cannot quietly choose easier replacement work.
 
-Separating physical validity from optimizer quality also mattered. The conventional greedy baseline delivers **224** initial meals, compared with **216 / 192 / 216** for Velocity / Resilience / Equity. We retain that result instead of claiming our named policies win. Their value is transparent preference comparison and recovery inspection, not demonstrated superiority over conventional methods.
+We also separated physical validity from policy quality. The heuristics can lose or tie. In the retained logistics fixture, ordinary greedy routing delivers more initial meals than the named policies; that result remains visible. Independent verification establishes modeled consistency, not superiority or real-world truth.
 
-## Evidence and current boundaries
+## Evidence and boundaries
 
-The final suite has **84 Python tests**, **4 frontend model tests**, and **14 real-browser checks** passing. The independent referee report records **6,780 synthetic worlds**, zero invalid receipts and zero recomputed-metric differences, with additional targeted load-boundary checks after review. Frontend typecheck and production build passed. Browser checks cover every vehicle choice, actual exports, preference failures and ordering, saved-run recovery, narrow layouts, and a fresh simulation with external origins blocked. These results do not establish field performance or global optimality.
+Compiler, scheduler, independent-referee and real API tests cover three distinct templates, unsupported requests, canonical hashes, capacity/dependency/stock/budget rules, outages, stale revisions, tampered evidence and current approval/export gates. The retained seeded workflow regression checks 600 nominal/control physical comparisons and 1,200 independently valid outage receipts. Current integrated commands and actual browser results are recorded in [TESTING.md](TESTING.md) and the studio reports.
 
-All geography, orders, priorities, volunteers, costs and emissions are synthetic. The model has one depot, fixed drivers, atomic orders, one breakdown per experiment and at most one recovery reload per healthy vehicle. There is no failed-cargo rescue, transfer, spoilage certification or production dispatch.
+All examples are synthetic. Workflow jobs are checkpointable, retain one resource pool, and spend only actual worked resource-unit minutes. The compiler accepts documented patterns, not arbitrary prose. It does not infer routing, physical dynamics, stochastic arrivals or human behavior. The app is a local single-backend-process planning tool, with no production dispatch, sponsor API integration, global optimality guarantee or field-validation claim.
 
 ## What we learned
 
-A useful decision tool should make its assumptions and losses easy to inspect. Independent physical evidence, an honest conventional baseline and a paired no-replan comparison tell a more useful story than a preferred policy always winning.
+The useful question is not only which plan looks best. It is which assumptions made that result possible, what changed after disruption, and whether a person can inspect enough evidence to own the decision.
 
 ## What's next
 
-Validate the workflow with a food-bank coordinator, evaluate broader declared scenarios against conventional methods, and extend only the constraints that actual operations require. Live AI strategists and sponsor integrations remain conditional future work.
+Connect a bounded OpenAI authoring adapter after explicit API setup, preserving the same typed proposal and verification gates. Validate model assumptions with actual operators before operational use. Add new semantics only when a real problem and independent checks justify them.
 
-## Credits and submission notes
+## Submission notes
 
-Built with Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScript, Vite, pytest, HTTPX and Playwright. Dependency locks record the versions. OpenAI Codex provided substantial AI-assisted development; no human-authorship percentage or organizer eligibility ruling is asserted.
-
-Public repository: **https://github.com/ahmedhxssam/fork-ai** (created November 13, 2026 at 11:13 PM Eastern; public access verified). Actual screenshots and a genuine 37-second silent walkthrough are included in the repository. The live narrated pitch is separate. Check each sponsor's actual brief before selecting categories; there is no current live-model/deepagents/sponsor API claim or guaranteed award outcome. This file is a submission draft; the competition entry has not been submitted.
+Intended main-track fit: **Best Business and Enterprise**. Final category selection remains an entry action. Do not claim a live-model/deepagents/sponsor integration or guaranteed award outcome. The genuine [46.520-second silent Studio walkthrough](artifacts/FORK-studio-demo-silent.webm) is recorded and verified; the older clip documents logistics. Use [the two-minute pitch](docs/PITCH.md) for live narration.

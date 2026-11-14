@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-async function mission(page:Page){await page.goto('/');await page.getByRole('button',{name:/fork the mission/i}).click();await expect(page.getByRole('heading',{name:'Velocity',exact:true})).toBeVisible({timeout:120000})}
+async function mission(page:Page){await page.goto('/?view=logistics');await page.getByRole('button',{name:/fork the mission/i}).click();await expect(page.getByRole('heading',{name:'Velocity',exact:true})).toBeVisible({timeout:120000})}
 async function approve(page:Page){await page.getByRole('button',{name:'Inspect Velocity',exact:true}).click();await page.getByRole('button',{name:/approve simulated plan/i}).click();await expect(page.getByRole('link',{name:'Export JSON'})).toBeVisible();await page.getByRole('button',{name:'Close inspector'}).click()}
 
 test('failed preference save hides prior approved exports and blocks approval until retry',async({page})=>{
@@ -35,7 +35,7 @@ test('transient resume GET retains saved experiment and can be retried',async({p
   const response=await page.request.post('/api/experiments',{data:{seed:26}});expect(response.ok()).toBeTruthy();const experiment=await response.json();
   await page.addInitScript(id=>localStorage.setItem('fork-experiment',id),experiment.id);
   await page.route(`**/api/experiments/${experiment.id}`,route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({detail:'Temporary resume outage'})}));
-  await page.goto('/');await page.getByRole('button',{name:/resume saved experiment/i}).click();await expect(page.getByText('Temporary resume outage',{exact:false}).first()).toBeVisible();
+  await page.goto('/?view=logistics');await page.getByRole('button',{name:/resume saved experiment/i}).click();await expect(page.getByText('Temporary resume outage',{exact:false}).first()).toBeVisible();
   await expect(page.getByRole('button',{name:/resume saved experiment/i})).toBeVisible();expect(await page.evaluate(()=>localStorage.getItem('fork-experiment'))).toBe(experiment.id);
   await page.unroute(`**/api/experiments/${experiment.id}`);await page.getByRole('button',{name:/resume saved experiment/i}).click();await expect(page.getByRole('heading',{name:'Velocity',exact:true})).toBeVisible();
 });
@@ -56,7 +56,7 @@ test('revert re-fetches server preferences after a lost successful POST response
 
 test('a confirmed not-found resume clears the obsolete saved pointer',async({page})=>{
   await page.addInitScript(()=>localStorage.setItem('fork-experiment','nonexistent-reliability-run'));
-  await page.goto('/');await page.getByRole('button',{name:/resume saved experiment/i}).click();
+  await page.goto('/?view=logistics');await page.getByRole('button',{name:/resume saved experiment/i}).click();
   await expect(page.getByRole('button',{name:/resume saved experiment/i})).toHaveCount(0);
   expect(await page.evaluate(()=>localStorage.getItem('fork-experiment'))).toBeNull();
 });

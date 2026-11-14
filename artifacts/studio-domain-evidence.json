@@ -1,0 +1,210 @@
+{
+  "mode": "deterministic",
+  "synthetic": true,
+  "external_requests": [],
+  "domains": [
+    {
+      "id": "wf-630772745605434d",
+      "title": "Community repair clinic",
+      "hash": "e7e0c4ef03e90bec0bbdb7edac3ba7e0b84b8f3871f6233fd78fd315d40e67c7",
+      "skills": [
+        "repair",
+        "test"
+      ],
+      "tasks": [
+        "triage",
+        "radio",
+        "lamp",
+        "fan",
+        "test-radio",
+        "test-fan",
+        "test-lamp"
+      ],
+      "metrics": [
+        {
+          "policy": "throughput",
+          "metrics": {
+            "completed": 7,
+            "total": 7,
+            "on_time": 5,
+            "priority_on_time": 2,
+            "priority_total": 4,
+            "value_completed": 40,
+            "value_total": 40,
+            "cost_cents": 226,
+            "work_minutes": 83,
+            "unserved": 0,
+            "makespan": 51
+          }
+        },
+        {
+          "policy": "resilience",
+          "metrics": {
+            "completed": 7,
+            "total": 7,
+            "on_time": 7,
+            "priority_on_time": 4,
+            "priority_total": 4,
+            "value_completed": 40,
+            "value_total": 40,
+            "cost_cents": 226,
+            "work_minutes": 83,
+            "unserved": 0,
+            "makespan": 49
+          }
+        },
+        {
+          "policy": "priority",
+          "metrics": {
+            "completed": 7,
+            "total": 7,
+            "on_time": 5,
+            "priority_on_time": 4,
+            "priority_total": 4,
+            "value_completed": 40,
+            "value_total": 40,
+            "cost_cents": 226,
+            "work_minutes": 83,
+            "unserved": 0,
+            "makespan": 49
+          }
+        }
+      ]
+    },
+    {
+      "id": "wf-6e67a6234c2b4b34",
+      "title": "Community event production",
+      "hash": "89220c184d06223c001c8749b92bf15b627ce8547144bebe2e4f345cec640942",
+      "skills": [
+        "stage",
+        "audio"
+      ],
+      "tasks": [
+        "unload",
+        "platform",
+        "banners",
+        "lights",
+        "microphones",
+        "soundcheck"
+      ],
+      "metrics": [
+        {
+          "policy": "throughput",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 4,
+            "priority_on_time": 2,
+            "priority_total": 3,
+            "value_completed": 45,
+            "value_total": 45,
+            "cost_cents": 573,
+            "work_minutes": 100,
+            "unserved": 0,
+            "makespan": 67
+          }
+        },
+        {
+          "policy": "resilience",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 5,
+            "priority_on_time": 3,
+            "priority_total": 3,
+            "value_completed": 45,
+            "value_total": 45,
+            "cost_cents": 573,
+            "work_minutes": 100,
+            "unserved": 0,
+            "makespan": 55
+          }
+        },
+        {
+          "policy": "priority",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 5,
+            "priority_on_time": 3,
+            "priority_total": 3,
+            "value_completed": 45,
+            "value_total": 45,
+            "cost_cents": 573,
+            "work_minutes": 100,
+            "unserved": 0,
+            "makespan": 55
+          }
+        }
+      ]
+    },
+    {
+      "id": "wf-964598db24524f84",
+      "title": "IT service response",
+      "hash": "aabeca0d08abdf0f817c08edddd5e49256f0e6e396ff06fddb4a78b1b13f7a4c",
+      "skills": [
+        "ops",
+        "security"
+      ],
+      "tasks": [
+        "diagnose",
+        "restore",
+        "dashboard",
+        "audit",
+        "rotate",
+        "validate"
+      ],
+      "metrics": [
+        {
+          "policy": "throughput",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 5,
+            "priority_on_time": 4,
+            "priority_total": 5,
+            "value_completed": 52,
+            "value_total": 52,
+            "cost_cents": 672,
+            "work_minutes": 80,
+            "unserved": 0,
+            "makespan": 50
+          }
+        },
+        {
+          "policy": "resilience",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 5,
+            "priority_on_time": 5,
+            "priority_total": 5,
+            "value_completed": 52,
+            "value_total": 52,
+            "cost_cents": 672,
+            "work_minutes": 80,
+            "unserved": 0,
+            "makespan": 48
+          }
+        },
+        {
+          "policy": "priority",
+          "metrics": {
+            "completed": 6,
+            "total": 6,
+            "on_time": 5,
+            "priority_on_time": 5,
+            "priority_total": 5,
+            "value_completed": 52,
+            "value_total": 52,
+            "cost_cents": 672,
+            "work_minutes": 80,
+            "unserved": 0,
+            "makespan": 48
+          }
+        }
+      ]
+    }
+  ],
+  "shocked_experiment_id": "wf-964598db24524f84"
+}

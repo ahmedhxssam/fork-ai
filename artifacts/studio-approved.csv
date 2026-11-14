@@ -1,0 +1,8 @@
+task_id,resource_id,start,end,units
+diagnose,ops,0,8,1
+dashboard,ops,8,18,1
+audit,security,8,26,1
+restore,ops,18,25,2
+rotate,security,26,38,1
+restore,ops,33,48,2
+validate,ops,48,58,1

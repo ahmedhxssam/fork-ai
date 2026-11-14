@@ -1,0 +1,2 @@
+# Python's CSV writer emits standard CRLF records; keep actual downloaded bytes.
+*.csv whitespace=cr-at-eol

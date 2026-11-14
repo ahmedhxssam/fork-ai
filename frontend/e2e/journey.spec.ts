@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('computed fork, shared shock, evidence and revision-bound approval', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/?view=logistics');
   await expect(page.getByRole('heading', { name: /one decision/i })).toBeVisible();
   await page.getByRole('button', { name: /fork the mission/i }).click();
   await expect(page.getByRole('heading', { name: 'Velocity', exact: true })).toBeVisible({ timeout: 120000 });
