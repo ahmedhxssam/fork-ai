@@ -1,6 +1,6 @@
 # Judge-readiness release verification
 
-November 14, 2026. This report describes the locally prepared FORK polish, not a competition submission or publication receipt.
+November 14, 2026. This report describes the tested FORK polish. Source/media publication is separately verified in [PUBLICATION.md](PUBLICATION.md); no competition submission is claimed.
 
 ## What changed
 
@@ -45,4 +45,4 @@ The exact small media-generation scripts remain under `/private/tmp/fork-judge-m
 
 ## Remaining owner actions
 
-Review the local pack, authorize/publish the exact tested source update, upload/link the optional video, complete track/participant fields and submit Devpost before the written 8:00 AM Eastern cutoff. [Submission pack](../SUBMISSION_READY.md) is the single index. Current local checks do not establish those external actions, clean-machine setup, unrestricted offline installation or organizer eligibility.
+The tested source/media update is now publicly verified. Review the pack, upload/link the optional video to a compatible host, complete track/participant fields and submit Devpost before the written 8:00 AM Eastern cutoff. [Submission pack](../SUBMISSION_READY.md) is the single index. Current local checks do not establish those external actions, clean-machine setup, unrestricted offline installation or organizer eligibility.

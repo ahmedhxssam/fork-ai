@@ -1,0 +1,93 @@
+{
+  "verified_at_utc": "2026-11-14T20:37:27.339733+00:00",
+  "repository": "https://github.com/ahmedhxssam/fork-ai",
+  "visibility": "public",
+  "default_branch": "codex/fork",
+  "verified_code_commit": "e37a0ee79849a42f021fdf520e8473f5ae4ddab4",
+  "anonymous_no_auth_header": true,
+  "branch_head_matched": true,
+  "private_paths_absent": true,
+  "tree_file_count": 161,
+  "checks": [
+    {
+      "path": "README.md",
+      "http_status": 200,
+      "bytes": 7665,
+      "sha256": "fe9ac3f795d147d8e54c91737ea3861923153234c38d875554db2be43a9cbb51"
+    },
+    {
+      "path": "DEVPOST.md",
+      "http_status": 200,
+      "bytes": 6545,
+      "sha256": "223275ae091931ef1a46935971e1c011441a8d99215c166c6dd7413ae2fc136a"
+    },
+    {
+      "path": "SUBMISSION_READY.md",
+      "http_status": 200,
+      "bytes": 2904,
+      "sha256": "4ed2600266e061f607d433ed9e895fece784c76f8240e04b7c0e41ed7656596a"
+    },
+    {
+      "path": "docs/JUDGE_READINESS.md",
+      "http_status": 200,
+      "bytes": 5837,
+      "sha256": "7793133feabc1fb275d5e863215d4e37748ea3b56e8f262534be7b42077c8433"
+    },
+    {
+      "path": "artifacts/FORK-judge-demo.mp4",
+      "http_status": 200,
+      "bytes": 3703039,
+      "sha256": "7ff3cde0213b236e391a5c82a0cc22c27103e7ec7a6c3f3c149da030e22260d9"
+    },
+    {
+      "path": "artifacts/FORK-judge-demo.srt",
+      "http_status": 200,
+      "bytes": 1614,
+      "sha256": "76d326c350aef063fc89dd542ad80052d139d7bb8510a864272eaada775a799f"
+    },
+    {
+      "path": "artifacts/FORK-judge-demo-transcript.txt",
+      "http_status": 200,
+      "bytes": 1459,
+      "sha256": "0cd5b54da4409c3b5755243f2e9240af4b4a15626ac6fa2b20d78c797954c380"
+    },
+    {
+      "path": "artifacts/FORK-judge-approved.json",
+      "http_status": 200,
+      "bytes": 77314,
+      "sha256": "537f7ac27eed204b28305f52f1ef2fe118cd841045af65aa5c99276794a04ea4"
+    },
+    {
+      "path": "artifacts/FORK-judge-approved.csv",
+      "http_status": 200,
+      "bytes": 766,
+      "sha256": "a7218f34ca87a4030a9646b0158b91469a9e5b8ed87a6ae14eacc55f41385c74"
+    },
+    {
+      "path": "docs/assets/judge/02-food-bank.png",
+      "http_status": 200,
+      "bytes": 284373,
+      "sha256": "6df0dfc39e27b4bcdc3a04da741206f31c5a8ae76fecdb1d0edcd536ea036bd3"
+    },
+    {
+      "path": "docs/assets/judge/05-recovery.png",
+      "http_status": 200,
+      "bytes": 297066,
+      "sha256": "b16764a6cea4bc91fcd8a0ea7ad6d96c6b392456ceaeac34c5528993acb10043"
+    },
+    {
+      "path": "docs/assets/judge/07-referee.png",
+      "http_status": 200,
+      "bytes": 123630,
+      "sha256": "2c589520a6b53e4315548ca33dd08d4b5a721c28010a4ae7f42dbd3dd83c265c"
+    },
+    {
+      "path": "docs/assets/judge/09-mobile-entry.png",
+      "http_status": 200,
+      "bytes": 66511,
+      "sha256": "d75ecf7b05add74d98fd840b35b70d56a099f8305c009fa9ed5de8cab2655b66"
+    }
+  ],
+  "devpost_submitted": false,
+  "hosted_app_claimed": false
+}

@@ -23,14 +23,13 @@ The video contains genuine actions on the production build and actual computed o
 
 ## Readiness boundary
 
-The local application, entry draft and media are prepared for review. Final publication/upload and the Devpost entry are separate actions. The existing public repository is https://github.com/ahmedhxssam/fork-ai; check that the tested polish commit is published there before linking it as the final source. No submission receipt or hosted deployment is claimed by this file.
+The tested source and media are **published and anonymously verified** in [ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai) at commit [`e37a0ee`](https://github.com/ahmedhxssam/fork-ai/commit/e37a0ee79849a42f021fdf520e8473f5ae4ddab4). GitHub publication is complete; see [publication evidence](docs/PUBLICATION.md). No Devpost submission receipt or hosted app is claimed.
 
 Before the **November 15, 8:00 AM Eastern** cutoff, the owner still needs to:
 
 1. Review the video and entry text, including the Codex development-assistance disclosure.
-2. Publish the tested source/media update to the existing public repository and verify its links.
-3. Upload/link the reviewed video if using the optional Devpost video field; this local MP4 is ready but has no public video-host URL.
-4. Choose **Business & Enterprise**, confirm participant/eligibility fields and submit the actual Devpost entry.
-5. Verify the resulting submission confirmation and rehearse the local in-person demonstration.
+2. Upload/link the reviewed video to a Devpost-compatible host if using the optional video field. The public GitHub MP4 is available; no such hosted-video URL is claimed.
+3. Choose **Business & Enterprise**, confirm participant/eligibility fields and submit the actual Devpost entry.
+4. Verify the resulting submission confirmation and rehearse the local in-person demonstration.
 
 No CoStar, deepagents, runtime LLM or other sponsor integration is claimed. Preserve greedy's initial win, ties, zero gains, unmet demand and the distinction between independent model consistency and real-world safety. API keys, local databases, the CoStar extract, reconnaissance and private credentials are excluded from source/media publication.

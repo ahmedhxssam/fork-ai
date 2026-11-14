@@ -1,6 +1,6 @@
 # FORK — Devpost draft
 
-Draft fields for owner review; this file is not a submission receipt. The source repository has a published earlier snapshot; the latest local polish must be checked separately before an entry is submitted.
+Draft fields for owner review; this file is not a submission receipt. The tested judge-readiness source and media are public at commit `e37a0ee`; anonymous publication verification is recorded in [docs/PUBLICATION.md](docs/PUBLICATION.md).
 
 ## Copy-ready entry fields
 
@@ -14,7 +14,7 @@ Draft fields for owner review; this file is not a submission receipt. The source
 
 **Source:** https://github.com/ahmedhxssam/fork-ai
 
-**Prepared video:** [92-second narrated MP4](artifacts/FORK-judge-demo.mp4) · [captions](artifacts/FORK-judge-demo.srt). Upload/link after review; no public video-host URL is claimed.
+**Prepared video:** [92-second narrated MP4](artifacts/FORK-judge-demo.mp4) · [captions](artifacts/FORK-judge-demo.srt). The MP4 is public in GitHub; a Devpost-compatible video-host upload/link remains an owner action.
 
 **Local demo:** http://127.0.0.1:8000/?view=logistics — startup instructions in README.md. This is a local application, not a hosted demo URL.
 
