@@ -8,7 +8,9 @@ The replacement is **115.021333 seconds**, **1920×1080 / 30 fps**, **14,061,282
 
 The narration runs locally using Kokoro ONNX with pinned model/voice-bank hashes, isolated optional dependencies, measured sentence-group captions and cache invalidation for engine, voice, language, speed, text, model, package and script changes. Runtime FORK remains deterministic and has no model provider connected.
 
-Publication verification will be recorded after the replacement is pushed and its existing public link is checked.
+Published in commit [`8470300`](https://github.com/ahmedhxssam/fork-ai/commit/84703000a162fa92854dbe2d4b665913b71adbfc). A normal fast-forward push updated `codex/fork`, and `git ls-remote` matched the commit. Anonymous GitHub content metadata reported the exact replacement blob **`b96b05c95598308c3962da9ebc84f234c0122756`** and byte count. A complete anonymous MP4 download matched the local SHA-256 byte-for-byte. The GitHub connector separately fetched the new Heart transcript from that exact commit.
+
+A fresh anonymous read of the live Devpost page confirmed the **exact same GitHub MP4 URL is still present**. Its generic “offline system narration” wording remains accurate and the canonical public story retains it. The more specific Kokoro credit is in the repository's media documentation. Dia's management URL redirected to the event gallery and subsequent native controls timed out, so no new Devpost edits or submitted-status claim are inferred from this voice-only update. The earlier observed submitted status is preserved below as historical evidence. [Machine-readable publication receipt](../artifacts/FORK-submission-publication.json)
 
 ## Guided presentation publication — November 15, 2026
 

@@ -1,0 +1,32 @@
+{
+  "release": "FORK Heart neural narration replacement",
+  "repository": "https://github.com/ahmedhxssam/fork-ai",
+  "branch": "codex/fork",
+  "media_commit": "84703000a162fa92854dbe2d4b665913b71adbfc",
+  "normal_push_and_remote_head_match": true,
+  "video": {
+    "url": "https://github.com/ahmedhxssam/fork-ai/blob/codex/fork/artifacts/FORK-submission-demo.mp4",
+    "path": "artifacts/FORK-submission-demo.mp4",
+    "git_blob": "b96b05c95598308c3962da9ebc84f234c0122756",
+    "bytes": 14061282,
+    "sha256": "842700e74746913f85bc3e37a373785c888187e64a4301873e7632efe5ef56e5",
+    "anonymous_full_download_match": true,
+    "duration_seconds": 115.021333
+  },
+  "devpost": {
+    "url": "https://devpost.com/software/fork-ai-pmeja0",
+    "live_page_exact_existing_video_link_present": true,
+    "generic_narration_description_present": true,
+    "edited_in_this_voice_revision": false,
+    "reason": "Stable link already points to replacement; generic offline system narration description remains accurate. Dia editing controls became unavailable.",
+    "fresh_submitted_status_check": false
+  },
+  "voice": {
+    "engine": "kokoro-onnx",
+    "voice": "af_heart",
+    "selected_by_owner": true,
+    "local": true,
+    "api_key_required": false
+  },
+  "models_and_optional_dependencies_in_git": false
+}

@@ -10,7 +10,7 @@ The existing submission was updated in **Dia** after source/media publication, w
 - **Best Overall:** automatic consideration upon submission, not another main-track selection.
 - **Source:** https://github.com/ahmedhxssam/fork-ai
 - **Film:** [1:55 narrated MP4](artifacts/FORK-submission-demo.mp4), linked in the live story; [captions](artifacts/FORK-submission-demo.srt).
-- **Canonical story copy:** [DEVPOST_PUBLIC_STORY.md](docs/DEVPOST_PUBLIC_STORY.md).
+- **Canonical story copy:** [DEVPOST_PUBLIC_STORY.md](docs/DEVPOST_PUBLIC_STORY.md). Its live generic “offline system narration” wording is retained; the replacement Heart voice is credited in the media documentation.
 - **Thumbnail:** [minimal FORK wordmark](docs/assets/brand/FORK-thumbnail.png).
 
 The user chose the existing GitHub MP4 link in the story. The film stays at `artifacts/FORK-submission-demo.mp4`, so that link remains unchanged when its narration is replaced. No separate upload or embedded player was requested; the dedicated video field remains empty. No hosted app is claimed.
