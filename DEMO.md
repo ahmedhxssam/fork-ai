@@ -1,12 +1,12 @@
-# FORK: two-minute food-bank demo
+# FORK: guided food-bank demo
 
-**Business & Enterprise → Operations planning → Food-bank delivery resilience**
+**Business and Enterprise → Operations planning → Food-bank delivery resilience**
 
-Use **http://127.0.0.1:8000/?view=logistics**. The root page remains Scenario Studio and links to the food-bank demo. Tell one story: a delivery vehicle breaks down; the coordinator compares replanning with a fixed plan under the same shock, checks the evidence, then approves a simulated result.
+Tell one story: a food-bank delivery vehicle breaks down; the coordinator compares recovery with a fixed plan under the same shock, checks the evidence, and approves a simulated result.
 
-Runtime is **Deterministic Planner Mode**. The three strategy names describe published priorities, not autonomous LLM agents. All mission data is synthetic. Use [the spoken pitch](docs/PITCH.md).
+Start the server, then use the [three-minute guided rehearsal](http://127.0.0.1:8000/?view=logistics&tour=1) to learn the flow. Use the [two-minute judging cut](http://127.0.0.1:8000/?view=logistics&tour=1&pace=120) with judges. The ordinary workspace is [the logistics view](http://127.0.0.1:8000/?view=logistics). Scenario Studio remains the root page and links to the food-bank demo.
 
-Current backup: [92-second narrated recording](artifacts/FORK-judge-demo.mp4), [captions](artifacts/FORK-judge-demo.srt) and [verification](docs/JUDGE_READINESS.md). It contains genuine browser actions with a local system voice.
+**Both the optional submitted video and required in-person presentation are capped at two minutes** in the supplied onsite packet, p. 4. The three-minute mode is for rehearsal. [Guided mode instructions](docs/JUDGING_MODE.md) · [spoken scripts and FAQ](docs/PITCH.md) · [submission video](artifacts/FORK-submission-demo.mp4) · [captions](artifacts/FORK-submission-demo.srt).
 
 ## Before presenting
 
@@ -16,22 +16,26 @@ make test
 make demo
 ```
 
-In another terminal, run `make test-browser` against the running server. Record actual results and any failure in the release evidence; an unavailable browser is not a pass. Install dependencies and browser binaries before relying on an offline demonstration. Keep the server terminal running and use one backend worker.
+In another terminal, run `make test-browser` against the running server. Record actual results in release evidence; an unavailable browser is not a pass. Install dependencies and browser binaries before relying on an offline demonstration. Keep the server terminal running and use one backend worker.
 
-Start a fresh seed-26 experiment using the interface or `make reset`; stored history is preserved. Confirm the category, synthetic-data and deterministic-mode labels. A resumed experiment is a **saved replay**, not fresh computation. Close unrelated tabs and notifications, and use a legible laptop viewport.
+Start from the guided briefing. Use **Next** and **Back** for chapters; the explicit **Apply shared breakdown** action runs A at elapsed 1,500 seconds. **Restart tour** returns to the briefing and creates a new experiment when you continue into the comparison; it preserves saved history. **Exit** leaves the guide. A persisted experiment is a saved replay, not fresh computation. Close unrelated tabs/notifications and confirm synthetic-data and deterministic-mode labels.
 
-## Exactly two minutes
+## Rehearse in three minutes; present in two
 
-| Time | Visible action | What to explain |
+| Chapter / action | Rehearsal | Contest cut |
 |---|---|---|
-| 0:00–0:15 | Show the mission and choose **Fork the mission** | Food-bank planning: 240 meals available, 264 requested, three vehicles. |
-| 0:15–0:35 | Show the three worlds and initial benchmark | Same starting resources, different priorities. Greedy initially delivers more than all three named policies. |
-| 0:35–1:00 | Select vehicle A at elapsed 1,500 seconds (09:25); apply breakdown | Every isolated world gets the same vehicle/time shock. The engine replans only remaining work. |
-| 1:00–1:25 | Open the fixed-plan comparison and recovery gain | Compare adaptive execution with the original plan under the same shock. Read actual results; the unshocked reference is a different comparison. |
-| 1:25–1:40 | Inspect one cargo/event detail and referee receipt | The separate referee reconstructs movement, cargo, timing and results. A receipt checks modeled consistency. |
-| 1:40–2:00 | Change preferences, approve current evidence and download | The person chooses. Approval belongs to the current revision; exports contain simulated evidence, not dispatch orders. |
+| Mission: 240 meals available, 264 requested, three vehicles | 0:00–0:25 | 0:00–0:15 |
+| Compute three plans with equal starting resources | 0:25–0:50 | 0:15–0:30 |
+| Read the honest greedy benchmark and explain the control | 0:50–1:15 | 0:30–0:45 |
+| Apply the shared A-at-1,500 breakdown | 1:15–1:40 | 0:45–1:00 |
+| Compare adaptive outcomes, fixed plans and recovery gains | 1:40–2:10 | 1:00–1:20 |
+| Review preferences; a large gain is not automatically best | 2:10–2:25 | 1:20–1:30 |
+| Inspect a referee receipt and one physical detail | 2:25–2:45 | 1:30–1:45 |
+| Human approval and simulated JSON/CSV export | 2:45–3:00 | 1:45–2:00 |
 
-For the seed-26 rehearsal, preserve these reference values:
+Allow computation to finish. If it takes longer, shorten narration and keep the contest cutoff. The guide's time budget is a rehearsal aid, not a promise that every computer will complete the flow in that time.
+
+## Reference results, never a promised winner
 
 | Strategy | Initial meals | A-at-1,500 adaptive | Same-shock fixed plan | Recovery gain |
 |---|---:|---:|---:|---:|
@@ -39,22 +43,21 @@ For the seed-26 rehearsal, preserve these reference values:
 | Resilience | 192 | 168 | 120 | +48 |
 | Equity | 216 | 168 | 144 | +24 |
 
-Initial greedy delivers **224**; the neutral solver delivers **216**. All three adapted outcomes above tie on delivered meals. Resilience's larger gain is relative to its weaker fixed-plan control. These figures describe this scenario and shock; confirm them on the release being shown.
+Initial greedy delivers **224** and the neutral solver **216**. The named policies all lose to greedy initially and tie on adaptive meals here. Resilience's larger gain starts from its weaker fixed-plan control. The unshocked reference answers a different question.
 
-A judge may choose A, B or C and another supported time. If so, read the computed result and abandon the reference-number narration. A late shock may have no effect; a chilled-vehicle failure may leave chilled demand unrecoverable. Say zero when gain is zero, show ties, and never promise that one named policy wins. If computation takes longer, explain that it is running and shorten narration.
+A judge may choose another supported vehicle/time in the workspace. Read those computed results and abandon the reference-number narration. A late shock can have no effect; chilled demand can remain unrecoverable. Say zero when gain is zero, show ties and unmet demand, and never promise one policy wins.
 
-## Recording and release checklist
+## Recording and release checks
 
-- [ ] Verify the actual judging-laptop launch, shock, comparison, receipt, approval and download journey.
-- [ ] Record fresh actions and genuine computed changes; label saved replay or fallback video honestly.
-- [ ] Keep the mission, three worlds, chosen shock and fixed-plan control readable.
-- [ ] Preserve greedy's initial win, unmet demand, ties and any zero/negative recovery gain.
-- [ ] Inspect one physical detail and one independent receipt.
-- [ ] Change a preference, approve the current revision and open the downloaded artifact.
-- [ ] Keep credentials, private notifications and unrelated personal content off-screen.
-- [ ] Check narration, playback, legibility and exported duration **at most 2:00**.
-- [ ] Record the exact source/release and video used. Existing silent clips are historical version evidence until the final recording is captured and inspected.
+- Verify launch, guided Back/Next/Restart, common shock, comparison, receipt, approval and download on the actual judging laptop.
+- Record fresh actions and genuine computed changes; label any saved replay or fallback video honestly.
+- Keep the mission, strategy worlds, chosen shock, paired control and independent receipt readable.
+- Preserve the initial greedy win, ties, unmet demand and any zero/negative gain.
+- Change a preference, approve the current revision and inspect the actual downloaded artifact.
+- Keep private notifications, credentials and unrelated personal material off-screen.
+- Check narration, captions, legibility, playback and measured output duration **at most 2:00**.
+- Record the exact source/release and media used. Local checks do not establish publication, submission or eligibility.
 
-If the browser fails, refresh and resume the persisted experiment. Diagnose a command error before retrying. If fresh computation cannot run, use a genuine inspected recording or saved experiment with explicit labeling. Do not claim an unobserved browser pass, offline run, publication or submission.
+If the browser fails, refresh and resume the persisted experiment. Diagnose a command error before retrying. Use an inspected recording only with explicit labeling. The earlier [92-second recording](artifacts/FORK-judge-demo.mp4) and [its evidence](docs/JUDGE_READINESS.md) remain historical fallback material; they do not show the newer guided tour.
 
-Scenario Studio is secondary: show its bounded clarification/model-authoring flow only if asked or if time remains after the logistics story. It is not needed to explain the main use case. [Simulation semantics](SIMULATION.md), [checks and evidence](TESTING.md), [Devpost draft](DEVPOST.md).
+Runtime is **Deterministic Planner Mode**, all data is synthetic, and OpenAI Codex substantially assisted development. No runtime LLM, deepagents or model API key is implemented. Export does not dispatch. The referee checks modeled consistency, not real-world safety or optimality. Scenario Studio is secondary; show its bounded clarification flow only if asked after the main story.

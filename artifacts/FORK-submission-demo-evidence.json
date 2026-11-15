@@ -1,0 +1,346 @@
+{
+  "source": "Actual uncut local browser workflow, with separate editorial chapter frame and visible pointer.",
+  "synthetic": true,
+  "mode": "deterministic",
+  "capture": {
+    "css_viewport": {
+      "width": 1440,
+      "height": 800
+    },
+    "device_scale_factor": 2,
+    "requested_video": {
+      "width": 2880,
+      "height": 1600
+    },
+    "verified_video": {
+      "codec_name": "vp8",
+      "width": 2880,
+      "height": 1600,
+      "r_frame_rate": "25/1"
+    }
+  },
+  "narration": "Offline macOS Samantha system voice; not the owner voice.",
+  "external_requests": [],
+  "page_errors": [],
+  "post_responses": [
+    {
+      "url": "/api/experiments",
+      "status": 200
+    },
+    {
+      "url": "/api/experiments/fb9efd0d6c9d4c53/disrupt",
+      "status": 200
+    },
+    {
+      "url": "/api/experiments/fb9efd0d6c9d4c53/preferences",
+      "status": 200
+    },
+    {
+      "url": "/api/experiments/fb9efd0d6c9d4c53/approve",
+      "status": 200
+    }
+  ],
+  "lead_seconds": 1.157,
+  "recorded_timeline": [
+    {
+      "chapter": 1,
+      "start": 0,
+      "planned_seconds": 10
+    },
+    {
+      "chapter": 2,
+      "start": 10.001,
+      "planned_seconds": 12
+    },
+    {
+      "chapter": 3,
+      "start": 22.002,
+      "planned_seconds": 16
+    },
+    {
+      "chapter": 4,
+      "start": 38.004,
+      "planned_seconds": 13
+    },
+    {
+      "chapter": 5,
+      "start": 51.006,
+      "planned_seconds": 17
+    },
+    {
+      "chapter": 6,
+      "start": 68.008,
+      "planned_seconds": 13
+    },
+    {
+      "chapter": 7,
+      "start": 81.01,
+      "planned_seconds": 15
+    },
+    {
+      "chapter": 8,
+      "start": 96.013,
+      "planned_seconds": 19
+    }
+  ],
+  "experiment_id": "fb9efd0d6c9d4c53",
+  "revision": 3,
+  "shock": {
+    "vehicle_id": "A",
+    "time": 1500
+  },
+  "baseline": {
+    "named_meals": [
+      216,
+      192,
+      216
+    ],
+    "greedy_meals": 224
+  },
+  "worlds": [
+    {
+      "id": "velocity",
+      "delivered": 168,
+      "fixed_plan_delivered": 144,
+      "valid": true,
+      "fixed_plan_valid": true
+    },
+    {
+      "id": "resilience",
+      "delivered": 168,
+      "fixed_plan_delivered": 120,
+      "valid": true,
+      "fixed_plan_valid": true
+    },
+    {
+      "id": "equity",
+      "delivered": 168,
+      "fixed_plan_delivered": 144,
+      "valid": true,
+      "fixed_plan_valid": true
+    }
+  ],
+  "before_preferences": "CURRENT RECOMMENDATION\nResilience \u2197\n\nResilience leads under your current preferences: 168 meals delivered, 100% on-time high-need coverage, $35.49 modeled travel cost.\n\nOpen decision evidence \u2192",
+  "after_preferences": "CURRENT RECOMMENDATION\nResilience \u2197\n\nResilience leads under your current preferences: 168 meals delivered, 100% on-time high-need coverage, $35.49 modeled travel cost.\n\nOpen decision evidence \u2192",
+  "approval": {
+    "id": "c4b48d7bdefb",
+    "world_id": "velocity",
+    "experiment_id": "fb9efd0d6c9d4c53",
+    "revision": 3,
+    "approved_at": "2026-11-15T08:30:03.686835+00:00",
+    "label": "Human-approved simulated plan",
+    "evidence_hash": "2b71f6ff80aabcb7ab2ff4be1951087a1e06fb61989f276d43a308b7f2b242ca",
+    "preferences_hash": "ff434c93c4bf21dc666f1545dda272ade46835d3405148be98483de65a11b640"
+  },
+  "export": {
+    "external_dispatch": false,
+    "revision": 3,
+    "referee_valid": true,
+    "world_evidence_hash_matches": true
+  },
+  "video": "artifacts/FORK-submission-demo.mp4",
+  "source_video": "artifacts/FORK-submission-source.webm",
+  "delivery": {
+    "duration_seconds": 115.021333,
+    "bytes": 14121445,
+    "sha256": "ddb9b8d1767da14e0cc78ec64a2474cb68ee309f51b13e9a5f5342ee4750da49",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "nb_frames": "3450",
+        "sample_rate": null,
+        "channels": null,
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709"
+      },
+      {
+        "codec_type": "audio",
+        "codec_name": "aac",
+        "width": null,
+        "height": null,
+        "pix_fmt": null,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "nb_frames": "5403",
+        "sample_rate": "48000",
+        "channels": 1,
+        "color_space": null,
+        "color_transfer": null,
+        "color_primaries": null
+      }
+    ],
+    "complete_decode": "passed",
+    "audio_measurement_log": "/private/tmp/fork-submission-media/audio-check.log",
+    "final_frame_checks": "Passed: all eight final chapter frames, opening frame, logo-only close and fading ending inspected at full delivery size.",
+    "frames": 3450,
+    "average_frame_rate": "30/1"
+  },
+  "source_hashes": {
+    "screen.webm": "e6fc698df025f4223d992873cfad3a23f9ad7dcfbb7612128dafe95f0293b636",
+    "storyboard.json": "8ff0a7b2a41ea1a9801789ac256c198155e799833ec064595c4167a5ad9ef39c"
+  },
+  "outro": "Final 3 seconds: native FORK mark and wordmark, opacity and 12px position settle.",
+  "color_pipeline": {
+    "purpose": "Media format correction only; UI layout, labels, scenario and results are unmodified. Raw browser video and native PNGs are retained.",
+    "browser_input": "Untagged VP8 interpreted as BT.601 limited range; Y+1/U+2/V+1 neutral-patch capture calibration against retained PNG.",
+    "working_canvas": "RGBA; overlays and captions composited in RGB.",
+    "delivery": "Explicit RGB to BT.709 limited-range YUV420 conversion, with matching H.264 VUI tags.",
+    "decoded_neutral_patch_checks": [
+      {
+        "patch": "chapter_rail",
+        "time_seconds": 5,
+        "position": [
+          10,
+          200
+        ],
+        "decoded_rgb": [
+          245,
+          245,
+          240
+        ],
+        "reference_rgb": [
+          247,
+          247,
+          242
+        ],
+        "max_channel_error": 2
+      },
+      {
+        "patch": "native_app_paper",
+        "time_seconds": 5,
+        "position": [
+          344,
+          326
+        ],
+        "decoded_rgb": [
+          244,
+          244,
+          242
+        ],
+        "reference_rgb": [
+          247,
+          247,
+          242
+        ],
+        "max_channel_error": 3
+      },
+      {
+        "patch": "outro_paper",
+        "time_seconds": 113.5,
+        "position": [
+          100,
+          100
+        ],
+        "decoded_rgb": [
+          245,
+          245,
+          240
+        ],
+        "reference_rgb": [
+          247,
+          247,
+          242
+        ],
+        "max_channel_error": 2
+      }
+    ],
+    "reference_png": {
+      "path": "docs/assets/presentation/chapter-01-source.png",
+      "sha256": "6a6b20c5d27ae5664b515eb6208a36dae49d31099fabfb1c9e838cbdf4e0a586",
+      "native_rgb": [
+        247,
+        247,
+        242
+      ]
+    }
+  },
+  "audio_measurements": {
+    "mean_volume": -16.2,
+    "max_volume": -1.4
+  },
+  "visual_review": {
+    "scope": "Static review of all listed final frames plus contact sheet; complete video decode is a separate technical check.",
+    "frames": [
+      {
+        "path": "docs/assets/presentation/chapter-01-final.png",
+        "sha256": "568ad7a92c913941d61d471d3cf184b67e3e758e9ece08e67d633ae517fe6e65"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-02-final.png",
+        "sha256": "aa43aea9f5c385c68387bbdf8389d64d7b8a60ba7d01422a0655add641e5137c"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-03-final.png",
+        "sha256": "247b17b816cf6cccdea8353cffbe5567ab48911e82436da3a6720f114eb1f491"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-04-final.png",
+        "sha256": "f7a8e1f4df649ccffbecc9263e09e3984b375c23803c90c59658c4dac35ddd8a"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-05-final.png",
+        "sha256": "427b616177a28d534b40bf4c3316c6801c2fc9ef50094a7269b8ed68763b5366"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-06-final.png",
+        "sha256": "2a2b74fd622aa89b0f3afee06ea86d0e65f514ceb3033be3c9c035fb2f5020e8"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-07-final.png",
+        "sha256": "2838450f9833c3ac28612ad9e4e11297e4736ca3c7e36c193c8279093489e14c"
+      },
+      {
+        "path": "docs/assets/presentation/chapter-08-final.png",
+        "sha256": "dccce90623a14609cf8b13e63629d191a7a585cd9318ae0f6e78dcf899796d7a"
+      },
+      {
+        "path": "docs/assets/presentation/opening-final.png",
+        "sha256": "484e0cc420d9e43d36afbadb956a120edad27e806452e1384dd61d597a137573"
+      },
+      {
+        "path": "docs/assets/presentation/outro-final.png",
+        "sha256": "b1a5c652de432e54a9834ecdc98b2935e8670f534bf35784b48820f38d2ac918"
+      },
+      {
+        "path": "docs/assets/presentation/ending-final.png",
+        "sha256": "f4e98070beaf267e2d56cbc8cc3264e57abd26aaf1ee83472b9aa99c085c952f"
+      }
+    ],
+    "contact_sheets": [
+      "docs/assets/presentation/contact-sheet.jpg",
+      "docs/assets/presentation/contact-sheet-1fps.jpg"
+    ]
+  },
+  "captions": {
+    "exact_text_matches_authored_narration": true,
+    "sentence_cue_timing": "Proportional per-sentence timing inside the measured local voice asset.",
+    "burned_in": true,
+    "sidecar": "artifacts/FORK-submission-demo.srt"
+  },
+  "production_code": {
+    "scripts/media/render.py": "c88b507a9ee87cd9801a3efe08449516d05b5bf603325fe043e8dc352b781b97",
+    "scripts/media/prepare.mjs": "bd042aa94fdd64d14d48926dd4c2b6cda090500e48cfb4202d14ee0ed361bc3c",
+    "scripts/media/storyboard.json": "8ff0a7b2a41ea1a9801789ac256c198155e799833ec064595c4167a5ad9ef39c",
+    "frontend/scripts/record-judging.mjs": "2e3144bc868a71bb29652c69c78ef65a907953d7ccec0b5f291936831d3dafa7"
+  },
+  "downloaded_guidance": {
+    "repository": "https://github.com/crimeacs/product-demo-director",
+    "commit": "8de3b3b8d8f55bec01b0d57bbc2fd0ed9b703bf6",
+    "license": "MIT, Copyright 2026 Artemii Novoselov",
+    "local_path": ".superpowers/demo-skills/product-demo-director",
+    "use": "Reviewed story/capture/editing guidance. No downloaded implementation scripts, dependencies, external voice/music APIs or advisory AI judge were executed."
+  },
+  "production_notes": [
+    "An early recording assertion incorrectly assumed all named policies delivered 216. The filmed source established 216/192/216; narration and assertions were corrected, without changing fixtures.",
+    "A recording assertion initially compared the export with the pre-preference revision. The recorder now retains the returned preference revision and checks both current experiment and approval revision.",
+    "Final capture includes the app stylesheet-load race fix and final shared CTA/mark styling. A 2x native capture improves text sharpness.",
+    "Explicit source normalization, RGB composition and BT.709 delivery corrected the media color cast; raw source and native PNG evidence are retained."
+  ]
+}

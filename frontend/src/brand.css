@@ -1,0 +1,15 @@
+/* FORK: quiet confidence, visible evidence. Shared by both workspaces. */
+:root {
+  --fork-paper: #f7f7f2;
+  --fork-surface: #ffffff;
+  --fork-ink: #17221d;
+  --fork-muted: #627066;
+  --fork-line: #dde1d9;
+  --fork-green: #5c7658;
+  --fork-accent: #d8e4d0;
+  --fork-warning: #8b573c;
+  --fork-font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+body { background: var(--fork-paper); }
+::selection { background: var(--fork-accent); color: var(--fork-ink); }

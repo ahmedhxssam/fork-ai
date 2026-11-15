@@ -1,0 +1,107 @@
+{
+  "title": "FORK \u00b7 Test the plan before the disruption",
+  "target_seconds": 115,
+  "fps": 30,
+  "voice": "Samantha",
+  "voice_rate": 172,
+  "synthetic": true,
+  "runtime": "Deterministic Planner Mode",
+  "chapters": [
+    {
+      "n": 1,
+      "seconds": 10,
+      "title": "A decision before dispatch",
+      "label": "THE QUESTION",
+      "points": [
+        "Test one mission",
+        "Compare its futures",
+        "Keep the decision human"
+      ],
+      "narration": "Which plan still feeds people when a vehicle fails? FORK lets a coordinator test that decision before dispatch, with a synthetic mission."
+    },
+    {
+      "n": 2,
+      "seconds": 12,
+      "title": "One shared starting point",
+      "label": "SET THE MISSION",
+      "points": [
+        "240 meals available",
+        "264 meals requested",
+        "3 delivery vehicles"
+      ],
+      "narration": "This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy receives an isolated copy of the same resources and constraints."
+    },
+    {
+      "n": 3,
+      "seconds": 16,
+      "title": "Keep the baseline honest",
+      "label": "COMPARE BEFORE FAILURE",
+      "points": [
+        "Three named strategies",
+        "Ordinary greedy control",
+        "Visible losses and ties"
+      ],
+      "narration": "Velocity, Resilience, and Equity express different priorities in a deterministic planner. Ordinary greedy routing delivers two hundred twenty four meals initially, beating every named policy. FORK keeps that loss visible."
+    },
+    {
+      "n": 4,
+      "seconds": 13,
+      "title": "Break the same vehicle",
+      "label": "ONE COMMON SHOCK",
+      "points": [
+        "Vehicle A fails",
+        "At minute 25",
+        "History stays locked"
+      ],
+      "narration": "Now vehicle A fails at minute twenty five in every world. Completed deliveries stay completed. Its cargo stays stranded. Recovery can change only the remaining plan."
+    },
+    {
+      "n": 5,
+      "seconds": 17,
+      "title": "Measure the recovery",
+      "label": "PAIRED CONTROLS",
+      "points": [
+        "168 adapted meals",
+        "144 \u00b7 120 \u00b7 144 fixed",
+        "Same failure and timing"
+      ],
+      "narration": "All three adapted plans now deliver one hundred sixty eight meals. With fixed routes under the same failure, they deliver one hundred forty four, one hundred twenty, and one hundred forty four. This measures recovery against a paired control."
+    },
+    {
+      "n": 6,
+      "seconds": 13,
+      "title": "Make priorities explicit",
+      "label": "THE DECISION LENS",
+      "points": [
+        "Food coverage",
+        "High-need service",
+        "Modeled resource cost"
+      ],
+      "narration": "Better depends on the coordinator's priorities. Adjust the weights for coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner."
+    },
+    {
+      "n": 7,
+      "seconds": 15,
+      "title": "Open the actual receipt",
+      "label": "INDEPENDENT REFEREE",
+      "points": [
+        "Replay physical events",
+        "Recompute the metrics",
+        "Inspect the model boundary"
+      ],
+      "narration": "A separate referee reconstructs movement, cargo, and timing, then recomputes the metrics. Its receipt checks consistency inside the declared model. It does not prove route optimality or real world safety."
+    },
+    {
+      "n": 8,
+      "seconds": 19,
+      "title": "A person makes the call",
+      "label": "APPROVE AND EXPORT",
+      "points": [
+        "Approve this revision",
+        "Download the plan",
+        "No real dispatch"
+      ],
+      "narration": "A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and its verification. Nothing is dispatched. FORK makes the tradeoffs inspectable, and leaves the final decision with the coordinator."
+    }
+  ]
+}

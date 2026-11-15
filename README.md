@@ -2,13 +2,19 @@
 
 **Business & Enterprise · Operations planning · Food-bank delivery resilience**
 
-**Rehearse a decision before its consequences become real.**
+**Rehearse before you commit.**
 
 A delivery vehicle breaks down. Which meals can still arrive, and what does changing the plan actually recover? FORK lets an operations coordinator rehearse that decision before dispatch: compare three planning strategies, apply the same breakdown, inspect independently checked results, then approve a simulated plan for export.
 
 The primary demo is a **synthetic food-bank delivery mission**. FORK runs locally in **Deterministic Planner Mode**: OR-Tools proposes routes, a simulator executes them, and a separate referee reconstructs movement, cargo and results. A person makes the final choice. Runtime uses no language model, deepagents or API key. OpenAI Codex substantially assisted development.
 
-![FORK food-bank demo: clear category, coordinator use case and shared-breakdown workflow](docs/assets/judge/02-food-bank.png)
+**Start here:** [3-minute guided walkthrough](http://127.0.0.1:8000/?view=logistics&tour=1) · [2-minute judging cut](http://127.0.0.1:8000/?view=logistics&tour=1&pace=120) · [presentation guide](docs/JUDGING_MODE.md)
+
+**Watch the demo:** [numbered, narrated submission film](artifacts/FORK-submission-demo.mp4) · [captions](artifacts/FORK-submission-demo.srt) · [spoken pitch](docs/PITCH.md)
+
+The three-minute mode is for learning and rehearsal. The supplied event packet caps both the submitted video and in-person presentation at **two minutes**. Start the local server below before opening either guide.
+
+![FORK judging mode: three real planning worlds with a numbered guide](docs/assets/presentation/guide-desktop.png)
 
 ## Run the food-bank demo
 
@@ -19,7 +25,9 @@ make setup
 make demo
 ```
 
-Open **http://127.0.0.1:8000/?view=logistics**. The root page opens Scenario Studio; its **Try the food-bank demo** link reaches the same logistics view. Keep the server terminal running. `make demo` builds the frontend and serves it through FastAPI on one origin; use one backend worker.
+Open **http://127.0.0.1:8000/?view=logistics&tour=1** for the guided food-bank story, or **http://127.0.0.1:8000/?view=logistics** for the workspace. The root page opens Scenario Studio; its **Try the food-bank demo** link reaches the same logistics view. Keep the server terminal running. `make demo` builds the frontend and serves it through FastAPI on one origin; use one backend worker.
+
+In judging mode, use its **Next** buttons to follow the eight chapters. For direct exploration in the ordinary workspace:
 
 1. Choose **Fork the mission**: 240 meals available for 264 requested, 12 orders and three vehicles.
 2. Compare Velocity, Resilience and Equity. Their names describe different priorities and reserve settings, not autonomous agents or a guaranteed winner.
@@ -74,14 +82,14 @@ Roads, orders, priorities, volunteer identities, costs and emissions are synthet
 
 ## Presentation and source
 
-- [Submission pack](SUBMISSION_READY.md) · [92-second narrated demo](artifacts/FORK-judge-demo.mp4) · [captions](artifacts/FORK-judge-demo.srt)
-- [Two-minute food-bank demo](DEMO.md) · [spoken pitch](docs/PITCH.md) · [copy-ready Devpost draft](DEVPOST.md)
+- [Current presentation release evidence](docs/PRESENTATION_RELEASE.md) · [submission pack and track recommendation](SUBMISSION_READY.md) · [submission demo](artifacts/FORK-submission-demo.mp4)
+- [Guided judging mode](docs/JUDGING_MODE.md) · [3-minute rehearsal / 2-minute click guide](DEMO.md) · [spoken scripts and FAQ](docs/PITCH.md) · [copy-ready Devpost draft](DEVPOST.md)
 - [Simulation and metric definitions](SIMULATION.md) · [architecture and API](ARCHITECTURE.md)
 - [Runtime roles and AI disclosure](AGENTS.md) · [tests and evidence](TESTING.md)
 - [Engine evidence](docs/ENGINE_REPORT.md) · [independent referee evidence](docs/VERIFIER_REPORT.md)
 - [Scenario Studio](docs/SCENARIO_STUDIO.md) · [conversational authoring](docs/CONVERSATIONAL_INTAKE.md) · [roadmap](ROADMAP.md)
 
-Source repository: **[ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai)**. The judge-readiness UI and media are public at tested commit [`e37a0ee`](https://github.com/ahmedhxssam/fork-ai/commit/e37a0ee79849a42f021fdf520e8473f5ae4ddab4); anonymous source/media hashes were verified. See [publication evidence](docs/PUBLICATION.md). The [92-second narrated judge walkthrough](artifacts/FORK-judge-demo.mp4) contains genuine browser actions with a local system voice; [captions](artifacts/FORK-judge-demo.srt) and [current verification](docs/JUDGE_READINESS.md) are included. Earlier silent [logistics](artifacts/FORK-demo-silent.webm), [Studio](artifacts/FORK-studio-demo-silent.webm) and [conversation](artifacts/FORK-conversation-demo-silent.webm) recordings remain historical. No hosted app or completed competition entry is claimed.
+Source repository: **[ahmedhxssam/fork-ai](https://github.com/ahmedhxssam/fork-ai)**. The earlier judge-readiness UI and 92-second media were published at tested commit [`e37a0ee`](https://github.com/ahmedhxssam/fork-ai/commit/e37a0ee79849a42f021fdf520e8473f5ae4ddab4); anonymous source/media hashes were verified. See [publication evidence](docs/PUBLICATION.md). That historical [92-second narrated judge walkthrough](artifacts/FORK-judge-demo.mp4) contains genuine browser actions with a local system voice; [captions](artifacts/FORK-judge-demo.srt) and [its verification](docs/JUDGE_READINESS.md) are included. Publication of the newer guided-tour/submission-video update requires separate release evidence. Earlier silent [logistics](artifacts/FORK-demo-silent.webm), [Studio](artifacts/FORK-studio-demo-silent.webm) and [conversation](artifacts/FORK-conversation-demo-silent.webm) recordings remain historical. The existing [Devpost entry](https://devpost.com/software/fork-ai-pmeja0) was observed as submitted on November 15; this release updates its presentation materials. No hosted app is claimed.
 
 Built with Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScript, Vite, pytest, HTTPX and Playwright. Exact dependencies are in `requirements.lock` and `frontend/package-lock.json`.
 

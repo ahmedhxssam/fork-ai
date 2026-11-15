@@ -15,7 +15,7 @@ const equal=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b);
 const weightNames={completion:'On-time completion',priority:'Priority deadlines',cost:'Lower resource cost'} as const;
 const policyDescriptions:Record<string,string>={throughput:'Shortest remaining work first, then deadlines and declared task value.',resilience:'Least deadline slack first, then shorter work to seek buffer.',priority:'Highest priority first, then deadlines and remaining work.'};
 function Arrow(){return <span aria-hidden="true">↗</span>}
-function ForkMark(){return <svg width="25" height="29" viewBox="0 0 25 29" fill="none" aria-hidden="true"><path d="M6 27V15C6 9 19 13 19 5M6 15V3M2 7L6 3L10 7M15 7L19 3L23 7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+function ForkMark(){return <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M7 25V6m0 12 15-9m-15 4 15 9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/></svg>}
 
 function Gantt({world,model,minute,compact=false}:{world:World;model:Model;minute:number;compact?:boolean}){
   const tasks=compact?model.tasks.slice(0,6):model.tasks;
@@ -134,8 +134,8 @@ export default function Studio(){
   return <div className="st-app">
     <a href="#studio-brief" className="st-skip">Skip to scenario brief</a>
     <header className="st-header">
-      <a className="st-brand" href="/" aria-label="FORK Scenario Studio"><ForkMark/><strong>FORK<span>.</span></strong><span className="st-brand-rule"/><span className="st-brand-caption">SCENARIO<br/>STUDIO</span></a>
-      <nav aria-label="Studio navigation"><a href="?view=logistics">Logistics lab <Arrow/></a><span className="st-mode"><i/>Deterministic demo</span></nav>
+      <a className="st-brand" href="/" aria-label="FORK Scenario Studio"><ForkMark/><strong>FORK</strong><span className="st-brand-rule"/><span className="st-brand-caption">SCENARIO<br/>STUDIO</span></a>
+      <nav aria-label="Studio navigation"><a className="st-judging-entry" href="?view=logistics&tour=1" style={{background:'#e5edce',padding:'10px 16px',borderRadius:24,color:'#274631',fontWeight:700}}>Judging mode · 3 min <Arrow/></a><a href="?view=logistics">Logistics lab <Arrow/></a><span className="st-mode"><i/>Deterministic demo</span></nav>
     </header>
     <main className="st-main">
       <section className="st-hero" aria-labelledby="studio-title"><div className="st-hero-main"><div className="st-category" aria-label="Project category"><span>Business &amp; Enterprise</span><span>Operations planning</span></div><h1 id="studio-title">Test the plan.<br/>Before the disruption.</h1><p>For operations coordinators: compare plans, rehearse a disruption, and see what can still get done.</p><div className="st-hero-actions"><a className="st-btn st-btn-primary st-demo-link" href="/?view=logistics">Try the food-bank demo</a><a className="st-hero-secondary" href="#studio-brief">Build your own scenario <span aria-hidden="true">↓</span></a></div><span className="st-hero-trust">Synthetic scenarios · Deterministic planning · Human approval</span></div><div className="st-hero-note"><span className="st-note-index">FEATURED USE CASE</span><h2>Food-bank delivery resilience</h2><p>Compare three delivery plans. Apply the same vehicle breakdown. Inspect the recovery before choosing a simulated plan.</p><a href="#studio-method">How FORK checks the evidence <span aria-hidden="true">↓</span></a></div></section>
@@ -199,7 +199,7 @@ export default function Studio(){
         </section>}
       </section>}
       <section id="studio-method" className="st-method"><div><span className="st-eyebrow">AN INSPECTABLE SYSTEM</span><h2>Nothing up<br/>its sleeve.</h2></div><div className="st-method-item"><span>01</span><h3>Bounded interview</h3><p>Local phrase extraction and focused questions build an inspectable model. This deterministic demo has a limited language scope; missing facts and unsupported constraints stay visible.</p><a href="/api/studio/schema" target="_blank" rel="noreferrer">Inspect the schema <Arrow/></a></div><div className="st-method-item"><span>02</span><h3>Physical accounting</h3><p>Each minute of work uses actual modeled capacity. Dependencies, stock and budgets constrain all three scheduling heuristics.</p></div><div className="st-method-item"><span>03</span><h3>Independent evidence</h3><p>The referee recomputes outcomes from work segments. A future AI adapter could propose this same schema; no model calls run today.</p></div></section>
-      <footer className="st-footer"><div><ForkMark/><strong>FORK.</strong><span>Explore consequences. Own the decision.</span></div><p>Synthetic inputs · Deterministic planning · No real dispatch<br/>Built with substantial OpenAI Codex development assistance.</p>{hash&&<code title={hash}>BRIEF MODEL {hash.slice(0,12)}</code>}</footer>
+      <footer className="st-footer"><div><ForkMark/><strong>FORK</strong><span>Rehearse before you commit.</span></div><p>Synthetic inputs · Deterministic planning · No real dispatch<br/>Built with substantial OpenAI Codex development assistance.</p>{hash&&<code title={hash}>BRIEF MODEL {hash.slice(0,12)}</code>}</footer>
     </main>
   </div>
 }

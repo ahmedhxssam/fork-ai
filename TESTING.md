@@ -29,7 +29,15 @@ npm --prefix frontend run build
 npm --prefix frontend run test:e2e
 ```
 
-## Current judge-readiness release
+## Guided presentation and brand release
+
+November 15, 2026: the final branded production build passed TypeScript/Vite and the complete real-browser suite passed **44/44** (reported 1.0 minute) against localhost 8767 with a separate temporary SQLite database. The retained engine/model checks passed **252 Python tests** and **4 frontend model tests**; four existing dependency deprecation warnings remain. See [presentation release evidence](docs/PRESENTATION_RELEASE.md) for media, review and inspection boundaries.
+
+Six new guide cases exercise real launch and shared failure, Back without another shock, preservation of the saved pointer, explicit approval, launch/disruption failure and retry, restart, keyboard navigation, timer pause across dialog remount, narrow-screen approval, tablet highlight geometry and delayed stylesheet loading. An initial complete run exposed four small-screen overflow failures; responsive header layout fixed their causes, then the full suite passed. Subsequent final guide/brand styling was followed by the final 44-case passing run.
+
+Independent review reproduced and resolved a missing receipt highlight on Back, a collapsed tablet highlight and inert inspector tabs. It reported no open P0–P2 finding in the reviewed scope. Desktop, 390px mobile and 1024px tablet guide screenshots were inspected; a native in-app browser separately exercised the desktop path through actual human approval. No exhaustive accessibility or real-world validation claim follows from those checks.
+
+## Earlier judge-readiness release
 
 November 14, 2026: `make test` passed **252 Python tests**, **4 frontend model tests**, TypeScript and production build. The final judge-readiness browser suite passed **38/38** (reported 1.2 minutes) and adds two end-to-end cases to the retained 36: category and above-fold demo discovery, real shared-shock/referee/current-approval export, plus a 390px mobile path with readable primary controls and no horizontal overflow. See [judge-readiness verification](docs/JUDGE_READINESS.md) for the final browser result, current screenshots/media, limitations and exact run provenance.
 

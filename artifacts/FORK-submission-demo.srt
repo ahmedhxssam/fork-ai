@@ -1,0 +1,95 @@
+1
+00:00:00,650 --> 00:00:03,659
+Which plan still feeds people when a vehicle fails?
+
+2
+00:00:03,659 --> 00:00:08,675
+FORK lets a coordinator test that decision before dispatch, with a synthetic mission.
+
+3
+00:00:10,650 --> 00:00:16,518
+This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles.
+
+4
+00:00:16,518 --> 00:00:21,236
+Each strategy receives an isolated copy of the same resources and constraints.
+
+5
+00:00:22,650 --> 00:00:27,969
+Velocity, Resilience, and Equity express different priorities in a deterministic planner.
+
+6
+00:00:27,969 --> 00:00:34,005
+Ordinary greedy routing delivers two hundred twenty four meals initially, beating every named policy.
+
+7
+00:00:34,005 --> 00:00:35,738
+FORK keeps that loss visible.
+
+8
+00:00:38,650 --> 00:00:42,096
+Now vehicle A fails at minute twenty five in every world.
+
+9
+00:00:42,096 --> 00:00:44,272
+Completed deliveries stay completed.
+
+10
+00:00:44,272 --> 00:00:45,784
+Its cargo stays stranded.
+
+11
+00:00:45,784 --> 00:00:48,444
+Recovery can change only the remaining plan.
+
+12
+00:00:51,650 --> 00:00:55,495
+All three adapted plans now deliver one hundred sixty eight meals.
+
+13
+00:00:55,495 --> 00:01:02,835
+With fixed routes under the same failure, they deliver one hundred forty four, one hundred twenty, and one hundred forty four.
+
+14
+00:01:02,835 --> 00:01:05,631
+This measures recovery against a paired control.
+
+15
+00:01:08,650 --> 00:01:11,387
+Better depends on the coordinator's priorities.
+
+16
+00:01:11,387 --> 00:01:15,406
+Adjust the weights for coverage, high need service, and modeled cost.
+
+17
+00:01:15,406 --> 00:01:20,357
+The comparison uses verified outcomes and reports ties instead of inventing a winner.
+
+18
+00:01:21,650 --> 00:01:27,030
+A separate referee reconstructs movement, cargo, and timing, then recomputes the metrics.
+
+19
+00:01:27,030 --> 00:01:30,475
+Its receipt checks consistency inside the declared model.
+
+20
+00:01:30,475 --> 00:01:33,860
+It does not prove route optimality or real world safety.
+
+21
+00:01:36,650 --> 00:01:39,936
+A person reviews the evidence and approves this revision.
+
+22
+00:01:39,936 --> 00:01:43,855
+The exported packet carries the simulated plan and its verification.
+
+23
+00:01:43,855 --> 00:01:45,123
+Nothing is dispatched.
+
+24
+00:01:45,123 --> 00:01:50,254
+FORK makes the tradeoffs inspectable, and leaves the final decision with the coordinator.

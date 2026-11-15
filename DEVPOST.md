@@ -1,6 +1,6 @@
 # FORK — Devpost draft
 
-Draft fields for owner review; this file is not a submission receipt. The tested judge-readiness source and media are public at commit `e37a0ee`; anonymous publication verification is recorded in [docs/PUBLICATION.md](docs/PUBLICATION.md).
+Draft fields for owner review; this file is not a submission receipt. The earlier judge-readiness release is documented in [publication evidence](docs/PUBLICATION.md). The newer guided tour and submission media require their own release/publication evidence.
 
 ## Copy-ready entry fields
 
@@ -8,15 +8,17 @@ Draft fields for owner review; this file is not a submission receipt. The tested
 
 **Tagline:** Rehearse food-bank delivery disruptions, compare recovery with a fixed plan, and choose using independently checked evidence.
 
-**Main track:** Business & Enterprise
+**Main track:** Business and Enterprise (select only this main track)
+
+**Best Overall Hack:** automatic consideration upon submission, not another main-track selection.
 
 **Category / use case:** Operations planning → Food-bank delivery resilience
 
 **Source:** https://github.com/ahmedhxssam/fork-ai
 
-**Prepared video:** [92-second narrated MP4](artifacts/FORK-judge-demo.mp4) · [captions](artifacts/FORK-judge-demo.srt). The MP4 is public in GitHub; a Devpost-compatible video-host upload/link remains an owner action.
+**Prepared video:** [submission MP4](artifacts/FORK-submission-demo.mp4) · [captions](artifacts/FORK-submission-demo.srt) · [transcript](artifacts/FORK-submission-demo-transcript.txt). Check the [presentation release report](docs/PRESENTATION_RELEASE.md) for measured duration and inspection. The supplied packet caps the optional video at two minutes. A Devpost-compatible video-host upload/link remains a separate action.
 
-**Local demo:** http://127.0.0.1:8000/?view=logistics — startup instructions in README.md. This is a local application, not a hosted demo URL.
+**Local demo:** http://127.0.0.1:8000/?view=logistics&tour=1&pace=120 — two-minute guided judging cut; startup instructions in README.md. The [three-minute guide](http://127.0.0.1:8000/?view=logistics&tour=1) is for rehearsal. This is a local application, not a hosted demo URL.
 
 ## Inspiration
 
@@ -30,7 +32,7 @@ An operations coordinator launches the same mission into three isolated worlds. 
 
 The comparison does not promise a preferred winner. In the seed-26 initial mission, ordinary greedy routing delivers **224 meals**, versus **216 / 192 / 216** for Velocity / Resilience / Equity. With **vehicle A failing at 1,500 seconds**, adaptive execution delivers **168 / 168 / 168**, while the paired fixed-plan controls deliver **144 / 120 / 144**: gains of **24 / 48 / 24**. The three adaptive outcomes tie on delivered meals; the larger recovery gain starts from a weaker control. Other shocks can produce different results or zero gains.
 
-A separate referee reconstructs movement, cargo, timing and metrics from the evidence. The coordinator inspects that receipt, chooses preferences, approves the current revision and downloads a simulated-plan packet. Exports do not dispatch vehicles or contact volunteers.
+An eight-chapter guide makes the story easy to follow, with Back, Next and Restart controls. A separate referee reconstructs movement, cargo, timing and metrics from the evidence. The coordinator inspects that receipt, chooses preferences, approves the current revision and downloads a simulated-plan packet. Exports do not dispatch vehicles or contact volunteers.
 
 Scenario Studio is a secondary authoring capability: a bounded interview asks for missing facts, exposes contradictions and compiles reviewed answers into a resource/task model. It shares the same decision-rehearsal approach, but generic workflow jobs do not impersonate vehicle routes.
 
@@ -68,7 +70,10 @@ Python, FastAPI, Pydantic, Uvicorn, SQLite, OR-Tools, NetworkX, React, TypeScrip
 
 ## Entry preparation notes — do not paste as product claims
 
-- Select the exact main track **Business & Enterprise**. Operations planning and food-bank delivery resilience describe the use case; they are not additional official tracks.
-- Use the primary logistics journey and the final inspected recording. Existing silent clips document earlier versions; do not describe them as a newly narrated release.
+- Select **Business and Enterprise** as the single main track. Operations planning and food-bank delivery resilience describe the use case. Best Overall consideration is automatic upon submission; the packet lists a PS5 Disc Edition per winning member and says main-track winners cannot also win Best Overall. No award outcome is promised.
+- Use the two-minute logistics journey and final inspected recording. The three-minute guide is rehearsal only: both video and required in-person demo have a two-minute cap. Older 92-second/silent clips document earlier versions.
 - Confirm the submitted source/video match the actual release. Publication, video upload, track selection and entry submission require their own evidence.
 - No live-model, deepagents, CoStar or other sponsor integration is claimed. Keep synthetic inputs, greedy's initial win, ties and human approval explicit.
+
+- Supplied source checks: *F26 Onsite Hacker Packet*, pp. 4–5 (deliverables, duration limits, judging rubric), pp. 10–12 (main tracks, prizes, automatic Overall); *F26 Main Track.docx* agrees. The deadline is November 15, 2026 at 8:00 AM event-local time (Princeton/Eastern); the packet itself prints “8 am.” Add the required Discord usernames and verify the entry confirmation.
+- Do not claim sponsor-track eligibility from the food-bank theme alone. CoStar requires combined sponsor-data layers and agentic behavior; LangChain requires deepagents; Peri requires an evidenced consultation with a real business. Current FORK establishes none of those. [Track guidance](SUBMISSION_READY.md) covers the remaining special tracks.
