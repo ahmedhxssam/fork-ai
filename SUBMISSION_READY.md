@@ -15,7 +15,7 @@ Start `make demo`, then open:
 - **Entry:** [copy-ready Devpost draft](DEVPOST.md) · [public source repository](https://github.com/ahmedhxssam/fork-ai).
 - **Evidence:** [current presentation release](docs/PRESENTATION_RELEASE.md) · [test history](TESTING.md) · [earlier judge-readiness report](docs/JUDGE_READINESS.md) · [publication history](docs/PUBLICATION.md).
 
-The final recording uses genuine browser interactions with the synthetic deterministic app. Narration uses the offline macOS Samantha system voice, not the owner's voice. Read the [presentation release report](docs/PRESENTATION_RELEASE.md) and media evidence for the measured duration, actual run and inspection boundaries; no listening or browser check is implied unless recorded there. The earlier [92-second recording](artifacts/FORK-judge-demo.mp4) remains historical fallback material.
+The final recording uses genuine browser interactions with the synthetic deterministic app. Narration uses local Kokoro neural speech with the built-in **af_heart** synthetic voice, not the owner's voice. Narration requires no API key and is separate from the app's deterministic runtime. Read the [presentation release report](docs/PRESENTATION_RELEASE.md) and media evidence for the measured duration, actual run and inspection boundaries; no listening or browser check is implied unless recorded there. The earlier [92-second recording](artifacts/FORK-judge-demo.mp4) remains historical fallback material.
 
 ## Which tracks fit this version?
 
@@ -58,7 +58,7 @@ The guided tour, shared brand and new submission video have their own [release v
 
 1. Review the exact release, video, captions, entry text and substantial Codex-assistance disclosure.
 2. Use the final release evidence to confirm the video is at most 2:00 and the actual judging-laptop journey works. Rehearse the short cut within the live limit.
-3. The new MP4 is linked prominently in the Devpost story. An optional embedded player needs YouTube/Vimeo/Youku hosting; separate hosting permission was requested. No embedded-video URL is currently claimed.
+3. The user chose the existing GitHub MP4 link, already prominent in the Devpost story. Keep the film at `artifacts/FORK-submission-demo.mp4` so the link stays unchanged. No separate upload or embedded player was requested; the dedicated video field remains empty.
 4. Preserve the existing submitted entry. Confirm its Business and Enterprise selection, participant/eligibility information, repository timing and Discord usernames; verify any saved updates retain submitted status.
 5. Keep the existing [entry URL](https://devpost.com/software/fork-ai-pmeja0) and verification record. The interface was observed as submitted; eligibility and award outcomes remain organizer decisions.
 

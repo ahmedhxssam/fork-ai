@@ -13,7 +13,9 @@ The existing submission was updated in **Dia** after source/media publication, w
 - **Canonical story copy:** [DEVPOST_PUBLIC_STORY.md](docs/DEVPOST_PUBLIC_STORY.md).
 - **Thumbnail:** [minimal FORK wordmark](docs/assets/brand/FORK-thumbnail.png).
 
-The dedicated video field remains empty pending separate hosting permission. Devpost embeds only YouTube, Vimeo or Youku; the GitHub MP4 link is available in the story. No hosted app is claimed. [Devpost video requirements](https://help.devpost.com/article/85-uploading-a-demo-video)
+The user chose the existing GitHub MP4 link in the story. The film stays at `artifacts/FORK-submission-demo.mp4`, so that link remains unchanged when its narration is replaced. No separate upload or embedded player was requested; the dedicated video field remains empty. No hosted app is claimed.
+
+Film narration uses local Kokoro neural speech with the built-in **af_heart** synthetic voice, not the owner's voice. It needs no API key and is separate from the app's deterministic runtime.
 
 For the local judging demonstration, run `make demo` and use the [two-minute guide](http://127.0.0.1:8000/?view=logistics&tour=1&pace=120). The [three-minute guide](http://127.0.0.1:8000/?view=logistics&tour=1) is for learning and rehearsal. [Spoken scripts](docs/PITCH.md) · [full submission pack](SUBMISSION_READY.md)
 

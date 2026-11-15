@@ -1,0 +1,4 @@
+# Optional local film narration only; keep separate from the FORK application runtime.
+# Tested with Python 3.13. Model/voice assets are separate pinned local downloads.
+kokoro-onnx==0.6.1
+soundfile==0.13.1

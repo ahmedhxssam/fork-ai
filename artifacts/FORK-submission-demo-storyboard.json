@@ -2,8 +2,7 @@
   "title": "FORK · Test the plan before the disruption",
   "target_seconds": 115,
   "fps": 30,
-  "voice": "Samantha",
-  "voice_rate": 172,
+  "voice": "af_heart",
   "synthetic": true,
   "runtime": "Deterministic Planner Mode",
   "chapters": [
@@ -18,9 +17,27 @@
         "Keep the decision human"
       ],
       "narration": "Which plan still feeds people when a vehicle fails? FORK lets a coordinator test that decision before dispatch, with a synthetic mission.",
+      "speech_seconds": 8.366625,
+      "narration_audio": {
+        "file": "1.aiff",
+        "sha256": "42b3a5559907243dd13fb8e3a796df5e8634635dc73e3ba11ab24757fed0cb7a",
+        "signature": "80a676a22cc14860d7da9de5fcb5d7636c06ecf502725fa4516bf9a1ed121b6c",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "Which plan still feeds people when a vehicle fails?",
+          "start": 0,
+          "end": 2.8693333333333335
+        },
+        {
+          "text": "FORK lets a coordinator test that decision before dispatch, with a synthetic mission.",
+          "start": 3.1193333333333335,
+          "end": 8.366625
+        }
+      ],
       "start": 0,
-      "end": 10,
-      "speech_seconds": 8.024671
+      "end": 10
     },
     {
       "n": 2,
@@ -32,10 +49,28 @@
         "264 meals requested",
         "3 delivery vehicles"
       ],
-      "narration": "This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy receives an isolated copy of the same resources and constraints.",
+      "narration": "This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy gets the same resources in an isolated world.",
+      "speech_seconds": 10.126,
+      "narration_audio": {
+        "file": "2.aiff",
+        "sha256": "5cfd3001961222b2830724dc97e5ff115ab35f25476d0212d54f6db19c22ac8c",
+        "signature": "420a16bb0b7968d349698820522536a72816edc61bd831f5a5eb32e689b46556",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles.",
+          "start": 0,
+          "end": 5.769333333333333
+        },
+        {
+          "text": "Each strategy gets the same resources in an isolated world.",
+          "start": 6.019333333333333,
+          "end": 10.126
+        }
+      ],
       "start": 10,
-      "end": 22,
-      "speech_seconds": 10.586485
+      "end": 22
     },
     {
       "n": 3,
@@ -48,9 +83,27 @@
         "Visible losses and ties"
       ],
       "narration": "Velocity, Resilience, and Equity express different priorities in a deterministic planner. Ordinary greedy routing delivers two hundred twenty four meals initially, beating every named policy. FORK keeps that loss visible.",
+      "speech_seconds": 14.231917,
+      "narration_audio": {
+        "file": "3.aiff",
+        "sha256": "1f8b795715ea06a16bc82234807552510f42be7b3a8776139acdef3aa7df330e",
+        "signature": "90ba5d9d6fbea37e033cd37b3d6ee368143afb6c96798f3feb4a4b05ecd85b83",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "Velocity, Resilience, and Equity express different priorities in a deterministic planner.",
+          "start": 0,
+          "end": 5.790625
+        },
+        {
+          "text": "Ordinary greedy routing delivers two hundred twenty four meals initially, beating every named policy. FORK keeps that loss visible.",
+          "start": 6.040625,
+          "end": 14.231916666666667
+        }
+      ],
       "start": 22,
-      "end": 38,
-      "speech_seconds": 13.088299
+      "end": 38
     },
     {
       "n": 4,
@@ -63,9 +116,27 @@
         "History stays locked"
       ],
       "narration": "Now vehicle A fails at minute twenty five in every world. Completed deliveries stay completed. Its cargo stays stranded. Recovery can change only the remaining plan.",
+      "speech_seconds": 10.757333,
+      "narration_audio": {
+        "file": "4.aiff",
+        "sha256": "76da17c61b45a5ea51e0d5f8656898a0bc98e2978172b00e127eda6ee0c714eb",
+        "signature": "a37cc3716a07a784db2510239be660eaddd46a55eed243fef0acd9c540023e0d",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "Now vehicle A fails at minute twenty five in every world.",
+          "start": 0,
+          "end": 3.3626666666666667
+        },
+        {
+          "text": "Completed deliveries stay completed. Its cargo stays stranded. Recovery can change only the remaining plan.",
+          "start": 3.6126666666666667,
+          "end": 10.757333333333333
+        }
+      ],
       "start": 38,
-      "end": 51,
-      "speech_seconds": 9.793832
+      "end": 51
     },
     {
       "n": 5,
@@ -78,9 +149,27 @@
         "Same failure and timing"
       ],
       "narration": "All three adapted plans now deliver one hundred sixty eight meals. With fixed routes under the same failure, they deliver one hundred forty four, one hundred twenty, and one hundred forty four. This measures recovery against a paired control.",
+      "speech_seconds": 14.701292,
+      "narration_audio": {
+        "file": "5.aiff",
+        "sha256": "569478c9a5352812a250cd75f8d563bab58245ad1a1600cdb9f84d1ca70a43af",
+        "signature": "be2b5b4cd466694f15c22416aaa3839c2e9817d456d3c913a48f6dbe7d4dddb8",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "All three adapted plans now deliver one hundred sixty eight meals.",
+          "start": 0,
+          "end": 4.233333333333333
+        },
+        {
+          "text": "With fixed routes under the same failure, they deliver one hundred forty four, one hundred twenty, and one hundred forty four. This measures recovery against a paired control.",
+          "start": 4.483333333333333,
+          "end": 14.701291666666666
+        }
+      ],
       "start": 51,
-      "end": 68,
-      "speech_seconds": 13.980952
+      "end": 68
     },
     {
       "n": 6,
@@ -92,10 +181,28 @@
         "High-need service",
         "Modeled resource cost"
       ],
-      "narration": "Better depends on the coordinator's priorities. Adjust the weights for coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner.",
+      "narration": "Better depends on your priorities. Adjust coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner.",
+      "speech_seconds": 11.505958,
+      "narration_audio": {
+        "file": "6.aiff",
+        "sha256": "44351c12ae7183cfdf0f98f8d22d16415e75bddcf431f48265a3e489eb888b05",
+        "signature": "45d058dce1676d3a48ee28ea1f76ea9b403594707e2bb046d51bd94a644864ed",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "Better depends on your priorities. Adjust coverage, high need service, and modeled cost.",
+          "start": 0,
+          "end": 5.571958333333333
+        },
+        {
+          "text": "The comparison uses verified outcomes and reports ties instead of inventing a winner.",
+          "start": 5.821958333333333,
+          "end": 11.505958333333334
+        }
+      ],
       "start": 68,
-      "end": 81,
-      "speech_seconds": 11.70712
+      "end": 81
     },
     {
       "n": 7,
@@ -108,9 +215,32 @@
         "Inspect the model boundary"
       ],
       "narration": "A separate referee reconstructs movement, cargo, and timing, then recomputes the metrics. Its receipt checks consistency inside the declared model. It does not prove route optimality or real world safety.",
+      "speech_seconds": 13.596667,
+      "narration_audio": {
+        "file": "7.aiff",
+        "sha256": "9d0541178eed2773197400975890e99c9bf5ca41e45ab897524bfa0525f0acd6",
+        "signature": "47053cf116aa73b473426564dd8ae95ac5460b30c87c6e8befdd71bcadd20e50",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "A separate referee reconstructs movement, cargo, and timing, then recomputes the metrics.",
+          "start": 0,
+          "end": 5.800666666666666
+        },
+        {
+          "text": "Its receipt checks consistency inside the declared model.",
+          "start": 6.050666666666666,
+          "end": 9.729333333333333
+        },
+        {
+          "text": "It does not prove route optimality or real world safety.",
+          "start": 9.979333333333333,
+          "end": 13.596666666666666
+        }
+      ],
       "start": 81,
-      "end": 96,
-      "speech_seconds": 12.210385
+      "end": 96
     },
     {
       "n": 8,
@@ -122,10 +252,148 @@
         "Download the plan",
         "No real dispatch"
       ],
-      "narration": "A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and its verification. Nothing is dispatched. FORK makes the tradeoffs inspectable, and leaves the final decision with the coordinator.",
+      "narration": "A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and verification. Nothing is dispatched. FORK makes tradeoffs inspectable, and leaves the decision with the coordinator.",
+      "speech_seconds": 14.628,
+      "narration_audio": {
+        "file": "8.aiff",
+        "sha256": "86b76774db1977f8d8f4b010e6d1f9e43ac3a53fe1cbbdb9752f58c7be1dc514",
+        "signature": "f5e1b6964934f94775d7c9bfb8350c4eb155246d431b6d19c4c4c97768bdb054",
+        "cache_hit": false
+      },
+      "sentence_timings": [
+        {
+          "text": "A person reviews the evidence and approves this revision.",
+          "start": 0,
+          "end": 3.466666666666667
+        },
+        {
+          "text": "The exported packet carries the simulated plan and verification.",
+          "start": 3.716666666666667,
+          "end": 8.026666666666667
+        },
+        {
+          "text": "Nothing is dispatched. FORK makes tradeoffs inspectable, and leaves the decision with the coordinator.",
+          "start": 8.276666666666667,
+          "end": 14.628
+        }
+      ],
       "start": 96,
-      "end": 115,
-      "speech_seconds": 13.603628
+      "end": 115
     }
-  ]
+  ],
+  "voice_engine": "kokoro-onnx",
+  "voice_speed": 1,
+  "voice_lang": "en-us",
+  "narration": {
+    "engine": "kokoro-onnx",
+    "description": "Offline local Kokoro ONNX neural narration (af_heart); a synthetic built-in voice, not the owner's voice.",
+    "voice": "af_heart",
+    "speed": 1,
+    "lang": "en-us",
+    "packages": {
+      "kokoro-onnx": "0.6.1",
+      "onnxruntime": "1.32.0",
+      "soundfile": "0.13.1",
+      "numpy": "2.5.4",
+      "phonemizer": "3.6.0",
+      "espeakng-loader": "0.2.4"
+    },
+    "python": "3.13.12",
+    "model_sha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+    "voices_sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+    "execution_provider": "CPUExecutionProvider",
+    "telemetry_disabled_before_session": true,
+    "sentence_pause_seconds": 0.25,
+    "timing": "Measured sentence-group audio segments; short adjacent sentences are synthesized together for prosody.",
+    "assets": [
+      {
+        "chapter": 1,
+        "file": "1.aiff",
+        "sha256": "42b3a5559907243dd13fb8e3a796df5e8634635dc73e3ba11ab24757fed0cb7a",
+        "signature": "80a676a22cc14860d7da9de5fcb5d7636c06ecf502725fa4516bf9a1ed121b6c",
+        "sample_rate": 24000,
+        "samples": 200799,
+        "speech_seconds": 8.366625,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 2,
+        "file": "2.aiff",
+        "sha256": "5cfd3001961222b2830724dc97e5ff115ab35f25476d0212d54f6db19c22ac8c",
+        "signature": "420a16bb0b7968d349698820522536a72816edc61bd831f5a5eb32e689b46556",
+        "sample_rate": 24000,
+        "samples": 243024,
+        "speech_seconds": 10.126,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 3,
+        "file": "3.aiff",
+        "sha256": "1f8b795715ea06a16bc82234807552510f42be7b3a8776139acdef3aa7df330e",
+        "signature": "90ba5d9d6fbea37e033cd37b3d6ee368143afb6c96798f3feb4a4b05ecd85b83",
+        "sample_rate": 24000,
+        "samples": 341566,
+        "speech_seconds": 14.231916666666667,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 4,
+        "file": "4.aiff",
+        "sha256": "76da17c61b45a5ea51e0d5f8656898a0bc98e2978172b00e127eda6ee0c714eb",
+        "signature": "a37cc3716a07a784db2510239be660eaddd46a55eed243fef0acd9c540023e0d",
+        "sample_rate": 24000,
+        "samples": 258176,
+        "speech_seconds": 10.757333333333333,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 5,
+        "file": "5.aiff",
+        "sha256": "569478c9a5352812a250cd75f8d563bab58245ad1a1600cdb9f84d1ca70a43af",
+        "signature": "be2b5b4cd466694f15c22416aaa3839c2e9817d456d3c913a48f6dbe7d4dddb8",
+        "sample_rate": 24000,
+        "samples": 352831,
+        "speech_seconds": 14.701291666666666,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 6,
+        "file": "6.aiff",
+        "sha256": "44351c12ae7183cfdf0f98f8d22d16415e75bddcf431f48265a3e489eb888b05",
+        "signature": "45d058dce1676d3a48ee28ea1f76ea9b403594707e2bb046d51bd94a644864ed",
+        "sample_rate": 24000,
+        "samples": 276143,
+        "speech_seconds": 11.505958333333334,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 7,
+        "file": "7.aiff",
+        "sha256": "9d0541178eed2773197400975890e99c9bf5ca41e45ab897524bfa0525f0acd6",
+        "signature": "47053cf116aa73b473426564dd8ae95ac5460b30c87c6e8befdd71bcadd20e50",
+        "sample_rate": 24000,
+        "samples": 326320,
+        "speech_seconds": 13.596666666666666,
+        "voice": "af_heart",
+        "speed": 1
+      },
+      {
+        "chapter": 8,
+        "file": "8.aiff",
+        "sha256": "86b76774db1977f8d8f4b010e6d1f9e43ac3a53fe1cbbdb9752f58c7be1dc514",
+        "signature": "f5e1b6964934f94775d7c9bfb8350c4eb155246d431b6d19c4c4c97768bdb054",
+        "sample_rate": 24000,
+        "samples": 351072,
+        "speech_seconds": 14.628,
+        "voice": "af_heart",
+        "speed": 1
+      }
+    ]
+  }
 }

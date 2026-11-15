@@ -1,5 +1,15 @@
 # Public source publication
 
+## Neural narration replacement — November 15, 2026
+
+The owner selected the built-in Kokoro **Heart (`af_heart`)** voice after three local auditions and requested replacement at the exact existing film path. The final MP4 remains `artifacts/FORK-submission-demo.mp4`; the branch-based link already in the Devpost story is unchanged. No separate video-platform upload was requested.
+
+The replacement is **115.021333 seconds**, **1920×1080 / 30 fps**, **14,061,282 bytes**, SHA-256 `842700e74746913f85bc3e37a373785c888187e64a4301873e7632efe5ef56e5`. Full decoding, all eight static chapter frames, opening/outro/ending, caption text/timing bounds, audio levels and neutral-color checks passed. Audio measured −16.2 dB mean / −1.5 dB peak; no full-film human listening check is claimed. The existing raw browser take and application runtime were preserved. [Current release evidence](PRESENTATION_RELEASE.md)
+
+The narration runs locally using Kokoro ONNX with pinned model/voice-bank hashes, isolated optional dependencies, measured sentence-group captions and cache invalidation for engine, voice, language, speed, text, model, package and script changes. Runtime FORK remains deterministic and has no model provider connected.
+
+Publication verification will be recorded after the replacement is pushed and its existing public link is checked.
+
 ## Guided presentation publication — November 15, 2026
 
 The application, shared brand, eight-chapter guide, final film, raw browser take, captions, scripts, screenshots and release documentation were committed as [`d406d2b`](https://github.com/ahmedhxssam/fork-ai/commit/d406d2b584c6a43de4d11e31f5fd4e4481a49c9b) and pushed to the public default branch `codex/fork`. `git ls-remote` returned that exact commit. The GitHub connector fetched the updated README at the exact commit.

@@ -24,18 +24,32 @@ Style: Default,Arial,25,&H001D2217,&H001D2217,&H00F2F7F7,&H00F2F7F7,0,0,0,0,100,
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
 '''
 import re
+def sentence_cues(chapter):
+    """Prefer measured local sentence boundaries; retain legacy storyboard support."""
+    cues=chapter.get('sentence_timings')
+    if cues:
+        assert ' '.join(c['text'] for c in cues)==' '.join(chapter['narration'].split()),'Caption text differs from narration'
+        previous=0
+        for cue in cues:
+            assert previous<=cue['start']<cue['end']<=chapter['speech_seconds']+.001,cue
+            previous=cue['end']
+        return cues
+    sentences=[s.strip() for s in re.findall(r'[^.!?]+[.!?]+',chapter['narration'])]
+    count=sum(map(len,sentences));at=0;cues=[]
+    for sentence in sentences:
+        end=at+chapter['speech_seconds']*len(sentence)/count
+        cues.append({'text':sentence,'start':at,'end':end});at=end
+    return cues
 source_probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-of','json',str(WORK/'screen.webm')]))
 source_video=next(s for s in source_probe['streams'] if s['codec_type']=='video')
 assert (source_video['width'],source_video['height'])==(2880,1600),source_video
 EVIDENCE['capture']['verified_video']={k:source_video.get(k) for k in ['codec_name','width','height','r_frame_rate']}
 segments=[]
 for c in STORY['chapters']:
-    sentences=[s.strip() for s in re.findall(r'[^.!?]+[.!?]+',c['narration'])]
-    count=sum(map(len,sentences));at=.65;events=[]
-    for sentence in sentences:
-        dur=c['speech_seconds']*len(sentence)/count
-        events.append(f'Dialogue: 0,{ass_time(at)},{ass_time(at+dur)},Default,,0,0,0,,{sentence}')
-        at+=dur
+    cues=sentence_cues(c);events=[]
+    for cue in cues:
+        events.append(f'Dialogue: 0,{ass_time(.65+cue["start"])},{ass_time(.65+cue["end"])},Default,,0,0,0,,{cue["text"]}')
+    at=.65+c['speech_seconds']
     caption=WORK/f"caption-{c['n']}.ass";caption.write_text(ASS+'\n'.join(events)+'\n')
     # The final three seconds are a logo-only outro; the native workflow remains in the source.
     duration=c['seconds']-(3 if c['n']==8 else 0)
@@ -79,6 +93,13 @@ for t,label in [(0.1,'opening'),(114.8,'ending')]:
 EVIDENCE.update({'delivery':{'duration_seconds':float(probe['format']['duration']),'bytes':OUT.stat().st_size,'sha256':sha(OUT),'streams':[{k:s.get(k) for k in ['codec_type','codec_name','width','height','pix_fmt','r_frame_rate','avg_frame_rate','nb_frames','sample_rate','channels','color_space','color_transfer','color_primaries']} for s in probe['streams']],'complete_decode':'passed','audio_measurement_log':str(WORK/'audio-check.log'),'final_frame_checks':'pending visual inspection'},'color_pipeline':{'purpose':'Media format correction only; UI layout, labels, scenario and results are unmodified. Raw browser video and native PNGs are retained.','browser_input':'Untagged VP8 interpreted as BT.601 limited range; Y+1/U+2/V+1 neutral-patch capture calibration against retained PNG.','working_canvas':'RGBA; overlays and captions composited in RGB.','delivery':'Explicit RGB to BT.709 limited-range YUV420 conversion, with matching H.264 VUI tags.'},'source_hashes':{'screen.webm':sha(WORK/'screen.webm'),'storyboard.json':sha(ROOT/'scripts/media/storyboard.json')},'outro':'Final 3 seconds: native FORK mark and wordmark, opacity and 12px position settle.'})
 EVIDENCE['delivery']['frames']=int(video_stream['nb_frames'])
 EVIDENCE['delivery']['average_frame_rate']=video_stream['avg_frame_rate']
+if STORY.get('narration'):
+    EVIDENCE['narration']=STORY['narration']
+EVIDENCE.pop('visual_review',None)
+EVIDENCE['captions']={'exact_text_matches_authored_narration':True,'sentence_cue_timing':'Measured sentence-group synthesis boundaries with explicit inter-group pauses; not word alignment.' if STORY.get('narration',{}).get('engine')=='kokoro-onnx' and all(c.get('sentence_timings') for c in STORY['chapters']) else 'Proportional sentence timing within measured audio; not measured sentence alignment.','burned_in':True,'sidecar':'artifacts/FORK-submission-demo.srt'}
+if EVIDENCE.get('downloaded_guidance'):
+    EVIDENCE['downloaded_guidance']['use']='Reviewed story/capture/editing guidance. No implementation scripts or dependencies from that guidance repository, external voice/music APIs or advisory AI judge were executed. Kokoro is a separately credited local narration dependency.'
+EVIDENCE['production_code']={str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'scripts/media/render.py',ROOT/'scripts/media/prepare.mjs',ROOT/'scripts/media/storyboard.json',ROOT/'scripts/media/narrate.py',ROOT/'frontend/scripts/record-judging.mjs'] if p.exists()}
 EVIDENCE['audio_measurements']={key:float(re.search(rf'{key}: ([\-0-9.]+) dB',audio_check).group(1)) for key in ['mean_volume','max_volume']}
 color_checks=[]
 for label,t,x,y in [('chapter_rail',5,10,200),('native_app_paper',5,344,326),('outro_paper',113.5,100,100)]:

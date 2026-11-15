@@ -1,12 +1,12 @@
 FORK submission demo
-Narration: offline macOS Samantha system voice, not the owner's voice.
+Narration: Offline local Kokoro ONNX neural narration (af_heart); a synthetic built-in voice, not the owner's voice.
 Actual local UI; synthetic data; Deterministic Planner Mode.
 
 01 · 0s–10s · A decision before dispatch
 Which plan still feeds people when a vehicle fails? FORK lets a coordinator test that decision before dispatch, with a synthetic mission.
 
 02 · 10s–22s · One shared starting point
-This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy receives an isolated copy of the same resources and constraints.
+This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy gets the same resources in an isolated world.
 
 03 · 22s–38s · Keep the baseline honest
 Velocity, Resilience, and Equity express different priorities in a deterministic planner. Ordinary greedy routing delivers two hundred twenty four meals initially, beating every named policy. FORK keeps that loss visible.
@@ -18,10 +18,10 @@ Now vehicle A fails at minute twenty five in every world. Completed deliveries s
 All three adapted plans now deliver one hundred sixty eight meals. With fixed routes under the same failure, they deliver one hundred forty four, one hundred twenty, and one hundred forty four. This measures recovery against a paired control.
 
 06 · 68s–81s · Make priorities explicit
-Better depends on the coordinator's priorities. Adjust the weights for coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner.
+Better depends on your priorities. Adjust coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner.
 
 07 · 81s–96s · Open the actual receipt
 A separate referee reconstructs movement, cargo, and timing, then recomputes the metrics. Its receipt checks consistency inside the declared model. It does not prove route optimality or real world safety.
 
 08 · 96s–115s · A person makes the call
-A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and its verification. Nothing is dispatched. FORK makes the tradeoffs inspectable, and leaves the final decision with the coordinator.
+A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and verification. Nothing is dispatched. FORK makes tradeoffs inspectable, and leaves the decision with the coordinator.

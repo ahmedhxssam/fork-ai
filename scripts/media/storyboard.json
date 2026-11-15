@@ -2,8 +2,7 @@
   "title": "FORK \u00b7 Test the plan before the disruption",
   "target_seconds": 115,
   "fps": 30,
-  "voice": "Samantha",
-  "voice_rate": 172,
+  "voice": "af_heart",
   "synthetic": true,
   "runtime": "Deterministic Planner Mode",
   "chapters": [
@@ -29,7 +28,7 @@
         "264 meals requested",
         "3 delivery vehicles"
       ],
-      "narration": "This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy receives an isolated copy of the same resources and constraints."
+      "narration": "This food bank has two hundred forty meals, two hundred sixty four requested, and three vehicles. Each strategy gets the same resources in an isolated world."
     },
     {
       "n": 3,
@@ -77,7 +76,7 @@
         "High-need service",
         "Modeled resource cost"
       ],
-      "narration": "Better depends on the coordinator's priorities. Adjust the weights for coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner."
+      "narration": "Better depends on your priorities. Adjust coverage, high need service, and modeled cost. The comparison uses verified outcomes and reports ties instead of inventing a winner."
     },
     {
       "n": 7,
@@ -101,7 +100,10 @@
         "Download the plan",
         "No real dispatch"
       ],
-      "narration": "A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and its verification. Nothing is dispatched. FORK makes the tradeoffs inspectable, and leaves the final decision with the coordinator."
+      "narration": "A person reviews the evidence and approves this revision. The exported packet carries the simulated plan and verification. Nothing is dispatched. FORK makes tradeoffs inspectable, and leaves the decision with the coordinator."
     }
-  ]
+  ],
+  "voice_engine": "kokoro-onnx",
+  "voice_speed": 1.0,
+  "voice_lang": "en-us"
 }

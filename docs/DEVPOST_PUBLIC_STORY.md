@@ -26,7 +26,7 @@ A separate referee reconstructs movement, cargo, capacity and timing, then recom
 
 The new **eight-chapter judging mode** highlights the relevant app areas and gives short explanations. Back, Next, Restart, keyboard navigation and a pauseable timer make it easy to rehearse or answer questions. The three-minute mode is for learning; the two-minute pace fits the contest presentation limit. Restarting preserves saved work.
 
-The new **1:55, 1080p demo** follows real browser actions with numbered titles, short step lists, captions, offline system narration and a simple animated FORK logo close. A shared minimal identity connects the app, guide and film.
+The new **1:55, 1080p demo** follows real browser actions with numbered titles, short step lists, captions, local Kokoro neural narration and a simple animated FORK logo close. The built-in **af_heart** voice is synthetic, not my voice, and requires no API key. This film-production tool is separate from FORK's deterministic runtime. A shared minimal identity connects the app, guide and film.
 
 ### Another kind of problem
 

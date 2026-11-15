@@ -2,7 +2,16 @@
 
 This pipeline records the real local application with synthetic data. It does not redraw the product, mock API outcomes, contact a model provider, dispatch a vehicle, or erase stored experiments. Separate editorial graphics occupy the margin around the recorded app. The pointer is a recording aid added to the captured page.
 
-Requirements: the repository's Playwright/Chromium install, `ffmpeg`/`ffprobe`, Python standard library, and macOS `say` with the Samantha voice. The voice is synthetic system narration, not the project owner's voice. There is no music.
+Requirements: the repository's Playwright/Chromium install, `ffmpeg`/`ffprobe`, Python 3.10–3.13, and the optional [voice requirements](requirements-voice.txt) in a separate media environment. Current narration uses the built-in `af_heart` voice from [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M) through [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx). It is synthetic neural speech generated locally, not the project owner's voice. No voice is cloned, no API key or hosted speech service is used, and there is no music. This media-only model does not change FORK's deterministic application runtime.
+
+One-time voice setup:
+
+```sh
+uv venv --python 3.13 .cache/tts-venv
+uv pip install --python .cache/tts-venv/bin/python -r scripts/media/requirements-voice.txt
+```
+
+Download `kokoro-v1.0.onnx` and `voices-v1.0.bin` from the runtime's [model-files-v1.1 release](https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.1) into `.cache/tts-models/`. The narration script verifies their pinned SHA-256 hashes before loading. Downloads and optional dependencies stay outside version control; synthesis itself does not fetch anything. The runtime is MIT-licensed; Kokoro model weights are Apache 2.0. `FORK_TTS_PYTHON` can override the isolated Python executable.
 
 From the repository root, serve the built production application against a dedicated temporary database. Then:
 
@@ -12,7 +21,18 @@ FORK_URL=http://127.0.0.1:8767/ node frontend/scripts/record-judging.mjs
 .venv/bin/python scripts/media/render.py
 ```
 
-`FORK_MEDIA_WORK` optionally overrides `/private/tmp/fork-submission-media`. Intermediate audio and rendering assets stay there. The raw 2880×1600 browser capture is retained as `artifacts/FORK-submission-source.webm`; the final film, captions, storyboard, exact transcript, approved plan exports and evidence receipt are in `artifacts/`. Native source screenshots, chapter frames and contact sheet are in `docs/assets/presentation/`. The film is 115 seconds, including a three-second logo-only close. Review generated media before claiming a specific delivery check passed.
+For a voice-only revision, retain the existing evidence receipt and source take; no browser recapture is needed:
+
+```sh
+mkdir -p /private/tmp/fork-submission-media
+cp artifacts/FORK-submission-source.webm /private/tmp/fork-submission-media/screen.webm
+node scripts/media/prepare.mjs
+.venv/bin/python scripts/media/render.py
+```
+
+The final output remains `artifacts/FORK-submission-demo.mp4`, so a branch-based GitHub link already on Devpost opens the replacement after publication. The original capture assertions remain evidence for that retained take; the new receipt records the replacement narration and delivery checks separately.
+
+`FORK_MEDIA_WORK` optionally overrides `/private/tmp/fork-submission-media`. Intermediate audio and rendering assets stay there. A per-chapter audio manifest keys the cache by engine, voice, language, speed, text, model/voice-bank hashes and package version. Changing the narrator cannot silently reuse old system-voice audio. Captions follow measured sentence-group synthesis boundaries, including explicit pauses; short adjacent sentences can share one cue. This is not word alignment. The raw 2880×1600 browser capture is retained as `artifacts/FORK-submission-source.webm`; the final film, captions, storyboard, exact transcript, approved plan exports and evidence receipt are in `artifacts/`. Native source screenshots, chapter frames and contact sheet are in `docs/assets/presentation/`. The film is 115 seconds, including a three-second logo-only close. Review generated media before claiming a specific delivery check passed.
 
 The recorder creates a fresh experiment through the visible UI and asserts the filmed figures: greedy 224 versus named policies 216/192/216 initially; shared vehicle A failure at minute 25; adapted outcomes 168 each versus fixed-route 144/120/144. It also checks preference persistence, referee validity, current-revision approval, JSON/CSV downloads, `external_dispatch=false`, no page errors, and zero external browser requests.
 
