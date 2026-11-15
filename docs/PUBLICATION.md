@@ -1,5 +1,26 @@
 # Public source publication
 
+## Guided presentation publication — November 15, 2026
+
+The application, shared brand, eight-chapter guide, final film, raw browser take, captions, scripts, screenshots and release documentation were committed as [`d406d2b`](https://github.com/ahmedhxssam/fork-ai/commit/d406d2b584c6a43de4d11e31f5fd4e4481a49c9b) and pushed to the public default branch `codex/fork`. `git ls-remote` returned that exact commit. The GitHub connector fetched the updated README at the exact commit.
+
+The GitHub content API returned **14,121,445 bytes** for `artifacts/FORK-submission-demo.mp4`, with Git blob **`375f6e0f24c6295aba8edfe417e716ef2c3ce40a`**, matching local `git hash-object`. The decoded film is **115.021333 seconds**, 1920×1080 at 30 fps, H.264/AAC. Its SHA-256 is `ddb9b8d1767da14e0cc78ec64a2474cb68ee309f51b13e9a5f5342ee4750da49`. [Local release and media verification](PRESENTATION_RELEASE.md)
+
+The user separately authorized updating the existing Devpost submission in **Dia** after the GitHub push. The existing project [FORK](https://devpost.com/software/fork-ai-pmeja0), submission ID **1305400**, was edited in place. Its original public URL and team were preserved. No project or gallery image was deleted.
+
+Observed after save:
+
+- Management interface: **SUBMITTED — 5/5 steps done**, project name **FORK**. The management slug changes from `1305400-fork-ai` to `1305400-fork`; the submission ID and public software URL remain the same.
+- Main track: **Business/Enterprise**; this selection was inspected and left unchanged.
+- New name/tagline, larger minimal brand thumbnail, updated story with the 44-browser-test result and guided mode, and a prominent link to the 1:55 GitHub film.
+- Gallery: **nine images**, with five numbered current screenshots first. The four existing images remain, explicitly labeled as earlier prototype views.
+- Public page: refreshed name/tagline, first new mission image, new film/guide links, one Challenges section and current guide/test descriptions were visible after saving.
+
+[Published story copy](DEVPOST_PUBLIC_STORY.md) · [native public-page capture](assets/presentation/devpost-public.png) · [brand thumbnail](assets/brand/FORK-thumbnail.png)
+
+The video is linked in the story. Its dedicated embedded-video field remains empty: Devpost requires YouTube/Vimeo/Youku, and separate YouTube hosting permission was requested rather than inferred from permission to edit Devpost. No hosted app or embedded player is claimed. User-specific eligibility and organizer decisions are separate from the observed submitted status.
+
+
 ## Judge-readiness release — November 14, 2026
 
 Published with the owner's explicit approval: “Publish the tested FORK update.”

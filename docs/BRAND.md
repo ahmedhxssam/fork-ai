@@ -20,6 +20,8 @@ Use generous empty space, thin borders, soft corners and restrained motion. Use 
 
 The three branches of the FORK mark represent possible decisions from one starting point. Keep the mark simple, monochrome and unboxed. Use the same [mark](../frontend/public/fork-mark.svg) and [wordmark](../frontend/public/fork-wordmark.svg) in the application and video. The mark is FORK's own; the minimal editorial direction takes inspiration from OpenAI's restraint without implying affiliation.
 
+The [1500×1000 thumbnail](assets/brand/FORK-thumbnail.png) uses the same native wordmark, with a precisely centered 600px visible mark on paper. It is the saved Devpost thumbnail.
+
 ## Voice
 
 Say “Compare plans,” “Apply a breakdown,” “Inspect evidence” and “Approve simulated plan.” Prefer a concrete verb and a short explanation. Show uncertainty, baseline wins and ties directly. Explain a technical mechanism when it helps someone assess the result.

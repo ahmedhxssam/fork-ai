@@ -54,12 +54,12 @@ Pages 10–12 and *F26 Main Track.docx* establish the main-track descriptions, a
 
 ## Readiness and remaining actions
 
-The guided tour, shared brand and new submission video have their own [release verification](docs/PRESENTATION_RELEASE.md). The earlier source/media publication remains a separate [historical record](docs/PUBLICATION.md). Localhost is a local app, not a hosted demo URL. The existing [FORK.ai entry](https://devpost.com/software/fork-ai-pmeja0) was observed in Dia as **SUBMITTED — 5/5 steps done** before agent edits on November 15. Its story/media update is a separate publication action; preserve that entry and team information.
+The guided tour, shared brand and new submission video have their own [release verification](docs/PRESENTATION_RELEASE.md). The earlier source/media publication remains a separate [historical record](docs/PUBLICATION.md). Localhost is a local app, not a hosted demo URL. The existing [FORK.ai entry](https://devpost.com/software/fork-ai-pmeja0) was observed in Dia as **SUBMITTED — 5/5 steps done** before agent edits on November 15. Its name, tagline, thumbnail, story and gallery were subsequently updated in Dia and verified; submitted status, the original public URL, submission ID and team remain. [Publication record](docs/PUBLICATION.md)
 
 1. Review the exact release, video, captions, entry text and substantial Codex-assistance disclosure.
 2. Use the final release evidence to confirm the video is at most 2:00 and the actual judging-laptop journey works. Rehearse the short cut within the live limit.
-3. Upload the reviewed video to a Devpost-compatible host and verify the resulting link. A repository MP4 does not itself establish a supported Devpost video-host URL.
+3. The new MP4 is linked prominently in the Devpost story. An optional embedded player needs YouTube/Vimeo/Youku hosting; separate hosting permission was requested. No embedded-video URL is currently claimed.
 4. Preserve the existing submitted entry. Confirm its Business and Enterprise selection, participant/eligibility information, repository timing and Discord usernames; verify any saved updates retain submitted status.
-5. Retain the actual confirmation and resulting entry URL. Submission, eligibility and award outcomes require their own evidence.
+5. Keep the existing [entry URL](https://devpost.com/software/fork-ai-pmeja0) and verification record. The interface was observed as submitted; eligibility and award outcomes remain organizer decisions.
 
 Preserve the initial greedy win (**224 meals**), the A-at-1,500 adaptive tie (**168 / 168 / 168**), paired controls (**144 / 120 / 144**) and gains (**+24 / +48 / +24**). Preserve unmet demand and any zero gain on other shocks. The independent referee checks consistency inside the declared model; it does not establish optimality or real-world safety. Exports never dispatch vehicles or contact volunteers.
